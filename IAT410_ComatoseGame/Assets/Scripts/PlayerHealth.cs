@@ -8,6 +8,8 @@ public class PlayerHealth : MonoBehaviour
     public float curHealth;
     public float maxHealth;
     public Slider healthBar;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,8 @@ public class PlayerHealth : MonoBehaviour
         if(Input.GetKeyUp(KeyCode.E)){
             sendDamage(Random.Range(10,20));
         }
+
+        
     }
 
     public void sendDamage (float damageValue){
