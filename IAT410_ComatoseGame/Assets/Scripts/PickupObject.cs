@@ -23,7 +23,7 @@ public class PickupObject : MonoBehaviour
 
     public void pickupObj(){
         availablePickup.transform.SetParent(playerRightHand.transform);
-        availablePickup.transform.localScale = new Vector3(1f,1f,1f);
+        availablePickup.transform.localScale = new Vector3(0.09f,0.09f,0.09f);
         availablePickup.transform.localPosition = new Vector3(0f,0f,0f);
     }
 
