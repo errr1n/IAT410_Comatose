@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerHealth : MonoBehaviour
+public class TestTakeDamage : MonoBehaviour
 {
     public float curHealth;
     public float maxHealth;
@@ -38,13 +38,9 @@ public class PlayerHealth : MonoBehaviour
 
     public void OnCollisionEnter(Collision other)
     {
-        if(other.collider.tag == "enemyAttack"){
+        if(other.collider.tag == "Player"){
             Debug.Log("collided with player");
-            Destroy(other.gameObject); // not working
-            sendDamage(2f);
-            
         }
     }
-
  
 }

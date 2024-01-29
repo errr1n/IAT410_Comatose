@@ -80,7 +80,7 @@ public class AINavPath : MonoBehaviour
             //attack form tutorial - change later
             Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
             rb.AddForce(transform.forward *32f, ForceMode.Impulse);
-             rb.AddForce(transform.up * 8f, ForceMode.Impulse);
+            // rb.AddForce(transform.up * 8f, ForceMode.Impulse);
 
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
@@ -113,5 +113,17 @@ public class AINavPath : MonoBehaviour
         if(!playerInSightRange && !playerInAttackRange) Patrolling();
         if(playerInSightRange && !playerInAttackRange) ChasePlayer();
         if(playerInSightRange && playerInAttackRange) AttackPlayer();
+    }
+
+    
+    public void OnCollisionEnter(Collision collision){
+        if(collision.collider.tag == "projectile"){
+            //collide with player projectile
+            health -=1;
+            Destroy(collision.gameObject);
+            Invoke(nameof(DestroyEnemy),0.5f);
+            
+        }
+        
     }
 }
