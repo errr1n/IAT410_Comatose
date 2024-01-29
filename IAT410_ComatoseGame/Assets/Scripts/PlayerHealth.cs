@@ -23,15 +23,16 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         
-        //just for testing purposes
-        if(Input.GetKeyUp(KeyCode.E)){
-            sendDamage(Random.Range(10,20));
-        }
-
+        // //just for testing purposes
+        // if(Input.GetKeyUp(KeyCode.E)){
+        //     sendDamage(Random.Range(10,20));
+        // }
+    
         
     }
 
     public void sendDamage (float damageValue){
+        Debug.Log("dmg : " + damageValue);
         curHealth -= damageValue;
         healthBar.value = curHealth;
     }
@@ -39,9 +40,10 @@ public class PlayerHealth : MonoBehaviour
     public void OnCollisionEnter(Collision other)
     {
         if(other.collider.tag == "enemyAttack"){
+            //sendDamage(Random.Range(10,20));
             Debug.Log("collided with player");
-            Destroy(other.gameObject); // not working
-            sendDamage(2f);
+           // Destroy(other.collider.gameObject); // not working
+            
             
         }
     }

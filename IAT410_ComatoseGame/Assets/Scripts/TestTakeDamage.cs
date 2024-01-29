@@ -5,41 +5,13 @@ using UnityEngine.UI;
 
 public class TestTakeDamage : MonoBehaviour
 {
-    public float curHealth;
-    public float maxHealth;
-    public Slider healthBar;
+   
+    
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        curHealth = maxHealth;
-        healthBar.value = curHealth;
-        healthBar.maxValue = maxHealth;
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-        //just for testing purposes
-        if(Input.GetKeyUp(KeyCode.E)){
-            sendDamage(Random.Range(10,20));
-        }
-
-        
-    }
-
-    public void sendDamage (float damageValue){
-        curHealth -= damageValue;
-        healthBar.value = curHealth;
-    }
-
-    public void OnCollisionEnter(Collision other)
+   public void OnCollisionEnter(Collision other)
     {
         if(other.collider.tag == "Player"){
-            Debug.Log("collided with player");
+            Destroy(gameObject);
         }
     }
  
