@@ -21,4 +21,17 @@ public class BulletProjectile : MonoBehaviour
    {
     Destroy(gameObject);
    }
+
+   // youtube comments to delete bullets after a while
+   // private void Update()
+   // {
+   //    public float timeRemaining = 5f;
+   //    if(timeRemaining > 0)
+   //    {
+   //       timeRemaining -= Time.deltaTime;
+   //    }
+   //    else{
+   //       Destroy(gameObject);
+   //    }
+   // }
 }
