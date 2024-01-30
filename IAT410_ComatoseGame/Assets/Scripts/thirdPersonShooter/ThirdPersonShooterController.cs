@@ -65,6 +65,38 @@ public class ThirdPersonShooterController : MonoBehaviour
         // aim mode
         if(starterAssetsInputs.aim)
         {
+
+            // NEW HERE
+            // check if clicked e
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+
+                // place = new Vector3()
+
+                //hit scan
+                if(hitTransform != null)
+                // if not null, we hit something
+                {
+                    if(hitTransform.GetComponent<TeleportTarget>() != null)
+                    {
+                    //hit target (can play particles from here)
+                    // Instantiate(vfxHitGreen, transform.position, Quaternion.identity);
+                    Debug.Log("teleport");
+                    //teleporting
+                    // gameObject.transform.position = teleportLocation.transform.position;
+                    gameObject.transform.position = mouseWorldPosition;
+                    // thirdPersonController.transform.position = teleportLocation.transform.position;
+                    // Debug.Log("complete");
+                    // StartCoroutine(Delay());
+                    } 
+                    // else{
+                    // // hit something else (can play particles from here)
+                    // // Instantiate(vfxHitRed, transform.position, Quaternion.identity);
+                    //  Debug.Log("no teleport");
+                    // }
+                }
+            }
+
             //crosshair
             crosshair.SetActive(true);
 
@@ -113,36 +145,36 @@ public class ThirdPersonShooterController : MonoBehaviour
             // check if they pressed E
             //
             
-            // NEW HERE
-            // check if clicked e
-            if (Input.GetKeyDown(KeyCode.E))
-            {
+            // // NEW HERE
+            // // check if clicked e
+            // if (Input.GetKeyDown(KeyCode.E))
+            // {
 
-                // place = new Vector3()
+            //     // place = new Vector3()
 
-                //hit scan
-                if(hitTransform != null)
-                // if not null, we hit something
-                {
-                    if(hitTransform.GetComponent<TeleportTarget>() != null)
-                    {
-                    //hit target (can play particles from here)
-                    // Instantiate(vfxHitGreen, transform.position, Quaternion.identity);
-                    Debug.Log("teleport");
-                    //teleporting
-                    // gameObject.transform.position = teleportLocation.transform.position;
-                    gameObject.transform.position = mouseWorldPosition;
-                    // thirdPersonController.transform.position = teleportLocation.transform.position;
-                    // Debug.Log("complete");
-                    // StartCoroutine(Delay());
-                    } 
-                    // else{
-                    // // hit something else (can play particles from here)
-                    // // Instantiate(vfxHitRed, transform.position, Quaternion.identity);
-                    //  Debug.Log("no teleport");
-                    // }
-                }
-            }
+            //     //hit scan
+            //     if(hitTransform != null)
+            //     // if not null, we hit something
+            //     {
+            //         if(hitTransform.GetComponent<TeleportTarget>() != null)
+            //         {
+            //         //hit target (can play particles from here)
+            //         // Instantiate(vfxHitGreen, transform.position, Quaternion.identity);
+            //         Debug.Log("teleport");
+            //         //teleporting
+            //         // gameObject.transform.position = teleportLocation.transform.position;
+            //         gameObject.transform.position = mouseWorldPosition;
+            //         // thirdPersonController.transform.position = teleportLocation.transform.position;
+            //         // Debug.Log("complete");
+            //         // StartCoroutine(Delay());
+            //         } 
+            //         // else{
+            //         // // hit something else (can play particles from here)
+            //         // // Instantiate(vfxHitRed, transform.position, Quaternion.identity);
+            //         //  Debug.Log("no teleport");
+            //         // }
+            //     }
+            // }
 
 
         }  else
