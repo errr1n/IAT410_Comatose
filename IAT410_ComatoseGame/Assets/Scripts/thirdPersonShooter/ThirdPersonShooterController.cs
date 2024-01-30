@@ -17,6 +17,10 @@ public class ThirdPersonShooterController : MonoBehaviour
     [SerializeField] private Transform pfBulletProjectile;
     [SerializeField] private Transform spawnBulletPosition;
 
+    // hit scan
+    [SerializeField] private Transform vfxHitGreen;
+    [SerializeField] private Transform vfxHitRed;
+
     private ThirdPersonController thirdPersonController;
     private StarterAssetsInputs starterAssetsInputs;
 
@@ -33,10 +37,15 @@ public class ThirdPersonShooterController : MonoBehaviour
         //get center point of the screen (crosshair center)
         Vector2 screenCenterPoint = new Vector2(Screen.width/2f, Screen.height/2f);
         Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
+
+        // hit scan
+        Transform hitTransform = null;
+
         if(Physics.Raycast(ray, out RaycastHit raycastHit, 999f, aimColliderLayerMask))
         {
             debugTransform.position = raycastHit.point;
             mouseWorldPosition = raycastHit.point;
+            hitTransform = raycastHit.transform;
         } 
 
         // youtube comments
@@ -67,10 +76,27 @@ public class ThirdPersonShooterController : MonoBehaviour
 
         if(starterAssetsInputs.shoot)
         {
+            // hit scan
+            if(hitTransform != null)
+            // if not null, we hit something
+            {
+                if(hitTransform.GetComponent<BulletTarget>() != null)
+                {
+                    //hit target (can play particles from here)
+                    // Instantiate(vfxHitGreen, transform.position, Quaternion.identity);
+                    Debug.Log("green");
+                } else{
+                    // hit something else (can play particles from here)
+                    // Instantiate(vfxHitRed, transform.position, Quaternion.identity);
+                     Debug.Log("red");
+                }
+            }
+
             // to calculate aim direction, grab mouse position, calculate direction using spawn bullet position
-            Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
-            Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+            //Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
+            //Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
             // not shooting constantly
+
             starterAssetsInputs.shoot = false;
         }
 
