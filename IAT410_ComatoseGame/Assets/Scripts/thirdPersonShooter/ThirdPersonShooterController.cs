@@ -43,6 +43,7 @@ public class ThirdPersonShooterController : MonoBehaviour
 
         if(Physics.Raycast(ray, out RaycastHit raycastHit, 999f, aimColliderLayerMask))
         {
+            //moves debug sphere to raycast point
             debugTransform.position = raycastHit.point;
             mouseWorldPosition = raycastHit.point;
             hitTransform = raycastHit.transform;
@@ -54,6 +55,7 @@ public class ThirdPersonShooterController : MonoBehaviour
             debugTransform.position = ray.GetPoint(10);
         }
 
+        // aim mode
         if(starterAssetsInputs.aim)
         {
             aimVirtualCamera.gameObject.SetActive(true);
@@ -67,6 +69,15 @@ public class ThirdPersonShooterController : MonoBehaviour
             // rotate the player towards crosshair
             transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f);
 
+            // ERIN - trying to make it so can only shoot in aim mode
+            if(starterAssetsInputs.shoot)
+            {
+                // to calculate aim direction, grab mouse position, calculate direction using spawn bullet position
+                Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
+                Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+                // not shooting constantly
+                starterAssetsInputs.shoot = false;
+            }
         }  else
         {
             aimVirtualCamera.gameObject.SetActive(false);
@@ -74,30 +85,30 @@ public class ThirdPersonShooterController : MonoBehaviour
             thirdPersonController.SetRotateOnMove(true);
         }
 
-        if(starterAssetsInputs.shoot)
-        {
-            // hit scan
-            // if(hitTransform != null)
-            // // if not null, we hit something
-            // {
-            //     if(hitTransform.GetComponent<BulletTarget>() != null)
-            //     {
-            //         //hit target (can play particles from here)
-            //         // Instantiate(vfxHitGreen, transform.position, Quaternion.identity);
-            //         Debug.Log("green");
-            //     } else{
-            //         // hit something else (can play particles from here)
-            //         // Instantiate(vfxHitRed, transform.position, Quaternion.identity);
-            //          Debug.Log("red");
-            //     }
-            // }
+        // if(starterAssetsInputs.shoot)
+        // {
+        //     // hit scan
+        //     // if(hitTransform != null)
+        //     // // if not null, we hit something
+        //     // {
+        //     //     if(hitTransform.GetComponent<BulletTarget>() != null)
+        //     //     {
+        //     //         //hit target (can play particles from here)
+        //     //         // Instantiate(vfxHitGreen, transform.position, Quaternion.identity);
+        //     //         Debug.Log("green");
+        //     //     } else{
+        //     //         // hit something else (can play particles from here)
+        //     //         // Instantiate(vfxHitRed, transform.position, Quaternion.identity);
+        //     //          Debug.Log("red");
+        //     //     }
+        //     // }
 
-            // to calculate aim direction, grab mouse position, calculate direction using spawn bullet position
-            Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
-            Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
-            // not shooting constantly
-            starterAssetsInputs.shoot = false;
-        }
+        //     // to calculate aim direction, grab mouse position, calculate direction using spawn bullet position
+        //     Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
+        //     Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+        //     // not shooting constantly
+        //     starterAssetsInputs.shoot = false;
+        // }
 
     }
 }
