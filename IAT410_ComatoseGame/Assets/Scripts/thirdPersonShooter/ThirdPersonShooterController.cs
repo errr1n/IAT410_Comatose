@@ -128,13 +128,15 @@ public class ThirdPersonShooterController : MonoBehaviour
                     Debug.Log("teleport");
                     //teleporting
                     gameObject.transform.position = teleportLocation.transform.position;
-                    Debug.Log("complete");
-
-                    } else{
-                    // hit something else (can play particles from here)
-                    // Instantiate(vfxHitRed, transform.position, Quaternion.identity);
-                     Debug.Log("no teleport");
-                    }
+                    // thirdPersonController.transform.position = teleportLocation.transform.position;
+                    // Debug.Log("complete");
+                    // StartCoroutine(Delay());
+                    } 
+                    // else{
+                    // // hit something else (can play particles from here)
+                    // // Instantiate(vfxHitRed, transform.position, Quaternion.identity);
+                    //  Debug.Log("no teleport");
+                    // }
                 }
             }
 
@@ -178,5 +180,10 @@ public class ThirdPersonShooterController : MonoBehaviour
         //     starterAssetsInputs.shoot = false;
         // }
 
+    }
+
+    IEnumerator Delay()
+    {
+        yield return null;
     }
 }
