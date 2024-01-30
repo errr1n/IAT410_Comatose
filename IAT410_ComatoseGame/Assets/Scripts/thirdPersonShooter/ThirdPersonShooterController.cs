@@ -79,12 +79,59 @@ public class ThirdPersonShooterController : MonoBehaviour
             // ERIN - trying to make it so can only shoot in aim mode
             if(starterAssetsInputs.shoot)
             {
+
+
+
+            //     if(hitTransform != null)
+            // // if not null, we hit something
+            // {
+            //     if(hitTransform.GetComponent<TeleportTarget>() != null)
+            //     {
+            //         //hit target (can play particles from here)
+            //         // Instantiate(vfxHitGreen, transform.position, Quaternion.identity);
+            //         Debug.Log("teleport");
+            //     } else{
+            //         // hit something else (can play particles from here)
+            //         // Instantiate(vfxHitRed, transform.position, Quaternion.identity);
+            //          Debug.Log("no teleport");
+            //     }
+            // }
+
+
+
                 // to calculate aim direction, grab mouse position, calculate direction using spawn bullet position
                 Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
                 Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
                 // not shooting constantly
                 starterAssetsInputs.shoot = false;
             }
+
+            // teleport
+            // check if they pressed E
+            //
+            
+            // NEW HERE
+            // check if clicked e
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                //hit scan
+                if(hitTransform != null)
+                // if not null, we hit something
+                {
+                    if(hitTransform.GetComponent<TeleportTarget>() != null)
+                    {
+                    //hit target (can play particles from here)
+                    // Instantiate(vfxHitGreen, transform.position, Quaternion.identity);
+                    Debug.Log("teleport");
+                    } else{
+                    // hit something else (can play particles from here)
+                    // Instantiate(vfxHitRed, transform.position, Quaternion.identity);
+                     Debug.Log("no teleport");
+                    }
+                }
+            }
+
+
         }  else
         {
             //crosshair
@@ -95,8 +142,11 @@ public class ThirdPersonShooterController : MonoBehaviour
             thirdPersonController.SetRotateOnMove(true);
         }
 
+
         // if(starterAssetsInputs.shoot)
         // {
+
+
         //     // hit scan
         //     // if(hitTransform != null)
         //     // // if not null, we hit something
@@ -112,6 +162,7 @@ public class ThirdPersonShooterController : MonoBehaviour
         //     //          Debug.Log("red");
         //     //     }
         //     // }
+
 
         //     // to calculate aim direction, grab mouse position, calculate direction using spawn bullet position
         //     Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
