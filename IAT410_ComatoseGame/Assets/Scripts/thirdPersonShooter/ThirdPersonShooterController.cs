@@ -17,6 +17,9 @@ public class ThirdPersonShooterController : MonoBehaviour
     [SerializeField] private Transform pfBulletProjectile;
     [SerializeField] private Transform spawnBulletPosition;
 
+    //crosshair
+    [SerializeField] private GameObject crosshair; // makes a serialized field for the image of the crosshair to be assigned to.
+
     // hit scan
     [SerializeField] private Transform vfxHitGreen;
     [SerializeField] private Transform vfxHitRed;
@@ -28,6 +31,7 @@ public class ThirdPersonShooterController : MonoBehaviour
     {
         thirdPersonController = GetComponent<ThirdPersonController>();
         starterAssetsInputs = GetComponent<StarterAssetsInputs>();
+        crosshair.SetActive(false); // hides the crosshair to make sure it is hidden at the start.
     }
 
     private void Update()
@@ -58,6 +62,9 @@ public class ThirdPersonShooterController : MonoBehaviour
         // aim mode
         if(starterAssetsInputs.aim)
         {
+            //crosshair
+            crosshair.SetActive(true);
+
             aimVirtualCamera.gameObject.SetActive(true);
             thirdPersonController.SetSensitivity(aimSensitivity);
             thirdPersonController.SetRotateOnMove(false);
@@ -80,6 +87,9 @@ public class ThirdPersonShooterController : MonoBehaviour
             }
         }  else
         {
+            //crosshair
+            crosshair.SetActive(false);
+            
             aimVirtualCamera.gameObject.SetActive(false);
             thirdPersonController.SetSensitivity(normalSensitivity);
             thirdPersonController.SetRotateOnMove(true);
