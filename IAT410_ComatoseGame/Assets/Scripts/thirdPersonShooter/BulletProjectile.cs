@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class BulletProjectile : MonoBehaviour
 {
+   [SerializeField] private Transform vfxHitGreen;
+   [SerializeField] private Transform vfxHitRed;
+
+   [SerializeField] private float bulletSpeed;
    private Rigidbody bulletRigidbody;
 
    private void Awake()
@@ -13,13 +17,23 @@ public class BulletProjectile : MonoBehaviour
 
    private void Start()
    {
-    float speed = 10f;
-    bulletRigidbody.velocity = transform.forward * speed;
+   //  float speed = 10f;
+    bulletRigidbody.velocity = transform.forward * bulletSpeed;
    }
 
    private void OnTriggerEnter(Collider other)
    {
-    Destroy(gameObject);
+      if(other.GetComponent<BulletTarget>() != null)
+      {
+         //hit target (can play particles from here)
+         // Instantiate(vfxHitGreen, transform.position, Quaternion.identity);
+         Debug.Log("green");
+      } else{
+         // hit something else (can play particles from here)
+         // Instantiate(vfxHitRed, transform.position, Quaternion.identity);
+         Debug.Log("red");
+      }
+      Destroy(gameObject);
    }
 
    // youtube comments to delete bullets after a while

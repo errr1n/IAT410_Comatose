@@ -95,6 +95,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b7f64cb288bdc4698558e70ae01afa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vfxHitGreen: {fileID: 0}
+  vfxHitRed: {fileID: 0}
+  bulletSpeed: 35
 --- !u!1 &7748286999491514307
 GameObject:
   m_ObjectHideFlags: 0
