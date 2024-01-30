@@ -24,6 +24,9 @@ public class ThirdPersonShooterController : MonoBehaviour
     [SerializeField] private Transform vfxHitGreen;
     [SerializeField] private Transform vfxHitRed;
 
+    //teleporting
+    [SerializeField] GameObject teleportLocation;
+
     private ThirdPersonController thirdPersonController;
     private StarterAssetsInputs starterAssetsInputs;
 
@@ -123,6 +126,10 @@ public class ThirdPersonShooterController : MonoBehaviour
                     //hit target (can play particles from here)
                     // Instantiate(vfxHitGreen, transform.position, Quaternion.identity);
                     Debug.Log("teleport");
+                    //teleporting
+                    gameObject.transform.position = teleportLocation.transform.position;
+                    Debug.Log("complete");
+
                     } else{
                     // hit something else (can play particles from here)
                     // Instantiate(vfxHitRed, transform.position, Quaternion.identity);
