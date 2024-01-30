@@ -117,6 +117,9 @@ public class ThirdPersonShooterController : MonoBehaviour
             // check if clicked e
             if (Input.GetKeyDown(KeyCode.E))
             {
+
+                // place = new Vector3()
+
                 //hit scan
                 if(hitTransform != null)
                 // if not null, we hit something
@@ -127,7 +130,8 @@ public class ThirdPersonShooterController : MonoBehaviour
                     // Instantiate(vfxHitGreen, transform.position, Quaternion.identity);
                     Debug.Log("teleport");
                     //teleporting
-                    gameObject.transform.position = teleportLocation.transform.position;
+                    // gameObject.transform.position = teleportLocation.transform.position;
+                    gameObject.transform.position = mouseWorldPosition;
                     // thirdPersonController.transform.position = teleportLocation.transform.position;
                     // Debug.Log("complete");
                     // StartCoroutine(Delay());
