@@ -182,8 +182,8 @@ public class ThirdPersonShooterController : MonoBehaviour
 
     }
 
-    IEnumerator Delay()
-    {
-        yield return null;
-    }
+    // IEnumerator Delay()
+    // {
+    //     yield return null;
+    // }
 }
