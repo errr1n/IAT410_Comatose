@@ -39,11 +39,11 @@ public class ThirdPersonShooterController : MonoBehaviour
         thirdPersonController = GetComponent<ThirdPersonController>();
         starterAssetsInputs = GetComponent<StarterAssetsInputs>();
         crosshair.SetActive(false); // hides the crosshair to make sure it is hidden at the start.
+        poisonParticles.SetActive(false);
     }
 
     private void Update()
     {
-        Attack();
 
         Vector3 mouseWorldPosition = Vector3.zero;
 
@@ -193,6 +193,20 @@ public class ThirdPersonShooterController : MonoBehaviour
             thirdPersonController.SetRotateOnMove(true);
         }
 
+        //AOE
+
+        // Attack();
+
+        // if(Input.GetKeyDown(KeyCode.V))
+        // {
+        //     //once attack button is pressed
+        //     // Debug.Log("attack input");
+        //     // StartCoroutine(AttackSequence());
+        //     poisonParticles.transform.position = mouseWorldPosition;
+        //     poisonParticles.SetActive(true);
+
+        // }
+
 
         // if(starterAssetsInputs.shoot)
         // {
@@ -231,35 +245,36 @@ public class ThirdPersonShooterController : MonoBehaviour
 
 
     // AOE ATTACK
-    private void Attack()
-    {
-        if(Input.GetKeyDown(KeyCode.V))
-        {
-            //once attack button is pressed
-            Debug.Log("attack input");
-            StartCoroutine(AttackSequence());
-        }
-    }
+    // private void Attack()
+    // {
+    //     if(Input.GetKeyDown(KeyCode.V))
+    //     {
+    //         //once attack button is pressed
+    //         Debug.Log("attack input");
+    //         StartCoroutine(AttackSequence());
+    //     }
+    // }
 
-    private IEnumerator AttackSequence()
-    {
-        yield return new WaitForSeconds(0.25f);
-        Debug.Log("coroutine");
-        poisonParticles.SetActive(true);
-        CheckForDestructables();
-        // yield return new WaitForSeconds(1f);
-        // poisonParticles.SetActive(false);
-    }
+    // private IEnumerator AttackSequence()
+    // {
+    //     yield return new WaitForSeconds(0.25f);
+    //     Debug.Log("coroutine");
+    //     poisonParticles.transform.position = gameObject.transform.position;
+    //     poisonParticles.SetActive(true);
+    //     CheckForDestructables();
+    //     yield return new WaitForSeconds(1f);
+    //     poisonParticles.SetActive(false);
+    // }
 
-    private void CheckForDestructables()
-    {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, 4f);
-        foreach(Collider c in colliders)
-        {
-            if(c.GetComponent<AOETarget>())
-            {
-                c.GetComponent<AOETarget>().DealDamage();
-            }
-        }
-    }
+    // private void CheckForDestructables()
+    // {
+    //     Collider[] colliders = Physics.OverlapSphere(transform.position, 4f);
+    //     foreach(Collider c in colliders)
+    //     {
+    //         if(c.GetComponent<AOETarget>())
+    //         {
+    //             c.GetComponent<AOETarget>().DealDamage();
+    //         }
+    //     }
+    // }
 }
