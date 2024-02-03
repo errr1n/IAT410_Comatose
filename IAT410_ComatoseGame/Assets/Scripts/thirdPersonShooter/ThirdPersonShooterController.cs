@@ -27,6 +27,9 @@ public class ThirdPersonShooterController : MonoBehaviour
     //teleporting
     [SerializeField] GameObject teleportLocation;
 
+    //AOE
+    private bool isImmobilized = false;
+
     private ThirdPersonController thirdPersonController;
     private StarterAssetsInputs starterAssetsInputs;
 
@@ -39,6 +42,8 @@ public class ThirdPersonShooterController : MonoBehaviour
 
     private void Update()
     {
+        Attack();
+
         Vector3 mouseWorldPosition = Vector3.zero;
 
         //get center point of the screen (crosshair center)
@@ -221,5 +226,29 @@ public class ThirdPersonShooterController : MonoBehaviour
     IEnumerator Delay()
     {
         yield return null;
+    }
+
+
+    // AOE ATTACK
+    private void Attack()
+    {
+        if(Input.GetKeyDown(KeyCode.V))
+        {
+            //once attack button is pressed
+            Debug.Log("attack input");
+            CheckForDestructables();
+        }
+    }
+
+    private void CheckForDestructables()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, 4f);
+        foreach(Collider c in colliders)
+        {
+            if(c.GetComponent<AOETarget>())
+            {
+                c.GetComponent<AOETarget>().DealDamage();
+            }
+        }
     }
 }
