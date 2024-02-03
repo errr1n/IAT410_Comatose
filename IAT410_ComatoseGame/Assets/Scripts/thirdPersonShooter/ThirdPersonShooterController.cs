@@ -29,6 +29,7 @@ public class ThirdPersonShooterController : MonoBehaviour
 
     //AOE
     private bool isImmobilized = false;
+    [SerializeField] private GameObject poisonParticles;
 
     private ThirdPersonController thirdPersonController;
     private StarterAssetsInputs starterAssetsInputs;
@@ -236,8 +237,18 @@ public class ThirdPersonShooterController : MonoBehaviour
         {
             //once attack button is pressed
             Debug.Log("attack input");
-            CheckForDestructables();
+            StartCoroutine(AttackSequence());
         }
+    }
+
+    private IEnumerator AttackSequence()
+    {
+        yield return new WaitForSeconds(0.25f);
+        Debug.Log("coroutine");
+        poisonParticles.SetActive(true);
+        CheckForDestructables();
+        // yield return new WaitForSeconds(1f);
+        // poisonParticles.SetActive(false);
     }
 
     private void CheckForDestructables()
