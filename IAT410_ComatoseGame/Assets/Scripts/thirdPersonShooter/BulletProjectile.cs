@@ -12,6 +12,8 @@ public class BulletProjectile : MonoBehaviour
 
    [SerializeField] private Transform poisonParticles;
 
+   public bool hitTarget = false;
+
    private void Awake()
    {
     bulletRigidbody = GetComponent<Rigidbody>();
@@ -28,9 +30,17 @@ public class BulletProjectile : MonoBehaviour
       if(other.GetComponent<BulletTarget>() != null)
       {
          //hit target (can play particles from here)
-         Instantiate(poisonParticles, transform.position, Quaternion.identity);
-         // poisonParticles.transform.rotation = 180;
+         //play particle effect (effet rotated 90 degrees))
+         Instantiate(poisonParticles, transform.position, Quaternion.Euler(90,0,0));
+         // poisonParticles.transform.rotation = 90f;
          Debug.Log("green");
+
+         // StartCoroutine(AttackSequence());
+         CheckForDestructables();
+         // Attack();
+         hitTarget = true;
+         // Debug.Log(hitTarget);
+
          Debug.Log("Destroy");
          // Attack();
       } else{
@@ -54,35 +64,49 @@ public class BulletProjectile : MonoBehaviour
    //    }
    // }
 
-   //  private void Attack()
-   //  {
-   //          //once attack button is pressed
-   //          Debug.Log("bullet attack");
-   //          // StartCoroutine(AttackSequence());
-   //          // poisonParticles.transform.position = gameObject.transform.position;
-   //          poisonParticles.SetActive(true);
-   //  }
+   // private void Update()
+   // {
+   //    if(hitTarget = true)
+   //    {
+   //       Debug.Log("update attack");
+   //       Attack();
+   //    }
+   // }
 
-   //  private IEnumerator AttackSequence()
-   //  {
-   //      yield return new WaitForSeconds(0.25f);
-   //      Debug.Log("coroutine");
-   //      poisonParticles.transform.position = gameObject.transform.position;
-   //      poisonParticles.SetActive(true);
-   //      CheckForDestructables();
-   //      yield return new WaitForSeconds(1f);
-   //      poisonParticles.SetActive(false);
-   //  }
+    private void Attack()
+    {
+            //once attack button is pressed
+            Debug.Log("bullet attack");
+            StartCoroutine(AttackSequence());
+            Debug.Log("attack bottom");
+            // poisonParticles.transform.position = gameObject.transform.position;
+            // poisonParticles.SetActive(true);
+    }
 
-   //  private void CheckForDestructables()
-   //  {
-   //      Collider[] colliders = Physics.OverlapSphere(transform.position, 4f);
-   //      foreach(Collider c in colliders)
-   //      {
-   //          if(c.GetComponent<AOETarget>())
-   //          {
-   //              c.GetComponent<AOETarget>().DealDamage();
-   //          }
-   //      }
-   //  }
+    private IEnumerator AttackSequence()
+    {
+         // poisonParticles.SetActive(true);
+         Instantiate(poisonParticles, transform.position, Quaternion.Euler(90,0,0));
+        yield return new WaitForSeconds(1f);
+        Debug.Log("coroutine");
+      //   poisonParticles.transform.position = gameObject.transform.position;
+      //   poisonParticles.SetActive(true);
+        CheckForDestructables();
+        yield return new WaitForSeconds(1f);
+      //   poisonParticles.SetActive(false);
+         hitTarget = false;
+    }
+
+    private void CheckForDestructables()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, 4f);
+        foreach(Collider c in colliders)
+        {
+            if(c.GetComponent<AOETarget>())
+            {
+                c.GetComponent<AOETarget>().DealDamage();
+                Debug.Log("destroy object");
+            }
+        }
+    }
 }
