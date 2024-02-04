@@ -8,9 +8,12 @@ public class AOETarget : MonoBehaviour
 
     public void DealDamage()
     {
-        Destroy(gameObject);
+        
+        Invoke(nameof(DestroySelf),2);
     }
 
-
+    public void DestroySelf(){
+        Destroy(gameObject);
+    }
 
 }

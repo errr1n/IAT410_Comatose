@@ -31,6 +31,8 @@ public class BulletProjectileRaycast : MonoBehaviour
             Debug.Log("new red");
             transform.Find("Trail").SetParent(null);
             Destroy(gameObject);
+           // Invoke(nameof(DestroySelf),0.5f);
         }
     }
+
 }

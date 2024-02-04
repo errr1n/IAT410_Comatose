@@ -15,7 +15,8 @@ public class BulletProjectile : MonoBehaviour
    public ThirdPersonShooterController thirdPersonShooterController;
 
    public bool hitTarget;
-
+public float delay = 3;
+public float timer;
    private void Awake()
    {
     bulletRigidbody = GetComponent<Rigidbody>();
@@ -30,8 +31,13 @@ public class BulletProjectile : MonoBehaviour
 
    }
 
+   
+  
+
    private void OnTriggerEnter(Collider other)
    {
+      
+     // float timer;
       if(other.GetComponent<BulletTarget>() != null)
       {
          //hit target (can play particles from here)
@@ -58,7 +64,9 @@ public class BulletProjectile : MonoBehaviour
          Debug.Log("red");
          // Destroy(gameObject);
       }
+     
       Destroy(gameObject);
+      
    }
 
    // youtube comments to delete bullets after a while
@@ -123,6 +131,9 @@ public class BulletProjectile : MonoBehaviour
             if(c.GetComponent<AOETarget>())
             {
                 c.GetComponent<AOETarget>().DealDamage();
+               //c.GetComponent<AOETarget>().Invoke(nameof)
+
+               // Invoke(nameof(DestroyEnemy),0.5f);
                 Debug.Log("destroy object");
             }
         }
