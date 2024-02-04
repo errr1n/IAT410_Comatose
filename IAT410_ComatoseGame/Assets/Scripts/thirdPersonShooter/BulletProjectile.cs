@@ -32,25 +32,28 @@ public class BulletProjectile : MonoBehaviour
 
    private void OnTriggerEnter(Collider other)
    {
-      if(other.GetComponent<BulletTarget>() != null)
+      if(other.GetComponent<StatusEffectManager>() != null)
       {
+
+         // Instantiate(poisonParticles, transform.position, Quaternion.Euler(90,0,0));
+         other.GetComponent<StatusEffectManager>().CheckForDestructables();
          //hit target (can play particles from here)
          //play particle effect (effet rotated 90 degrees))
-         Instantiate(poisonParticles, transform.position, Quaternion.Euler(90,0,0));
+         // Instantiate(poisonParticles, transform.position, Quaternion.Euler(90,0,0));
          // poisonParticles.transform.rotation = 90f;
          Debug.Log("green");
 
          // thirdPersonShooterController.CheckForDestructables();
 
          // StartCoroutine(AttackSequence());
-         CheckForDestructables();
+         // CheckForDestructables();
          // Attack();
          // hitTarget = true;
          // Debug.Log(hitTarget);
          // StartCoroutine(thirdPersonShooterController.AttackSequence());
          // ThirdPersonShooterController.Attack();
 
-         Debug.Log("Destroy");
+         // Debug.Log("Destroy");
          // Attack();
       } else{
          // hit something else (can play particles from here)
@@ -88,43 +91,44 @@ public class BulletProjectile : MonoBehaviour
       //    hitTarget = true;
       // }
 
-    public void Attack()
-    {
-            //once attack button is pressed
-            // Debug.Log("bullet attack");
-            // StartCoroutine(AttackSequence());
-            // Debug.Log("attack bottom");
-            // poisonParticles.transform.position = gameObject.transform.position;
-            // poisonParticles.SetActive(true);
-            hitTarget = true;
-    }
+   //  public void Attack()
+   //  {
+   //          //once attack button is pressed
+   //          // Debug.Log("bullet attack");
+   //          // StartCoroutine(AttackSequence());
+   //          // Debug.Log("attack bottom");
+   //          // poisonParticles.transform.position = gameObject.transform.position;
+   //          // poisonParticles.SetActive(true);
+   //          hitTarget = true;
+   //  }
 
-    private IEnumerator AttackSequence()
-    {
-         // poisonParticles.SetActive(true);
-         Instantiate(poisonParticles, transform.position, Quaternion.Euler(90,0,0));
-        yield return new WaitForSeconds(2f);
-        Debug.Log("coroutine");
-      //   poisonParticles.transform.position = gameObject.transform.position;
-      //   poisonParticles.SetActive(true);
-        CheckForDestructables();
-        yield return new WaitForSeconds(1f);
-      //   poisonParticles.SetActive(false);
-         hitTarget = false;
+   //  private IEnumerator AttackSequence()
+   //  {
+   //       // poisonParticles.SetActive(true);
+   //       Instantiate(poisonParticles, transform.position, Quaternion.Euler(90,0,0));
+   //      yield return new WaitForSeconds(2f);
+   //      Debug.Log("coroutine");
+   //    //   poisonParticles.transform.position = gameObject.transform.position;
+   //    //   poisonParticles.SetActive(true);
+   //      CheckForDestructables();
+   //      yield return new WaitForSeconds(1f);
+   //    //   poisonParticles.SetActive(false);
+   //       hitTarget = false;
 
-         // Destroy(gameObject);
-    }
+   //       // Destroy(gameObject);
+   //  }
 
-    private void CheckForDestructables()
-    {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, 4f);
-        foreach(Collider c in colliders)
-        {
-            if(c.GetComponent<AOETarget>())
-            {
-                c.GetComponent<AOETarget>().DealDamage();
-                Debug.Log("destroy object");
-            }
-        }
-    }
+   // //check if within sphere range
+   //  private void CheckForDestructables()
+   //  {
+   //      Collider[] colliders = Physics.OverlapSphere(transform.position, 4f);
+   //      foreach(Collider c in colliders)
+   //      {
+   //          if(c.GetComponent<AOETarget>())
+   //          {
+   //              c.GetComponent<AOETarget>().DealDamage();
+   //              Debug.Log("destroy object");
+   //          }
+   //      }
+   //  }
 }
