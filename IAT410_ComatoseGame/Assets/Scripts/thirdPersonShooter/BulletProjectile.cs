@@ -12,7 +12,9 @@ public class BulletProjectile : MonoBehaviour
 
    [SerializeField] private Transform poisonParticles;
 
-   public bool hitTarget = false;
+   public ThirdPersonShooterController thirdPersonShooterController;
+
+   public bool hitTarget;
 
    private void Awake()
    {
@@ -23,6 +25,9 @@ public class BulletProjectile : MonoBehaviour
    {
    //  float speed = 10f;
     bulletRigidbody.velocity = transform.forward * bulletSpeed;
+
+   //  thirdPersonShooterController = GetComponent<ThirdPersonShooterController>();
+
    }
 
    private void OnTriggerEnter(Collider other)
@@ -35,11 +40,15 @@ public class BulletProjectile : MonoBehaviour
          // poisonParticles.transform.rotation = 90f;
          Debug.Log("green");
 
+         // thirdPersonShooterController.CheckForDestructables();
+
          // StartCoroutine(AttackSequence());
          CheckForDestructables();
          // Attack();
-         hitTarget = true;
+         // hitTarget = true;
          // Debug.Log(hitTarget);
+         // StartCoroutine(thirdPersonShooterController.AttackSequence());
+         // ThirdPersonShooterController.Attack();
 
          Debug.Log("Destroy");
          // Attack();
@@ -47,6 +56,7 @@ public class BulletProjectile : MonoBehaviour
          // hit something else (can play particles from here)
          // Instantiate(vfxHitRed, transform.position, Quaternion.identity);
          Debug.Log("red");
+         // Destroy(gameObject);
       }
       Destroy(gameObject);
    }
@@ -73,21 +83,27 @@ public class BulletProjectile : MonoBehaviour
    //    }
    // }
 
-    private void Attack()
+      // public void hitTarget()
+      // {
+      //    hitTarget = true;
+      // }
+
+    public void Attack()
     {
             //once attack button is pressed
-            Debug.Log("bullet attack");
-            StartCoroutine(AttackSequence());
-            Debug.Log("attack bottom");
+            // Debug.Log("bullet attack");
+            // StartCoroutine(AttackSequence());
+            // Debug.Log("attack bottom");
             // poisonParticles.transform.position = gameObject.transform.position;
             // poisonParticles.SetActive(true);
+            hitTarget = true;
     }
 
     private IEnumerator AttackSequence()
     {
          // poisonParticles.SetActive(true);
          Instantiate(poisonParticles, transform.position, Quaternion.Euler(90,0,0));
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         Debug.Log("coroutine");
       //   poisonParticles.transform.position = gameObject.transform.position;
       //   poisonParticles.SetActive(true);
@@ -95,6 +111,8 @@ public class BulletProjectile : MonoBehaviour
         yield return new WaitForSeconds(1f);
       //   poisonParticles.SetActive(false);
          hitTarget = false;
+
+         // Destroy(gameObject);
     }
 
     private void CheckForDestructables()

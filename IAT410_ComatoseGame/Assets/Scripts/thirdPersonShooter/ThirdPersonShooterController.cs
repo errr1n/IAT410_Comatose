@@ -35,12 +35,16 @@ public class ThirdPersonShooterController : MonoBehaviour
     private ThirdPersonController thirdPersonController;
     private StarterAssetsInputs starterAssetsInputs;
 
+    private BulletProjectile bulletProjectile;
+
     private void Awake()
     {
         thirdPersonController = GetComponent<ThirdPersonController>();
         starterAssetsInputs = GetComponent<StarterAssetsInputs>();
         crosshair.SetActive(false); // hides the crosshair to make sure it is hidden at the start.
         // poisonParticles.SetActive(false);
+
+        bulletProjectile = GetComponent<BulletProjectile>();
     }
 
     private void Update()
@@ -144,8 +148,17 @@ public class ThirdPersonShooterController : MonoBehaviour
                 // to calculate aim direction, grab mouse position, calculate direction using spawn bullet position
                 Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
                 Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+
+                // if(bulletProjectile.hitTarget)
+                // {
+                // Debug.Log("I AM HERE");
+                // }
+
+                // Debug.Log(bulletProjectile.hitTarget);
                 // not shooting constantly
                 starterAssetsInputs.shoot = false;
+
+
             }
 
             // teleport
@@ -194,7 +207,24 @@ public class ThirdPersonShooterController : MonoBehaviour
             thirdPersonController.SetRotateOnMove(true);
         }
 
+      
+
+        // if(bulletProjectile.hitTarget)
+        // {
+        //     Debug.Log("I AM HERE");
+        // }
         //AOE
+            //  if(bulletProjectile.GetComponent<AOETarget>() != false)
+            //  {
+            //     Debug.Log("OMGMGOMGO");
+            //  }
+
+        // Debug.Log(bulletProjectile);
+
+        // if(bulletProjectile != null)
+        // {
+        //     Debug.Log("I AM HERE");
+        // }
 
         // Attack();
 
