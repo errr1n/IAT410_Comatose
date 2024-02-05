@@ -9,10 +9,14 @@ public class AOETarget : MonoBehaviour
     public void DealDamage()
     {
         
-        Invoke(nameof(DestroySelf),2);
+        // Invoke(nameof(DestroySelf),2);
+        StartCoroutine(Damage());
     }
 
-    public void DestroySelf(){
+    private IEnumerator Damage()
+    {
+        // Instantiate(poisonParticles, transform.position, Quaternion.Euler(90,0,0))
+        yield return new WaitForSeconds(2f);
         Destroy(gameObject);
     }
 

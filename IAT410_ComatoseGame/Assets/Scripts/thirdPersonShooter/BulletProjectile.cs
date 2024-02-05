@@ -44,30 +44,46 @@ public float timer;
          //play particle effect (effet rotated 90 degrees))
          Instantiate(poisonParticles, transform.position, Quaternion.Euler(90,0,0));
          // poisonParticles.transform.rotation = 90f;
-         Debug.Log("green");
+         // Debug.Log("green");
 
          // thirdPersonShooterController.CheckForDestructables();
 
          // StartCoroutine(AttackSequence());
-         CheckForDestructables();
+         CheckIfBurnable();
          // Attack();
          // hitTarget = true;
          // Debug.Log(hitTarget);
          // StartCoroutine(thirdPersonShooterController.AttackSequence());
          // ThirdPersonShooterController.Attack();
 
-         Debug.Log("Destroy");
+         // Debug.Log("Destroy");
          // Attack();
       } else{
          // hit something else (can play particles from here)
          // Instantiate(vfxHitRed, transform.position, Quaternion.identity);
-         Debug.Log("red");
+         // Debug.Log("red");
          // Destroy(gameObject);
       }
      
       Destroy(gameObject);
       
    }
+
+   private void CheckIfBurnable()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, 4f);
+        foreach(Collider c in colliders)
+        {
+            if(c.GetComponent<AOETarget>())
+            {
+                c.GetComponent<AOETarget>().DealDamage();
+               //c.GetComponent<AOETarget>().Invoke(nameof)
+
+               // Invoke(nameof(DestroyEnemy),0.5f);
+                Debug.Log("destroy object");
+            }
+        }
+    }
 
    // youtube comments to delete bullets after a while
    // private void Update()
@@ -96,46 +112,31 @@ public float timer;
       //    hitTarget = true;
       // }
 
-    public void Attack()
-    {
-            //once attack button is pressed
-            // Debug.Log("bullet attack");
-            // StartCoroutine(AttackSequence());
-            // Debug.Log("attack bottom");
-            // poisonParticles.transform.position = gameObject.transform.position;
-            // poisonParticles.SetActive(true);
-            hitTarget = true;
-    }
+   //  public void Attack()
+   //  {
+   //          //once attack button is pressed
+   //          // Debug.Log("bullet attack");
+   //          // StartCoroutine(AttackSequence());
+   //          // Debug.Log("attack bottom");
+   //          // poisonParticles.transform.position = gameObject.transform.position;
+   //          // poisonParticles.SetActive(true);
+   //          hitTarget = true;
+   //  }
 
-    private IEnumerator AttackSequence()
-    {
-         // poisonParticles.SetActive(true);
-         Instantiate(poisonParticles, transform.position, Quaternion.Euler(90,0,0));
-        yield return new WaitForSeconds(2f);
-        Debug.Log("coroutine");
-      //   poisonParticles.transform.position = gameObject.transform.position;
-      //   poisonParticles.SetActive(true);
-        CheckForDestructables();
-        yield return new WaitForSeconds(1f);
-      //   poisonParticles.SetActive(false);
-         hitTarget = false;
+   //  private IEnumerator AttackSequence()
+   //  {
+   //       // poisonParticles.SetActive(true);
+   //       Instantiate(poisonParticles, transform.position, Quaternion.Euler(90,0,0));
+   //      yield return new WaitForSeconds(2f);
+   //      Debug.Log("coroutine");
+   //    //   poisonParticles.transform.position = gameObject.transform.position;
+   //    //   poisonParticles.SetActive(true);
+   //      CheckForDestructables();
+   //      yield return new WaitForSeconds(1f);
+   //    //   poisonParticles.SetActive(false);
+   //       hitTarget = false;
 
-         // Destroy(gameObject);
-    }
+   //       // Destroy(gameObject);
+   //  }
 
-    private void CheckForDestructables()
-    {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, 4f);
-        foreach(Collider c in colliders)
-        {
-            if(c.GetComponent<AOETarget>())
-            {
-                c.GetComponent<AOETarget>().DealDamage();
-               //c.GetComponent<AOETarget>().Invoke(nameof)
-
-               // Invoke(nameof(DestroyEnemy),0.5f);
-                Debug.Log("destroy object");
-            }
-        }
-    }
 }
