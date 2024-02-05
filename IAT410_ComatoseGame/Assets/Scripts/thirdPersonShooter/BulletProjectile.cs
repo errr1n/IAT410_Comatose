@@ -10,17 +10,11 @@ public class BulletProjectile : MonoBehaviour
    [SerializeField] private float bulletSpeed;
    private Rigidbody bulletRigidbody;
 
-   // [SerializeField] private Transform poisonParticles;
-   // Transform pParticle;
-
    [SerializeField] GameObject poisonParticle;
    GameObject pParticle;
 
-   public ThirdPersonShooterController thirdPersonShooterController;
+   // public ThirdPersonShooterController thirdPersonShooterController;
 
-   public bool hitTarget;
-   public float delay = 3;
-   public float timer;
    private void Awake()
    {
     bulletRigidbody = GetComponent<Rigidbody>();
@@ -28,81 +22,49 @@ public class BulletProjectile : MonoBehaviour
 
    private void Start()
    {
-   //  float speed = 10f;
     bulletRigidbody.velocity = transform.forward * bulletSpeed;
-
-   //  thirdPersonShooterController = GetComponent<ThirdPersonShooterController>();
-
    }
 
    
-  
-
    private void OnTriggerEnter(Collider other)
    {
       
      // float timer;
       if(other.GetComponent<BulletTarget>() != null)
       {
-
-         // if(other.GetComponent<AOETarget>() != null)
-         // {
-         //    other.GetComponent<AOETarget>().CheckIfBurnable();
-         //    Debug.Log("IF BURNABLE");
-         // }
-
-
-
          //hit target (can play particles from here)
          //play particle effect (effet rotated 90 degrees))
-         // pParticle = Instantiate(poisonParticles, transform.position, Quaternion.Euler(90,0,0));
          pParticle = Instantiate(poisonParticle, transform.position, Quaternion.Euler(90,0,0));
+         //destory particle after 3 seconds
          Destroy(pParticle, 3);
-         
-         // poisonParticles.transform.rotation = 90f;
-         // Debug.Log("green");
-
-         // thirdPersonShooterController.CheckForDestructables();
-
-         // StartCoroutine(AttackSequence());
+   
+         // calls check if burnable method
          CheckIfBurnable();
-         // Attack();
-         // hitTarget = true;
-         // Debug.Log(hitTarget);
-         // StartCoroutine(thirdPersonShooterController.AttackSequence());
-         // ThirdPersonShooterController.Attack();
+      } else
+      {
 
-         // Debug.Log("Destroy");
-         // Attack();
-      } else{
-         // hit something else (can play particles from here)
-         // Instantiate(vfxHitRed, transform.position, Quaternion.identity);
-         // Debug.Log("red");
-         // Destroy(gameObject);
-         // Debug.Log("DESTROY");
-         
       }
-     
+      //destroy bullet
       Destroy(gameObject);
-      // Destroy(pParticle);
       
    }
 
+
+   //atm, this is only called once, it needs to be constantly called to check of an AOETarget is within the sphere
    private void CheckIfBurnable()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, 4f);
-        foreach(Collider c in colliders)
-        {
-            if(c.GetComponent<AOETarget>())
-            {
-               //  c.GetComponent<AOETarget>().DealDamage();
-                c.GetComponent<AOETarget>().ApplyBurn(4);
-
-               // Invoke(nameof(DestroyEnemy),0.5f);
-                Debug.Log("destroy object");
-            }
-        }
-      //   Destroy(pParticle);
+      //creates a list of colliders and creates a 4m overlap sphere (sphere collider)
+      Collider[] colliders = Physics.OverlapSphere(transform.position, 4f);
+      foreach(Collider c in colliders)
+      {
+         //if their is an AOETarget script attached to object
+         if(c.GetComponent<AOETarget>())
+         {
+            //apply the burn method to the object with the AOETarget script
+            c.GetComponent<AOETarget>().ApplyBurn(4);
+            // c.GetComponent<AOETarget>().Test();
+         }
+      }
     }
 
    // youtube comments to delete bullets after a while

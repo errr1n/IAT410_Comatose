@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AOETarget : MonoBehaviour
 {
-    // [SerializeField] private MeshRenderer targetMesh;
     private Health healthScript;
 
     public List<int> burnTickTimers = new List<int>();
@@ -13,13 +12,6 @@ public class AOETarget : MonoBehaviour
     {
         healthScript = GetComponent<Health>();
     }
-
-    // public void DealDamage()
-    // {
-        
-    //     // Invoke(nameof(DestroySelf),2);
-    //     StartCoroutine(Damage());
-    // }
 
     public void ApplyBurn(int ticks)
     {
@@ -34,27 +26,9 @@ public class AOETarget : MonoBehaviour
         }
     }
 
-    // private IEnumerator Damage()
+    // public void Test()
     // {
-    //     // yield return new WaitForSeconds(2f);
-    //     // Destroy(gameObject);
-
-    // }
-
-    // public void CheckIfBurnable()
-    // {
-    //     Collider[] colliders = Physics.OverlapSphere(transform.position, 4f);
-    //     foreach(Collider c in colliders)
-    //     {
-    //         if(c.GetComponent<AOETarget>())
-    //         {
-    //            //  c.GetComponent<AOETarget>().DealDamage();
-    //             c.GetComponent<AOETarget>().ApplyBurn(4);
-
-    //            // Invoke(nameof(DestroyEnemy),0.5f);
-    //             Debug.Log("destroy object");
-    //         }
-    //     }
+    //     Invoke(nameof(ApplyBurn(4)), 2);
     // }
 
     //check if in range
