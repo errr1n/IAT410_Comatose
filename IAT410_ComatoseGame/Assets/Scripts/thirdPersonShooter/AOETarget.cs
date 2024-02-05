@@ -5,18 +5,70 @@ using UnityEngine;
 public class AOETarget : MonoBehaviour
 {
     // [SerializeField] private MeshRenderer targetMesh;
+    private Health healthScript;
 
-    public void DealDamage()
+    public List<int> burnTickTimers = new List<int>();
+
+    void Start()
     {
-        
-        // Invoke(nameof(DestroySelf),2);
-        StartCoroutine(Damage());
+        healthScript = GetComponent<Health>();
     }
 
-    private IEnumerator Damage()
+    // public void DealDamage()
+    // {
+        
+    //     // Invoke(nameof(DestroySelf),2);
+    //     StartCoroutine(Damage());
+    // }
+
+    public void ApplyBurn(int ticks)
     {
-        // Instantiate(poisonParticles, transform.position, Quaternion.Euler(90,0,0))
-        yield return new WaitForSeconds(2f);
+        if(burnTickTimers.Count <= 0)
+        {
+            burnTickTimers.Add(ticks);
+            StartCoroutine(Burn());
+        }
+        else
+        {
+            burnTickTimers.Add(ticks);
+        }
+    }
+
+    // private IEnumerator Damage()
+    // {
+    //     // yield return new WaitForSeconds(2f);
+    //     // Destroy(gameObject);
+
+    // }
+
+    // public void CheckIfBurnable()
+    // {
+    //     Collider[] colliders = Physics.OverlapSphere(transform.position, 4f);
+    //     foreach(Collider c in colliders)
+    //     {
+    //         if(c.GetComponent<AOETarget>())
+    //         {
+    //            //  c.GetComponent<AOETarget>().DealDamage();
+    //             c.GetComponent<AOETarget>().ApplyBurn(4);
+
+    //            // Invoke(nameof(DestroyEnemy),0.5f);
+    //             Debug.Log("destroy object");
+    //         }
+    //     }
+    // }
+
+    private IEnumerator Burn()
+    {
+        while(burnTickTimers.Count > 0)
+        {
+            for(int i = 0; i < burnTickTimers.Count; i++)
+            {
+                burnTickTimers[i]--;
+            }
+            healthScript.health -= 5;
+            burnTickTimers.RemoveAll(number => number == 0);
+            yield return new WaitForSeconds(0.75f);
+        }
         Destroy(gameObject);
     }
 

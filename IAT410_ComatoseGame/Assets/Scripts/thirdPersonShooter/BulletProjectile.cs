@@ -40,6 +40,15 @@ public float timer;
      // float timer;
       if(other.GetComponent<BulletTarget>() != null)
       {
+
+         // if(other.GetComponent<AOETarget>() != null)
+         // {
+         //    other.GetComponent<AOETarget>().CheckIfBurnable();
+         //    Debug.Log("IF BURNABLE");
+         // }
+
+
+
          //hit target (can play particles from here)
          //play particle effect (effet rotated 90 degrees))
          Instantiate(poisonParticles, transform.position, Quaternion.Euler(90,0,0));
@@ -76,8 +85,8 @@ public float timer;
         {
             if(c.GetComponent<AOETarget>())
             {
-                c.GetComponent<AOETarget>().DealDamage();
-               //c.GetComponent<AOETarget>().Invoke(nameof)
+               //  c.GetComponent<AOETarget>().DealDamage();
+                c.GetComponent<AOETarget>().ApplyBurn(4);
 
                // Invoke(nameof(DestroyEnemy),0.5f);
                 Debug.Log("destroy object");
