@@ -78,12 +78,24 @@ public class AINavPath : MonoBehaviour
             //attack code will go here - how enemy attacks
 
             //attack form tutorial - change later
-            Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-            rb.AddForce(transform.forward *32f, ForceMode.Impulse);
+            // Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+            
+            //rb.AddForce(transform.forward *32f, ForceMode.Impulse);
             // rb.AddForce(transform.up * 8f, ForceMode.Impulse);
+            
+            //testing
+            // thePlayer = GameObject.Find("Player");
+            // if(thePlayer != null)
+            // {
+            //     targetPlayer = thePlayer.transform.position;
+            // } else {
+            //         Debug.LogError("player is null");
+            // }
 
-            alreadyAttacked = true;
-            Invoke(nameof(ResetAttack), timeBetweenAttacks);
+            // shootDirection = (targetPlayer - transform.position).normalized * speed;
+
+            // alreadyAttacked = true;
+            // Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
     }
 
