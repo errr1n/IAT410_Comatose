@@ -57,6 +57,11 @@ public class AOETarget : MonoBehaviour
     //     }
     // }
 
+    //check if in range
+    //coroutine to wait a few seconds
+    //do sphere check 
+    //then apply damage
+
     private IEnumerator Burn()
     {
         while(burnTickTimers.Count > 0)

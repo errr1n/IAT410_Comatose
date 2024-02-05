@@ -99,6 +99,12 @@ MonoBehaviour:
   bulletSpeed: 60
   poisonParticles: {fileID: 8205284912903300636, guid: 79518669101f13e428182b91377a88c3,
     type: 3}
+  poisonParticle: {fileID: 4463510546404029593, guid: 79518669101f13e428182b91377a88c3,
+    type: 3}
+  thirdPersonShooterController: {fileID: 0}
+  hitTarget: 0
+  delay: 3
+  timer: 0
 --- !u!96 &5694137362978227883
 TrailRenderer:
   serializedVersion: 3

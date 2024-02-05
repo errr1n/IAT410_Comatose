@@ -10,13 +10,17 @@ public class BulletProjectile : MonoBehaviour
    [SerializeField] private float bulletSpeed;
    private Rigidbody bulletRigidbody;
 
-   [SerializeField] private Transform poisonParticles;
+   // [SerializeField] private Transform poisonParticles;
+   // Transform pParticle;
+
+   [SerializeField] GameObject poisonParticle;
+   GameObject pParticle;
 
    public ThirdPersonShooterController thirdPersonShooterController;
 
    public bool hitTarget;
-public float delay = 3;
-public float timer;
+   public float delay = 3;
+   public float timer;
    private void Awake()
    {
     bulletRigidbody = GetComponent<Rigidbody>();
@@ -51,7 +55,10 @@ public float timer;
 
          //hit target (can play particles from here)
          //play particle effect (effet rotated 90 degrees))
-         Instantiate(poisonParticles, transform.position, Quaternion.Euler(90,0,0));
+         // pParticle = Instantiate(poisonParticles, transform.position, Quaternion.Euler(90,0,0));
+         pParticle = Instantiate(poisonParticle, transform.position, Quaternion.Euler(90,0,0));
+         Destroy(pParticle, 3);
+         
          // poisonParticles.transform.rotation = 90f;
          // Debug.Log("green");
 
@@ -72,9 +79,12 @@ public float timer;
          // Instantiate(vfxHitRed, transform.position, Quaternion.identity);
          // Debug.Log("red");
          // Destroy(gameObject);
+         // Debug.Log("DESTROY");
+         
       }
      
       Destroy(gameObject);
+      // Destroy(pParticle);
       
    }
 
@@ -92,6 +102,7 @@ public float timer;
                 Debug.Log("destroy object");
             }
         }
+      //   Destroy(pParticle);
     }
 
    // youtube comments to delete bullets after a while
