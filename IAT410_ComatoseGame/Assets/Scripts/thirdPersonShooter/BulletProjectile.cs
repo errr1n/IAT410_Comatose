@@ -62,6 +62,9 @@ public class BulletProjectile : MonoBehaviour
          {
             //apply the burn method to the object with the AOETarget script
             c.GetComponent<AOETarget>().ApplyBurn(4);
+
+            // Debug.Log("Start Check");
+            // c.GetComponent<AOETarget>().StartCheck();
             // c.GetComponent<AOETarget>().Test();
          }
       }
