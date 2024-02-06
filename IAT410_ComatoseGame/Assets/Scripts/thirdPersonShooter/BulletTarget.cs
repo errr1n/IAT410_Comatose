@@ -16,15 +16,4 @@ public class BulletTarget : MonoBehaviour
         
     }
 
-     private void OnCollisionEnter(Collision collision){
-        if(collision.collider.tag == "PlayerAttack"){
-            //other.GetComponent<player>().Damage();
-            Debug.Log("hit enemy");
-            
-            //calls to the player health script and sends damage amount to update their healthbard
-            // adjust as needed
-            // collision.collider.GetComponent<PlayerHealth>().sendDamage(10);
-            // Destroy(this.gameObject);
-        }
-    }
 }
