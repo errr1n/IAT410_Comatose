@@ -40,7 +40,7 @@ public class PlayerHealth : MonoBehaviour
     public void OnCollisionEnter(Collision other)
     {
         if(other.collider.tag == "enemyAttack"){
-            //sendDamage(Random.Range(10,20));
+            sendDamage(10);
             Debug.Log("collided with player");
            // Destroy(other.collider.gameObject); // not working
             

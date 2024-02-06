@@ -24,7 +24,7 @@ public class EnemyShot : MonoBehaviour
             
             //calls to the player health script and sends damage amount to update their healthbard
             // adjust as needed
-            collision.collider.GetComponent<PlayerHealth>().sendDamage(10);
+            //collision.collider.GetComponent<PlayerHealth>().sendDamage(10);
             Destroy(this.gameObject);
         }
     }
