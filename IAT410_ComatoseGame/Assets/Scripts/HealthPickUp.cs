@@ -24,7 +24,8 @@ public class HealthPickUp : MonoBehaviour
 
             //call player health script 
          
-            collision.GetComponent<PlayerHealth>().addHealth(5);
+            collision.GetComponent<PlayerHealth>().addHealth(Random.Range(2,10));
+            Destroy(gameObject);
 
         }
     }

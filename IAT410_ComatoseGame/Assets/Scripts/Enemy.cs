@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float health;
+    public GameObject healthPack;
    
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,9 @@ public class Enemy : MonoBehaviour
         
         if(health <=0){
             Destroy(gameObject);
+
+            // here would generate a health pack
+            Instantiate(healthPack, transform.position, Quaternion.identity);
         }
         
     }

@@ -23,10 +23,10 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         
-        //just for testing purposes
-        if(Input.GetKeyUp(KeyCode.E)){
-            sendDamage(Random.Range(10,20));
-        }
+        // //just for testing purposes
+        // if(Input.GetKeyUp(KeyCode.E)){
+        //     sendDamage(Random.Range(10,20));
+        // }
     
         
     }
