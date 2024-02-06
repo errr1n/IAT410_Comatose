@@ -77,11 +77,14 @@ public class AINavPath : MonoBehaviour
         {
             //attack code will go here - how enemy attacks
 
+
+            Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();;
+
             //attack form tutorial - change later
             // Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
             
             //rb.AddForce(transform.forward *32f, ForceMode.Impulse);
-            // rb.AddForce(transform.up * 8f, ForceMode.Impulse);
+            rb.AddForce(transform.up * 8f, ForceMode.Impulse);
             
             //testing
             // thePlayer = GameObject.Find("Player");
@@ -94,9 +97,10 @@ public class AINavPath : MonoBehaviour
 
             // shootDirection = (targetPlayer - transform.position).normalized * speed;
 
-            // alreadyAttacked = true;
+            alreadyAttacked = true;
             // Invoke(nameof(ResetAttack), timeBetweenAttacks);
-        }
+        } 
+        Invoke(nameof(ResetAttack), timeBetweenAttacks);
     }
 
     private void ResetAttack() 
@@ -108,7 +112,7 @@ public class AINavPath : MonoBehaviour
    {
         health -= damage;
 
-        if(health<=0 ) Invoke(nameof(DestroyEnemy), 0.5f);
+        if(health<=0 ) Invoke(nameof(DestroyEnemy), 3f);
    }
 
    public void DestroyEnemy(){

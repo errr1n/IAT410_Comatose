@@ -6,7 +6,7 @@ public class EnemyShot : MonoBehaviour
 {
     private Vector3 targetPlayer, shootDirection;
     private GameObject player;
-    private float speed = 2f;
+    private float speed = 1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +20,7 @@ public class EnemyShot : MonoBehaviour
         }
         shootDirection = (targetPlayer - transform.position).normalized * speed;
         
-        Destroy(gameObject, 10f);
+        Destroy(gameObject, 3f);
     }
 
     // Update is called once per frame
@@ -29,8 +29,8 @@ public class EnemyShot : MonoBehaviour
         transform.Translate(shootDirection * Time.deltaTime);
     }
 
-    private void OnTriggerEnter(Collider other){
-        if(other.tag == "Player"){
+    private void OnCollisionEnter(Collision collision){
+        if(collision.collider.tag == "Player"){
             //other.GetComponent<player>().Damage();
             Debug.Log("hit player");
             Destroy(this.gameObject);
