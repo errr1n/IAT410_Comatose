@@ -48,5 +48,10 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    public void addHealth(float healthValue){
+        Debug.Log("gained : " + healthValue);
+        curHealth += healthValue;
+        healthBar.value = curHealth;
+    }
  
 }
