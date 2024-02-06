@@ -9,6 +9,8 @@ TagManager:
   - projectile
   - Pickup
   - enemyAttack
+  - Enemy
+  - PlayerAttack
   layers:
   - Default
   - TransparentFX
