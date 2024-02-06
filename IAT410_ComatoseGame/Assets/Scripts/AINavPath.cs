@@ -78,7 +78,7 @@ public class AINavPath : MonoBehaviour
             
             Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
             rb.AddForce(transform.forward *32f, ForceMode.Impulse);
-            rb.AddForce(transform.up *3f, ForceMode.Impulse);
+            rb.AddForce(transform.up *5f, ForceMode.Impulse);
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         } 
@@ -118,6 +118,7 @@ public class AINavPath : MonoBehaviour
 
     
     // public void OnCollisionEnter(Collision collision){
+
     //     if(collision.collider.tag == "projectile"){
     //         //collide with player projectile
     //         health -=1;
@@ -127,4 +128,5 @@ public class AINavPath : MonoBehaviour
     //     }
         
     // }
+   
 }

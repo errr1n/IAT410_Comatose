@@ -11,7 +11,7 @@ public class PlayerHealth : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         curHealth = maxHealth;
         healthBar.value = curHealth;
@@ -23,10 +23,10 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         
-        // //just for testing purposes
-        // if(Input.GetKeyUp(KeyCode.E)){
-        //     sendDamage(Random.Range(10,20));
-        // }
+        //just for testing purposes
+        if(Input.GetKeyUp(KeyCode.E)){
+            sendDamage(Random.Range(10,20));
+        }
     
         
     }
