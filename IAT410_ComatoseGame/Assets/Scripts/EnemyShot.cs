@@ -22,6 +22,8 @@ public class EnemyShot : MonoBehaviour
             //other.GetComponent<player>().Damage();
             Debug.Log("hit player");
             
+            //calls to the player health script and sends damage amount to update their healthbard
+            // adjust as needed
             collision.collider.GetComponent<PlayerHealth>().sendDamage(10);
             Destroy(this.gameObject);
         }
