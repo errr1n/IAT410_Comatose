@@ -10,8 +10,8 @@ public class AINavPath : MonoBehaviour
     public Transform player;
     public LayerMask isGround, isPlayer;
 
-    
-
+    public Transform spawnPoint;
+    public float enemySpeed =20;
     public GameObject projectile;
     //patrolling 
     public Vector3 walkPoint;
@@ -20,6 +20,7 @@ public class AINavPath : MonoBehaviour
 
     //attacking
     public float timeBetweenAttacks;
+    [SerializeField] private float timer =2;
     bool alreadyAttacked;
 
     //states
@@ -75,33 +76,18 @@ public class AINavPath : MonoBehaviour
 
         if(!alreadyAttacked)
         {
-            //attack code will go here - how enemy attacks
 
-
-            Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();;
-
-            //attack form tutorial - change later
-            // Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-            
-            //rb.AddForce(transform.forward *32f, ForceMode.Impulse);
-            rb.AddForce(transform.up * 8f, ForceMode.Impulse);
-            
-            //testing
-            // thePlayer = GameObject.Find("Player");
-            // if(thePlayer != null)
-            // {
-            //     targetPlayer = thePlayer.transform.position;
-            // } else {
-            //         Debug.LogError("player is null");
-            // }
-
-            // shootDirection = (targetPlayer - transform.position).normalized * speed;
-
+            Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+            rb.AddForce(transform.forward *32f, ForceMode.Impulse);
+            rb.AddForce(transform.up *8f, ForceMode.Impulse);
             alreadyAttacked = true;
-            // Invoke(nameof(ResetAttack), timeBetweenAttacks);
+            Invoke(nameof(ResetAttack), timeBetweenAttacks);
         } 
-        Invoke(nameof(ResetAttack), timeBetweenAttacks);
+   
     }
+   
+
+    
 
     private void ResetAttack() 
     {
@@ -132,14 +118,14 @@ public class AINavPath : MonoBehaviour
     }
 
     
-    public void OnCollisionEnter(Collision collision){
-        if(collision.collider.tag == "projectile"){
-            //collide with player projectile
-            health -=1;
-            Destroy(collision.gameObject);
-            Invoke(nameof(DestroyEnemy),0.5f);
+    // public void OnCollisionEnter(Collision collision){
+    //     if(collision.collider.tag == "projectile"){
+    //         //collide with player projectile
+    //         health -=1;
+    //         Destroy(collision.gameObject);
+    //         Invoke(nameof(DestroyEnemy),0.5f);
             
-        }
+    //     }
         
-    }
+    // }
 }

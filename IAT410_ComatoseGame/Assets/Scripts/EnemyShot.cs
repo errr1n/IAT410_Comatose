@@ -20,13 +20,14 @@ public class EnemyShot : MonoBehaviour
         }
         shootDirection = (targetPlayer - transform.position).normalized * speed;
         
-        Destroy(gameObject, 3f);
+        Destroy(gameObject, 10f);
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.Translate(shootDirection * Time.deltaTime);
+        //transform.position += transform.forward *speed* Time.deltaTime;
     }
 
     private void OnCollisionEnter(Collision collision){
