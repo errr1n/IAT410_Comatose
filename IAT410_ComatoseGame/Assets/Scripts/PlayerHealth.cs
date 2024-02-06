@@ -11,7 +11,7 @@ public class PlayerHealth : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         curHealth = maxHealth;
         healthBar.value = curHealth;
@@ -40,7 +40,7 @@ public class PlayerHealth : MonoBehaviour
     public void OnCollisionEnter(Collision other)
     {
         if(other.collider.tag == "enemyAttack"){
-            //sendDamage(Random.Range(10,20));
+            sendDamage(10);
             Debug.Log("collided with player");
            // Destroy(other.collider.gameObject); // not working
             
@@ -48,5 +48,10 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    public void addHealth(float healthValue){
+        Debug.Log("gained : " + healthValue);
+        curHealth += healthValue;
+        healthBar.value = curHealth;
+    }
  
 }

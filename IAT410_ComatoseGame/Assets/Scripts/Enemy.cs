@@ -4,35 +4,37 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public GameObject projectile;
-
-    
     public float health;
+    public GameObject healthPack;
    
     // Start is called before the first frame update
     void Start()
     {
-       
+       health = 3;
     }
 
     // Update is called once per frame
     void Update()
     {
         
-
-        if(health <1){
-            
+        if(health <=0){
             Destroy(gameObject);
+
+            // here would generate a health pack
+            Instantiate(healthPack, transform.position, Quaternion.identity);
         }
         
     }
 
-    public void OnCollisionEnter(Collision collision){
-        if(collision.collider.tag == "projectile"){
-            //collide with player projectile
-            health -=1;
-            Destroy(collision.gameObject);
-            
+    
+     private void OnCollisionEnter(Collision collision){
+        if(collision.gameObject.tag == "PlayerAttack"){
+            //other.GetComponent<player>().Damage();
+            Debug.Log("hit enemy");
+            health-=1;
+           // Destroy(gameObject);
+            //need to destroy player projectile too 
+           // this.GetComponent<AINavPath>().TakeDamage(1);
         }
     }
 }

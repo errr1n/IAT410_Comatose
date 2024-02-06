@@ -7,11 +7,10 @@ using UnityEngine.AI;
 public class AINavPath : MonoBehaviour
 {
     public NavMeshAgent agent;
-    public Transform player;
+    public Transform player, spawnPoint;
     public LayerMask isGround, isPlayer;
 
-    
-
+  
     public GameObject projectile;
     //patrolling 
     public Vector3 walkPoint;
@@ -20,6 +19,7 @@ public class AINavPath : MonoBehaviour
 
     //attacking
     public float timeBetweenAttacks;
+  
     bool alreadyAttacked;
 
     //states
@@ -30,7 +30,7 @@ public class AINavPath : MonoBehaviour
 
     private void Awake()
     {
-        player = GameObject.Find("Player").transform;
+        player = GameObject.Find("PlayerArmature").transform;
         agent = GetComponent<NavMeshAgent>();
     }
 
@@ -75,17 +75,18 @@ public class AINavPath : MonoBehaviour
 
         if(!alreadyAttacked)
         {
-            //attack code will go here - how enemy attacks
-
-            //attack form tutorial - change later
+            
             Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
             rb.AddForce(transform.forward *32f, ForceMode.Impulse);
-            // rb.AddForce(transform.up * 8f, ForceMode.Impulse);
-
+            rb.AddForce(transform.up *5f, ForceMode.Impulse);
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
-        }
+        } 
+   
     }
+   
+
+    
 
     private void ResetAttack() 
     {
@@ -96,7 +97,7 @@ public class AINavPath : MonoBehaviour
    {
         health -= damage;
 
-        if(health<=0 ) Invoke(nameof(DestroyEnemy), 0.5f);
+        if(health<=0 ) Invoke(nameof(DestroyEnemy), 3f);
    }
 
    public void DestroyEnemy(){
@@ -116,14 +117,16 @@ public class AINavPath : MonoBehaviour
     }
 
     
-    public void OnCollisionEnter(Collision collision){
-        if(collision.collider.tag == "projectile"){
-            //collide with player projectile
-            health -=1;
-            Destroy(collision.gameObject);
-            Invoke(nameof(DestroyEnemy),0.5f);
+    // public void OnCollisionEnter(Collision collision){
+
+    //     if(collision.collider.tag == "projectile"){
+    //         //collide with player projectile
+    //         health -=1;
+    //         Destroy(collision.gameObject);
+    //         Invoke(nameof(DestroyEnemy),0.5f);
             
-        }
+    //     }
         
-    }
+    // }
+   
 }
