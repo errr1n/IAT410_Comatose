@@ -7,11 +7,10 @@ using UnityEngine.AI;
 public class AINavPath : MonoBehaviour
 {
     public NavMeshAgent agent;
-    public Transform player;
+    public Transform player, spawnPoint;
     public LayerMask isGround, isPlayer;
 
-    public Transform spawnPoint;
-    public float enemySpeed =20;
+  
     public GameObject projectile;
     //patrolling 
     public Vector3 walkPoint;
@@ -20,7 +19,7 @@ public class AINavPath : MonoBehaviour
 
     //attacking
     public float timeBetweenAttacks;
-    [SerializeField] private float timer =2;
+  
     bool alreadyAttacked;
 
     //states
@@ -76,7 +75,7 @@ public class AINavPath : MonoBehaviour
 
         if(!alreadyAttacked)
         {
-
+            
             Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
             rb.AddForce(transform.forward *32f, ForceMode.Impulse);
             rb.AddForce(transform.up *8f, ForceMode.Impulse);
