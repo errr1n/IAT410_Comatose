@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//PLAYER CHECKPOINTS THIS IS THE ACTUAL CODE DONT BE SILLY 
 public class PlayerCheckPoint : MonoBehaviour
 {
     [SerializeField] private GameObject player;
