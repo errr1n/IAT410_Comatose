@@ -5,12 +5,13 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float health;
+    public float maxHealth = 3;
     public GameObject healthPack;
    
     // Start is called before the first frame update
     void Start()
     {
-       health = 3;
+       health = maxHealth;
     }
 
     // Update is called once per frame

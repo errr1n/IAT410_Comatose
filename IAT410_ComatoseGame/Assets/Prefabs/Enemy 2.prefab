@@ -177,7 +177,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  healthPack: {fileID: 0}
+  maxHealth: 10
+  healthPack: {fileID: 7619348863140790331, guid: d5fbd6ab3d22a5e48a974d770eb47176,
+    type: 3}
 --- !u!1 &7905662324005664404
 GameObject:
   m_ObjectHideFlags: 0

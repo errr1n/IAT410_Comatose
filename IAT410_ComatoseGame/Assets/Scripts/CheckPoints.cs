@@ -14,7 +14,7 @@ public class CheckPoints : MonoBehaviour
     {
       
 
-     if(player.GetComponent<PlayerHealth>().checkHealth() <= 90) { //90 FOR TESTING PURPOSE CHANGE TO 0 
+     if(player.GetComponent<PlayerHealth>().checkHealth() <= 0) { //90 FOR TESTING PURPOSE CHANGE TO 0 
             player.transform.position = respawnPoint.transform.position;
 
             Physics.SyncTransforms();
