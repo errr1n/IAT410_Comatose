@@ -53,5 +53,14 @@ public class PlayerHealth : MonoBehaviour
         curHealth += healthValue;
         healthBar.value = curHealth;
     }
+
+    public void respawn(){
+        curHealth = maxHealth;
+        healthBar.value = curHealth;
+    }
+
+    public float checkHealth(){
+        return curHealth;
+    }
  
 }
