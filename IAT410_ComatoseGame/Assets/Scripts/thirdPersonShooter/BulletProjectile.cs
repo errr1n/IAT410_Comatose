@@ -23,6 +23,7 @@ public class BulletProjectile : MonoBehaviour
    private void Start()
    {
     bulletRigidbody.velocity = transform.forward * bulletSpeed;
+    DelayDestroy();
    }
 
    
@@ -69,6 +70,12 @@ public class BulletProjectile : MonoBehaviour
          }
       }
     }
+
+   //if the bullet doesn't hit anything destroy it
+   private void DelayDestroy()
+   {
+      Destroy(gameObject, 0.5f);
+   }
 
    // youtube comments to delete bullets after a while
    // private void Update()
