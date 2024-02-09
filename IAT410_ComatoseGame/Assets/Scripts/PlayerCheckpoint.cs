@@ -13,7 +13,7 @@ public class PlayerCheckPoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player.GetComponent<PlayerHealth>().checkHealth() <= 100){
+        if(player.GetComponent<PlayerHealth>().checkHealth() <= 0){
        
             player.transform.position = spawnPoint;
             gameObject.GetComponent<PlayerHealth>().respawn();
