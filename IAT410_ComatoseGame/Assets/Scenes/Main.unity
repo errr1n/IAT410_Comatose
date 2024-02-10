@@ -19090,6 +19090,7 @@ MonoBehaviour:
   - {fileID: 756723689}
   - {fileID: 259797911}
   spawnPoint: {x: 0, y: 0, z: 0}
+  checkpointText: {fileID: 317227687}
 --- !u!1 &1784748855 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5052f3e19152cba45a45f528cd0a9120,
