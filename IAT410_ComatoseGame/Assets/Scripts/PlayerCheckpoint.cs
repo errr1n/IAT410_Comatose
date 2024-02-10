@@ -9,6 +9,11 @@ public class PlayerCheckPoint : MonoBehaviour
     [SerializeField] private  List<GameObject> checkPoints;
     [SerializeField] private Vector3 spawnPoint;
   
+    //test to define first respawn point
+    void Start() 
+    {
+        spawnPoint = new Vector3(122.1f, 6.24f, 87.56f);
+    }
 
     // Update is called once per frame
     void Update()
