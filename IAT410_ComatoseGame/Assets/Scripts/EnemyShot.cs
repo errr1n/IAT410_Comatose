@@ -14,7 +14,7 @@ public class EnemyShot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    
+        Invoke(nameof(DestroyShot), 2f);
     }
 
     private void OnCollisionEnter(Collision collision){
@@ -28,4 +28,8 @@ public class EnemyShot : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    public void DestroyShot(){
+        Destroy(gameObject);
+   }
 }
