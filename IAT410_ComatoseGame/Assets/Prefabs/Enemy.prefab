@@ -120,7 +120,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 5030953485187836923}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 4
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -157,7 +157,7 @@ MonoBehaviour:
   projectile: {fileID: 7084973490443700893, guid: 7e5d9ea33dbeb754d9e0971f44ef0e2e,
     type: 3}
   walkPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 5
+  walkPointRange: 4
   timeBetweenAttacks: 4
   sightRange: 20
   attackRange: 12
@@ -177,8 +177,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  maxHealth: 120
+  curHealth: 0
   healthPack: {fileID: 7619348863140790331, guid: d5fbd6ab3d22a5e48a974d770eb47176,
     type: 3}
+  healthBar: {fileID: 0}
 --- !u!1 &7905662324005664404
 GameObject:
   m_ObjectHideFlags: 0

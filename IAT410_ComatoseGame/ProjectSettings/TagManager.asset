@@ -21,7 +21,7 @@ TagManager:
   - UI
   - isGround
   - lsPlayer
-  - 
+  - notWalkable
   - 
   - 
   - 
