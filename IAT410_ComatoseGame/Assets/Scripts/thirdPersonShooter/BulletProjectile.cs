@@ -74,7 +74,7 @@ public class BulletProjectile : MonoBehaviour
    //if the bullet doesn't hit anything destroy it
    private void DelayDestroy()
    {
-      Destroy(gameObject, 10f);
+      Destroy(gameObject, 0.7f);
    }
 
    // youtube comments to delete bullets after a while
