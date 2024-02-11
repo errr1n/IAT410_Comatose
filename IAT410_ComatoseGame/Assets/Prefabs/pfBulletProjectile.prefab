@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 2035404113881002661}
   - component: {fileID: 2049643038548663053}
   - component: {fileID: 5694137362978227883}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pfBulletProjectile
   m_TagString: PlayerAttack
   m_Icon: {fileID: 0}

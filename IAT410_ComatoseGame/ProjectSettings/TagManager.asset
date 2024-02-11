@@ -22,8 +22,8 @@ TagManager:
   - isGround
   - lsPlayer
   - notWalkable
-  - 
-  - 
+  - playerProjectile
+  - enemyProjectile
   - 
   - 
   - 

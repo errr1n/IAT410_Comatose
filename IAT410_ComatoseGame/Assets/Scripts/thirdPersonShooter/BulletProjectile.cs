@@ -43,7 +43,7 @@ public class BulletProjectile : MonoBehaviour
          CheckIfBurnable();
       } else
       {
-
+         
       }
       //destroy bullet
       Destroy(gameObject);
@@ -74,7 +74,7 @@ public class BulletProjectile : MonoBehaviour
    //if the bullet doesn't hit anything destroy it
    private void DelayDestroy()
    {
-      Destroy(gameObject, 0.5f);
+      Destroy(gameObject, 10f);
    }
 
    // youtube comments to delete bullets after a while
