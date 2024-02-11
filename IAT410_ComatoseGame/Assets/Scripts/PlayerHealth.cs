@@ -49,9 +49,23 @@ public class PlayerHealth : MonoBehaviour
     }
 
     public void addHealth(float healthValue){
-        Debug.Log("gained : " + healthValue);
-        curHealth += healthValue;
-        healthBar.value = curHealth;
+        if(curHealth != maxHealth)
+        {
+            // Debug.Log("gained : " + healthValue);
+            // curHealth += healthValue;
+            // healthBar.value = curHealth;
+            // Debug.Log(healthValue);
+
+            if((curHealth + healthValue) > maxHealth)
+            {
+                healthValue = (maxHealth - curHealth);
+                // Debug.Log(healthValue);
+                curHealth += healthValue;
+                healthBar.value = curHealth;
+            }
+        }else{
+            Debug.Log("full");
+        }
     }
 
     public void respawn(){
