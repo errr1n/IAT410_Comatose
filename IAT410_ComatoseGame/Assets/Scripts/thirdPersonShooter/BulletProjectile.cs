@@ -35,7 +35,7 @@ public class BulletProjectile : MonoBehaviour
       {
          //hit target (can play particles from here)
          //play particle effect (effet rotated 90 degrees))
-         // pParticle = Instantiate(poisonParticle, transform.position, Quaternion.Euler(90,0,0));
+         pParticle = Instantiate(poisonParticle, transform.position, Quaternion.Euler(90,0,0));
          //destory particle after 3 seconds
          Destroy(pParticle, 3);
    
