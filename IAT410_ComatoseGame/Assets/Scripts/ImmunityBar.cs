@@ -17,7 +17,7 @@ public class ImmunityBar : MonoBehaviour
     {
         // curImmunity = maxImmunity;
         // curImmunity = kills;
-        // immunityBar.value = kills;
+        // immunityBar.value = curImmunity;
         // immunityBar.maxValue = maxImmunity;
 
     }
