@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
     //    health = 3;
     // }
     void Start(){
-         curHealth = maxHealth;
+        curHealth = maxHealth;
         healthBar.value = curHealth;
         healthBar.maxValue = maxHealth;
 
@@ -46,6 +46,7 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
 
             killCounterScript.AddKill();
+            Debug.Log("kills " + killCounterScript.kills);
 
             // here would generate a health pack
             Instantiate(healthPack, transform.position, Quaternion.identity);

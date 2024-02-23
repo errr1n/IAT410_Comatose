@@ -5,8 +5,23 @@ using UnityEngine.UI;
 
 public class ImmunityBar : MonoBehaviour
 {
-    public Text counterText;
-    int kills;
+    // public Text counterText;
+    public int kills;
+
+    public float curImmunity;
+    public float maxImmunity;
+    public Slider immunityBar;
+
+
+    void Awake()
+    {
+        // curImmunity = maxImmunity;
+        // curImmunity = kills;
+        // immunityBar.value = kills;
+        // immunityBar.maxValue = maxImmunity;
+
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +37,12 @@ public class ImmunityBar : MonoBehaviour
     private void ShowKils()
     {
         // counterText.text = kills.ToString();
-        Debug.Log("kills " + kills);
+        // Debug.Log("kills " + kills);
     }
 
     public void AddKill()
     {
         kills++;
+        curImmunity = kills;
     }
 }
