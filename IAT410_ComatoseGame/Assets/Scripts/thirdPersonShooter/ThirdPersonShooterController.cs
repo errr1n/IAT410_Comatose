@@ -67,7 +67,7 @@ public class ThirdPersonShooterController : MonoBehaviour
             hitTransform = raycastHit.transform;
         } 
 
-        // youtube comments
+        // youtube comments (change distance of aiming when not hitting object with raycast)
         else {
             mouseWorldPosition = ray.GetPoint(10);
             debugTransform.position = ray.GetPoint(10);

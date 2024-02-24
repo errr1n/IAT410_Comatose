@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class ImmunityBar : MonoBehaviour
 {
-    // public Text counterText;
-    // public int kills;
-
+    //variable for current immunity (number of kills)
     public float curImmunity;
+    //variable for maximum immunity (number of kills)
     public float maxImmunity;
+    //slider reference
     public Slider immunityBar;
 
 
@@ -24,10 +24,13 @@ public class ImmunityBar : MonoBehaviour
 
     void Update()
     {
+        //if immunity key pressed
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            //if the current immunity is equal to maximum immunity
             if(curImmunity == maxImmunity)
             {
+                //call the power up function
                 PowerUp();
             } 
         }
@@ -45,10 +48,13 @@ public class ImmunityBar : MonoBehaviour
         }
     }
 
+    //provides power up to player
     private void PowerUp()
     {
         Debug.Log("POWER UP");
+        //sets immunity bar back to 0
         curImmunity = 0;
+        //update the value of the slider
         immunityBar.value = curImmunity;
     }
 }
