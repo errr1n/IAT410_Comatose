@@ -36,6 +36,7 @@ public class ImmunityBar : MonoBehaviour
         }
     }
 
+    // called in enemy script
     public void AddKill()
     {
         //if immunity bar is not full
