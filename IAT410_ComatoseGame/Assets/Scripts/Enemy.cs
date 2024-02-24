@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour
         healthBar.value = curHealth;
         healthBar.maxValue = maxHealth;
 
+        //access immunity bar script from gameobject KCO
         immunityBar = GameObject.Find("KCO").GetComponent<ImmunityBar>();
     }
     void Awake()
@@ -45,8 +46,10 @@ public class Enemy : MonoBehaviour
         if(curHealth <=0){
             Destroy(gameObject);
 
+            //call addkill from immunity bar script
             immunityBar.AddKill();
-            Debug.Log("kills " + immunityBar.kills);
+            //debug kill amount
+            Debug.Log("kills " + immunityBar.curImmunity);
 
             // here would generate a health pack
             Instantiate(healthPack, transform.position, Quaternion.identity);

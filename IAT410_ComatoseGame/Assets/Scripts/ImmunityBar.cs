@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ImmunityBar : MonoBehaviour
 {
     // public Text counterText;
-    public int kills;
+    // public int kills;
 
     public float curImmunity;
     public float maxImmunity;
@@ -15,40 +15,40 @@ public class ImmunityBar : MonoBehaviour
 
     void Awake()
     {
-        // curImmunity = maxImmunity;
-        // curImmunity = 0;
-        // immunityBar.value = curImmunity;
-        // immunityBar.maxValue = maxImmunity;
-        // Debug.Log(immunityBar.value);
-
-        // curImmunity = maxImmunity;
+        // sets initial value to current kill count (0)
         immunityBar.value = curImmunity;
+        // sets max kill value (from inspector)
         immunityBar.maxValue = maxImmunity;
 
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        // ShowKils();
-    }
-
-    private void ShowKils()
-    {
-        // counterText.text = kills.ToString();
-        // Debug.Log("kills " + kills);
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if(curImmunity == maxImmunity)
+            {
+                PowerUp();
+            } 
+        }
     }
 
     public void AddKill()
     {
-        kills++;
-        curImmunity = kills;
+        //if immunity bar is not full
+        if(curImmunity != maxImmunity)
+        {
+            //add to immunity bar
+            curImmunity++;
+            //update the value of the slider
+            immunityBar.value = curImmunity;
+        }
+    }
+
+    private void PowerUp()
+    {
+        Debug.Log("POWER UP");
+        curImmunity = 0;
         immunityBar.value = curImmunity;
     }
 }
