@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour
     }
 
     public void sendDamage (float damageValue){
-        Debug.Log("dmg : " + damageValue);
+        // Debug.Log("dmg : " + damageValue);
         curHealth -= damageValue;
         healthBar.value = curHealth;
     }
@@ -58,7 +58,7 @@ public class Enemy : MonoBehaviour
      private void OnCollisionEnter(Collision collision){
         if(collision.gameObject.tag == "PlayerAttack"){
             //other.GetComponent<player>().Damage();
-            Debug.Log("hit enemy");
+            // Debug.Log("hit enemy");
             health-=1;
             sendDamage(10);
            // Destroy(gameObject);

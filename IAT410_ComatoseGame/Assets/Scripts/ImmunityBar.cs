@@ -21,7 +21,7 @@ public class ImmunityBar : MonoBehaviour
         // immunityBar.maxValue = maxImmunity;
         // Debug.Log(immunityBar.value);
 
-        curImmunity = maxImmunity;
+        // curImmunity = maxImmunity;
         immunityBar.value = curImmunity;
         immunityBar.maxValue = maxImmunity;
 
