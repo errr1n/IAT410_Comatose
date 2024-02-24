@@ -16,9 +16,14 @@ public class ImmunityBar : MonoBehaviour
     void Awake()
     {
         // curImmunity = maxImmunity;
-        // curImmunity = kills;
+        // curImmunity = 0;
         // immunityBar.value = curImmunity;
         // immunityBar.maxValue = maxImmunity;
+        // Debug.Log(immunityBar.value);
+
+        curImmunity = maxImmunity;
+        immunityBar.value = curImmunity;
+        immunityBar.maxValue = maxImmunity;
 
     }
 
