@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     public GameObject healthPack;
     public Slider healthBar;
 
-    ImmunityBar killCounterScript;
+    ImmunityBar immunityBar;
    
     // Start is called before the first frame update
     // void Start()
@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
         healthBar.value = curHealth;
         healthBar.maxValue = maxHealth;
 
-        killCounterScript = GameObject.Find("KCO").GetComponent<ImmunityBar>();
+        immunityBar = GameObject.Find("KCO").GetComponent<ImmunityBar>();
     }
     void Awake()
     {
@@ -45,8 +45,8 @@ public class Enemy : MonoBehaviour
         if(curHealth <=0){
             Destroy(gameObject);
 
-            killCounterScript.AddKill();
-            Debug.Log("kills " + killCounterScript.kills);
+            immunityBar.AddKill();
+            Debug.Log("kills " + immunityBar.kills);
 
             // here would generate a health pack
             Instantiate(healthPack, transform.position, Quaternion.identity);

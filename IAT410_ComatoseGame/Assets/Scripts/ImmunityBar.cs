@@ -49,5 +49,6 @@ public class ImmunityBar : MonoBehaviour
     {
         kills++;
         curImmunity = kills;
+        immunityBar.value = curImmunity;
     }
 }
