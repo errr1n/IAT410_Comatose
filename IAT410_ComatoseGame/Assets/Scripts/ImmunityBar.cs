@@ -36,7 +36,7 @@ public class ImmunityBar : MonoBehaviour
             //if the current immunity is equal to maximum immunity
             if(curImmunity == maxImmunity)
             {
-                //call the power up function
+                //call the power up coroutine
                 StartCoroutine(PowerUp());
             } 
         }

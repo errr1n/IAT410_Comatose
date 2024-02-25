@@ -148,6 +148,7 @@ public class ThirdPersonShooterController : MonoBehaviour
                 // to calculate aim direction, grab mouse position, calculate direction using spawn bullet position
                 Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
                 Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+                // StartCoroutine(Delay());
 
                 // if(bulletProjectile.hitTarget)
                 // {
@@ -160,6 +161,7 @@ public class ThirdPersonShooterController : MonoBehaviour
 
 
             }
+            // starterAssetsInputs.shoot = false;
 
             // teleport
             // check if they pressed E
@@ -271,7 +273,7 @@ public class ThirdPersonShooterController : MonoBehaviour
 
     IEnumerator Delay()
     {
-        yield return null;
+        yield return new WaitForSeconds(0.5f);
     }
 
 
