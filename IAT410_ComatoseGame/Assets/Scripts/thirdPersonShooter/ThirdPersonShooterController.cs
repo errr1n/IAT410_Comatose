@@ -201,9 +201,20 @@ public class ThirdPersonShooterController : MonoBehaviour
 
             if(isFiring == true)
             {
-                Debug.Log("shoot");
-                Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
-                Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+                shotCounter -= Time.deltaTime;
+
+                if(shotCounter <= 0)
+                {
+                    shotCounter = rateOfFire;
+
+                    Debug.Log("shoot");
+                    Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
+                    Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+                }
+            }
+            else
+            {
+                shotCounter -= Time.deltaTime;
             }
 
 
