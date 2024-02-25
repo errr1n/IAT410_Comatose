@@ -17925,6 +17925,7 @@ MonoBehaviour:
   teleportLocation: {fileID: 1997718959}
   poisonParticles: {fileID: 8205284912903300636, guid: 79518669101f13e428182b91377a88c3,
     type: 3}
+  rateOfFire: 0.15
 --- !u!4 &1780385052 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 490576248761790154, guid: c708a3b79cd542b42bbfedb17e213bc1,
