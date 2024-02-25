@@ -9,10 +9,13 @@ public class GameManager : MonoBehaviour
 
     // public static event Action<GameState> OnGameStateChanged;
     // public GameState State;
+    public GameObject door;
+    [SerializeField] private Transform spawnDoorPosition;
 
     // void Awake()
     // {
-    //     Instance = this;
+        // Instance = this;
+        // Instantiate(door, spawnDoorPosition);
     // }
 
     // void Start()
@@ -41,6 +44,14 @@ public class GameManager : MonoBehaviour
 
     //     OnGameStateChanged?.Invoke(newState);
     // }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            Instantiate(door, spawnDoorPosition);
+        }
+    }
 }
 
 // public enum GameState()
