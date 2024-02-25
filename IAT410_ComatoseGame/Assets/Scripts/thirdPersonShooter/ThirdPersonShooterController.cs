@@ -37,6 +37,8 @@ public class ThirdPersonShooterController : MonoBehaviour
 
     private BulletProjectile bulletProjectile;
 
+    private bool isFiring = false;
+
     private void Awake()
     {
         thirdPersonController = GetComponent<ThirdPersonController>();
@@ -125,29 +127,12 @@ public class ThirdPersonShooterController : MonoBehaviour
             // ERIN - trying to make it so can only shoot in aim mode
             if(starterAssetsInputs.shoot)
             {
-
-
-
-            //     if(hitTransform != null)
-            // // if not null, we hit something
-            // {
-            //     if(hitTransform.GetComponent<TeleportTarget>() != null)
-            //     {
-            //         //hit target (can play particles from here)
-            //         // Instantiate(vfxHitGreen, transform.position, Quaternion.identity);
-            //         Debug.Log("teleport");
-            //     } else{
-            //         // hit something else (can play particles from here)
-            //         // Instantiate(vfxHitRed, transform.position, Quaternion.identity);
-            //          Debug.Log("no teleport");
-            //     }
-            // }
-
-
+                isFiring = true;
 
                 // to calculate aim direction, grab mouse position, calculate direction using spawn bullet position
-                Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
-                Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+                // Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
+                // Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+                // Debug.Log("spawn bullet");
                 // StartCoroutine(Delay());
 
                 // if(bulletProjectile.hitTarget)
@@ -157,8 +142,22 @@ public class ThirdPersonShooterController : MonoBehaviour
 
                 // Debug.Log(bulletProjectile.hitTarget);
                 // not shooting constantly
-                starterAssetsInputs.shoot = false;
+                // starterAssetsInputs.shoot = false;
 
+            }
+            else if(starterAssetsInputs.shoot = false)
+            {
+                isFiring = false;
+            }
+
+
+            if(isFiring)
+            {
+                Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
+                Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+                Debug.Log("spawn bullet");
+            }
+            else{
 
             }
             // starterAssetsInputs.shoot = false;
