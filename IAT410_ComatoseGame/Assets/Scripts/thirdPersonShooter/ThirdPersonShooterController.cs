@@ -130,9 +130,9 @@ public class ThirdPersonShooterController : MonoBehaviour
             // Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
 
             // ERIN - trying to make it so can only shoot in aim mode
-            // if(Input.GetButtonDown("Fire1"))
 
 
+            //ORIGINAL - WORKING PISTOL -------------------------
             // if(starterAssetsInputs.shoot)
             // {
             //     Debug.Log(starterAssetsInputs.shoot);
@@ -152,10 +152,10 @@ public class ThirdPersonShooterController : MonoBehaviour
 
             //     // Debug.Log(bulletProjectile.hitTarget);
             //     // not shooting constantly
-            //     // starterAssetsInputs.shoot = false;
+            //     starterAssetsInputs.shoot = false;
             //     // Debug.Log(starterAssetsInputs.shoot);
-
             // }
+
             // else
             // {
             //     starterAssetsInputs.shoot = false;
@@ -163,7 +163,7 @@ public class ThirdPersonShooterController : MonoBehaviour
             // }
 
 
-            // //CLOSEST - ALMOST WORKING
+            // //ALMOST WORKING -------------------------
             // if(Input.GetButtonDown("Fire1"))
             // {
             //     isFiring = true;
@@ -183,7 +183,9 @@ public class ThirdPersonShooterController : MonoBehaviour
             // }
             // starterAssetsInputs.shoot = false;
 
-            //ALSO ALMOST WORKING?
+
+
+            //ALSO ALMOST WORKING? NEW INPUT --------------------------
             if(starterAssetsInputs.shoot)
             {
                 isFiring = true;
@@ -203,7 +205,6 @@ public class ThirdPersonShooterController : MonoBehaviour
                 Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
                 Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
             }
-            // starterAssetsInputs.shoot = false;
 
 
 
