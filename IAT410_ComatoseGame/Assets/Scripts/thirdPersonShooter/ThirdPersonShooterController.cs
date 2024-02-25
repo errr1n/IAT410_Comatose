@@ -38,6 +38,8 @@ public class ThirdPersonShooterController : MonoBehaviour
     private BulletProjectile bulletProjectile;
 
     private bool isFiring = false;
+    float shotCounter;
+    public float rateOfFire = 0.1f;
 
     private void Awake()
     {
@@ -124,42 +126,108 @@ public class ThirdPersonShooterController : MonoBehaviour
             // rotate the player towards crosshair
             transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f);
 
+            // Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
+            // Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+
             // ERIN - trying to make it so can only shoot in aim mode
+            // if(Input.GetButtonDown("Fire1"))
+
+
+            // if(starterAssetsInputs.shoot)
+            // {
+            //     Debug.Log(starterAssetsInputs.shoot);
+            //     // isFiring = true;
+            //     // Debug.Log(isFiring);
+
+            //     // to calculate aim direction, grab mouse position, calculate direction using spawn bullet position
+            //     Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
+            //     Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+            //     // Debug.Log("spawn bullet");
+            //     // StartCoroutine(Delay());
+
+            //     // if(bulletProjectile.hitTarget)
+            //     // {
+            //     // Debug.Log("I AM HERE");
+            //     // }
+
+            //     // Debug.Log(bulletProjectile.hitTarget);
+            //     // not shooting constantly
+            //     // starterAssetsInputs.shoot = false;
+            //     // Debug.Log(starterAssetsInputs.shoot);
+
+            // }
+            // else
+            // {
+            //     starterAssetsInputs.shoot = false;
+            //     Debug.Log(starterAssetsInputs.shoot);
+            // }
+
+
+            // //CLOSEST - ALMOST WORKING
+            // if(Input.GetButtonDown("Fire1"))
+            // {
+            //     isFiring = true;
+            //     Debug.Log("is firing: " + isFiring);
+            // }
+            // else if(Input.GetButtonUp("Fire1"))
+            // {
+            //     isFiring = false;
+            //     Debug.Log("is firing: " + isFiring);
+            // }
+
+            // if(isFiring == true)
+            // {
+            //     Debug.Log("shoot");
+            //     Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
+            //     Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+            // }
+            // starterAssetsInputs.shoot = false;
+
+            //ALSO ALMOST WORKING?
             if(starterAssetsInputs.shoot)
             {
                 isFiring = true;
-
-                // to calculate aim direction, grab mouse position, calculate direction using spawn bullet position
+                Debug.Log("is firing: " + isFiring);
                 // Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
                 // Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
-                // Debug.Log("spawn bullet");
-                // StartCoroutine(Delay());
-
-                // if(bulletProjectile.hitTarget)
-                // {
-                // Debug.Log("I AM HERE");
-                // }
-
-                // Debug.Log(bulletProjectile.hitTarget);
-                // not shooting constantly
-                // starterAssetsInputs.shoot = false;
-
             }
-            else if(starterAssetsInputs.shoot = false)
+            else if(starterAssetsInputs.shoot == false)
             {
                 isFiring = false;
+                Debug.Log("is firing: " + isFiring);
             }
 
-
-            if(isFiring)
+            if(isFiring == true)
             {
+                Debug.Log("shoot");
                 Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
                 Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
-                Debug.Log("spawn bullet");
             }
-            else{
+            // starterAssetsInputs.shoot = false;
 
-            }
+
+
+
+            // else if(Input.GetButtonUp("Fire1"))
+            // else if(starterAssetsInputs.shoot = false)
+            // {
+            //     isFiring = false;
+            //     Debug.Log(isFiring);
+            // }
+
+
+            // if(isFiring)
+            // {
+            //     Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
+            //     Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+            //     Debug.Log("spawn bullet");
+            //     StartCoroutine(Delay());
+            // }
+            // else{
+
+            // }
+
+
             // starterAssetsInputs.shoot = false;
 
             // teleport
