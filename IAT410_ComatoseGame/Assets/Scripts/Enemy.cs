@@ -34,8 +34,17 @@ public class Enemy : MonoBehaviour
 
     public void sendDamage (float damageValue){
         // Debug.Log("dmg : " + damageValue);
-        curHealth -= damageValue;
-        healthBar.value = curHealth;
+        Debug.Log("powerUp : " + immunityBar.powerUp);
+        if(immunityBar.powerUp == true){
+            curHealth -= (damageValue * 2);
+            Debug.Log("double damage = " + damageValue * 2);
+            healthBar.value = curHealth;
+        }
+        else{
+            curHealth -= damageValue;
+            Debug.Log(damageValue);
+            healthBar.value = curHealth;
+        }
     }
 
 
@@ -44,6 +53,7 @@ public class Enemy : MonoBehaviour
     {
         
         if(curHealth <=0){
+            //destroy enemy
             Destroy(gameObject);
 
             //call addkill from immunity bar script
