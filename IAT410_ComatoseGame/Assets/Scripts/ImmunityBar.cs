@@ -11,9 +11,9 @@ public class ImmunityBar : MonoBehaviour
     public float maxImmunity;
     //slider reference
     public Slider immunityBar;
-
+    //public timer for length of power up
     public float immunityTimer;
-
+    //boolean for whether power up is active
     public bool powerUp;
 
 
@@ -23,7 +23,7 @@ public class ImmunityBar : MonoBehaviour
         immunityBar.value = curImmunity;
         // sets max kill value (from inspector)
         immunityBar.maxValue = maxImmunity;
-
+        //sets powerup to false on awake
         powerUp = false;
 
     }
@@ -55,37 +55,27 @@ public class ImmunityBar : MonoBehaviour
         }
     }
 
-    //provides power up to player
-    // private void PowerUp()
-    // {
-    //     Debug.Log("POWER UP");
-    //     //sets immunity bar back to 0
-    //     curImmunity = 0;
-    //     //update the value of the slider
-    //     immunityBar.value = curImmunity;
-    // }
-
     private IEnumerator PowerUp()
     {
-        Debug.Log("POWER UP");
+        // Debug.Log("POWER UP");
+
         //sets immunity bar back to 0
         curImmunity = 0;
-        Debug.Log("Curr immunity = " + curImmunity);
+        // Debug.Log("Curr immunity = " + curImmunity);
+
         //update the value of the slider
         immunityBar.value = curImmunity;
 
         //set power up to true
         powerUp = true;
-        Debug.Log(powerUp);
+        // Debug.Log(powerUp);
 
         //wait for specified time
         yield return new WaitForSeconds(immunityTimer);
-
-        
-        Debug.Log("POWER UP DONE");
+        // Debug.Log("POWER UP DONE");
 
         //set power up to false
         powerUp = false;
-        Debug.Log(powerUp);
+        // Debug.Log(powerUp);
     }
 }

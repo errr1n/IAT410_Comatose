@@ -34,15 +34,24 @@ public class Enemy : MonoBehaviour
 
     public void sendDamage (float damageValue){
         // Debug.Log("dmg : " + damageValue);
-        Debug.Log("powerUp : " + immunityBar.powerUp);
+        // Debug.Log("powerUp : " + immunityBar.powerUp);
+
+        //checks if the power up is active from immunity bar script
         if(immunityBar.powerUp == true){
+
+            //double the damage value of the players bullets (strength power up)
             curHealth -= (damageValue * 2);
-            Debug.Log("double damage = " + damageValue * 2);
+            // Debug.Log("double damage = " + damageValue * 2);
+
+            //update the enemy slider health bar
             healthBar.value = curHealth;
         }
         else{
+            //deal the reguler damage value of the players bullets
             curHealth -= damageValue;
-            Debug.Log(damageValue);
+            // Debug.Log(damageValue);
+            
+            //update the enemy slider health bar
             healthBar.value = curHealth;
         }
     }
