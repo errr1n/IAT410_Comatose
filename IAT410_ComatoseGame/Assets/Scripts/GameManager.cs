@@ -7,12 +7,13 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance;
 
+    //variable holding current game state
     public int stateInt = 1;
 
-    //E ----------------------------------------------------------------------
+    //reference for door object
     public GameObject door;
+    //reference for door spawn position
     [SerializeField] private Transform spawnDoorPosition;
-    //-------------------------------------------------------------------------
 
     void Awake()
     {
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        //update game state on start
         UpdateGameState(stateInt);
     }
 
@@ -59,6 +61,7 @@ public class GameManager : MonoBehaviour
         // OnGameStateChanged?.Invoke(newState);
     }
 
+    //spawns final doorway
     private void SpawnDoor()
     {
         Instantiate(door, spawnDoorPosition);
