@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
+            //sets state to 4 (final door)
             stateInt = 4;
             UpdateGameState(stateInt);
         }
@@ -50,6 +51,7 @@ public class GameManager : MonoBehaviour
                 //spawn phase 3 enemies?
                 break;
             case 4:
+                //calls function to spawn final door
                 SpawnDoor();
                 break; 
             default:

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; 
 
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
+
 public class ImmunityBar : MonoBehaviour
 {
     //variable for current immunity (number of kills)
@@ -15,6 +18,8 @@ public class ImmunityBar : MonoBehaviour
     public float immunityTimer;
     //boolean for whether power up is active
     public bool powerUp;
+
+    [SerializeField] private Volume volume;
 
 
     void Awake()
@@ -70,6 +75,11 @@ public class ImmunityBar : MonoBehaviour
         powerUp = true;
         // Debug.Log(powerUp);
 
+        // if(volume.profile.TryGet(out Bloom bloom))
+        // {
+        //     bloom.intensity.value = 10f;
+        // }
+
         //wait for specified time
         yield return new WaitForSeconds(immunityTimer);
         // Debug.Log("POWER UP DONE");
@@ -77,5 +87,10 @@ public class ImmunityBar : MonoBehaviour
         //set power up to false
         powerUp = false;
         // Debug.Log(powerUp);
+
+        // if(volume.profile.TryGet(out Bloom bloomX))
+        // {
+        //     bloomX.intensity.value = 1f;
+        // }
     }
 }
