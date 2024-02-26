@@ -5,53 +5,103 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
-    // public static GameManager Instance;
+    public static GameManager Instance;
 
-    // public static event Action<GameState> OnGameStateChanged;
-    // public GameState State;
+    public int stateInt = 1;
+
+    //E ----------------------------------------------------------------------
     public GameObject door;
     [SerializeField] private Transform spawnDoorPosition;
+    //-------------------------------------------------------------------------
 
-    // void Awake()
-    // {
-        // Instance = this;
-        // Instantiate(door, spawnDoorPosition);
-    // }
+    void Awake()
+    {
+        Instance = this;
+    }
 
-    // void Start()
-    // {
-    //     UpdateGameState(GameState.PhaseOne);
-    //     Debug.Log('GAMESTATE ' + GameState);
-    // }
-
-    // public void UpdateGameState(GameState newState)
-    // {
-    //     State = newState;
-
-    //     switch(newState)
-    //     {
-    //         case GameState.PhaseOne:
-    //             break;
-    //         case GameState.PhaseTwo:
-    //             break;
-    //         case GameState.PhaseThree:
-    //             break;
-    //         case GameState.FinalPhase:
-    //             break; 
-    //         default:
-    //             throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
-    //     }
-
-    //     OnGameStateChanged?.Invoke(newState);
-    // }
+    void Start()
+    {
+        UpdateGameState(stateInt);
+    }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
-            Instantiate(door, spawnDoorPosition);
+            stateInt = 4;
+            UpdateGameState(stateInt);
         }
     }
+
+    public void UpdateGameState(int newInt)
+    {
+        stateInt = newInt;
+
+        switch (newInt)
+        {
+            case 1:
+                break;
+            case 2:
+                //spawn phase 2 enemies?
+                break;
+            case 3:
+                //spawn phase 3 enemies?
+                break;
+            case 4:
+                SpawnDoor();
+                break; 
+            default:
+                // throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
+                Debug.Log("default");
+                break;
+        }
+
+        // OnGameStateChanged?.Invoke(newState);
+    }
+
+    private void SpawnDoor()
+    {
+        Instantiate(door, spawnDoorPosition);
+    }
+
+
+
+    // public void UpdateGameState(GameState newState)
+    // {
+    //     State = newState;
+
+    //     switch (newState)
+    //     {
+    //         case GameState.PhaseOne:
+    //             break;
+    //         case GameState.PhaseTwo:
+    //             //spawn phase 2 enemies?
+    //             break;
+    //         case GameState.PhaseThree:
+    //             //spawn phase 3 enemies?
+    //             break;
+    //         case GameState.FinalPhase:
+    //             SpawnDoor();
+    //             break; 
+    //         default:
+    //             // throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
+    //             Debug.Log("default");
+    //             break;
+    //     }
+
+    //     // OnGameStateChanged?.Invoke(newState);
+    // }
+
+    //E ------------------------------------------------------------
+    // private void Update()
+    // {
+    //     if (Input.GetKeyDown(KeyCode.X))
+    //     {
+    //         UpdateGameState(GameState.FinalPhase);
+    //         // Debug.Log('GAMESTATE ' + State);
+    //     }
+    // }
+    //---------------------------------------------------------
 }
 
 // public enum GameState()

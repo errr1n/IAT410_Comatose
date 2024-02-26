@@ -8330,6 +8330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1ea8cad03ab8414e85c23539b9fe967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stateInt: 1
   door: {fileID: 6577767476943123394, guid: 9fe63fe2fff3df2448b4e381b3d096e7, type: 3}
   spawnDoorPosition: {fileID: 516662991}
 --- !u!4 &902256755
