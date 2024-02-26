@@ -17949,7 +17949,7 @@ MonoBehaviour:
   aimSensitivity: 0.5
   aimColliderLayerMask:
     serializedVersion: 2
-    m_Bits: 65
+    m_Bits: 321
   debugTransform: {fileID: 152380672}
   pfBulletProjectile: {fileID: 8396177813032939379, guid: 26fd42fa8f9c10d438473fe3276589c7,
     type: 3}

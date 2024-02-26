@@ -41,10 +41,7 @@ public class BulletProjectile : MonoBehaviour
    
          // calls check if burnable method
          CheckIfBurnable();
-      } else
-      {
-         
-      }
+      } 
       //destroy bullet
       Destroy(gameObject);
       

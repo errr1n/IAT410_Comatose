@@ -77,7 +77,7 @@ public class Enemy : MonoBehaviour
     }
 
     
-     private void OnCollisionEnter(Collision collision){
+     private void OnTriggerEnter(Collider collision){
         if(collision.gameObject.tag == "PlayerAttack"){
             //other.GetComponent<player>().Damage();
             // Debug.Log("hit enemy");
