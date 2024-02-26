@@ -76,7 +76,7 @@ public class Enemy : MonoBehaviour
         
     }
 
-    
+    //OLD --- private void OnCollisionEnter(Collision collision){ (trigger in inspector was also not ticked on)
      private void OnTriggerEnter(Collider collision){
         if(collision.gameObject.tag == "PlayerAttack"){
             //other.GetComponent<player>().Damage();
