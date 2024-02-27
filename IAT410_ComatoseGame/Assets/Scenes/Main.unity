@@ -18061,7 +18061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curImmunity: 0
-  maxImmunity: 10
+  maxImmunity: 3
   immunityBar: {fileID: 766350376}
   immunityTimer: 3
   powerUp: 0
@@ -18143,6 +18143,8 @@ MonoBehaviour:
     m_Bits: 321
   debugTransform: {fileID: 152380672}
   pfBulletProjectile: {fileID: 8396177813032939379, guid: 26fd42fa8f9c10d438473fe3276589c7,
+    type: 3}
+  immunityBulletProjectile: {fileID: 8396177813032939379, guid: 8abdc279743be174c94e29a907574dff,
     type: 3}
   spawnBulletPosition: {fileID: 845760976}
   crosshair: {fileID: 75434707}

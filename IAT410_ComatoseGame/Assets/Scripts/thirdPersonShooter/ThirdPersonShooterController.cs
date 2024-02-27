@@ -16,6 +16,7 @@ public class ThirdPersonShooterController : MonoBehaviour
     [SerializeField] private LayerMask aimColliderLayerMask = new LayerMask(); 
     [SerializeField] private Transform debugTransform;
     [SerializeField] private Transform pfBulletProjectile;
+    [SerializeField] private Transform immunityBulletProjectile;
     [SerializeField] private Transform spawnBulletPosition;
 
     //crosshair
@@ -45,6 +46,8 @@ public class ThirdPersonShooterController : MonoBehaviour
     //variable to hold stamina bar
     private StaminaBar staminaBar;
 
+    ImmunityBar immunityBar;
+
     private void Awake()
     {
         thirdPersonController = GetComponent<ThirdPersonController>();
@@ -56,6 +59,8 @@ public class ThirdPersonShooterController : MonoBehaviour
 
         //access stamina bar
         staminaBar = GetComponent<StaminaBar>();
+
+        immunityBar = GameObject.Find("KCO").GetComponent<ImmunityBar>();
     }
 
     private void Update()
@@ -154,7 +159,37 @@ public class ThirdPersonShooterController : MonoBehaviour
                 shotCounter -= Time.deltaTime;
 
                 //check if rate of fire timer is below 0 and current stamina is above 0
-                if(shotCounter <= 0 && staminaBar.curStamina > 0)
+                if(shotCounter <= 0 && staminaBar.curStamina > 0 && immunityBar.powerUp == true)
+                {
+                    shotCounter = rateOfFire;
+
+                    Debug.Log("shoot with immunity");
+                    // to calculate aim direction, grab mouse position, calculate direction using spawn bullet position
+                    Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
+                    Instantiate(immunityBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+
+                    //DISSABLED STAMINA IN IMMUNITY MODE ----------
+                    // //reduce stamina
+                    // staminaBar.curStamina -= staminaBar.attackCost;
+                    // //ensure stamina never goes below 0
+                    // if(staminaBar.curStamina < 0)
+                    // {
+                    //     staminaBar.curStamina = 0;
+                    // }
+                    // //drain stamina bar UI
+                    // staminaBar.Staminabar.fillAmount = staminaBar.curStamina / staminaBar.maxStamina;
+                    // // Debug.Log(staminaBar.curStamina);
+
+                    // //if coroutine is occuring (checks to make sure only one coroutine is running)
+                    // if(staminaBar.recharge != null)
+                    // {
+                    //     //stop coroutine 
+                    //     staminaBar.StopCoroutine(staminaBar.recharge);
+                    // }
+                    // //otherwise call recharge coroutine
+                    // staminaBar.recharge = staminaBar.StartCoroutine(staminaBar.RechargeStamina());
+                }
+                else if(shotCounter <= 0 && staminaBar.curStamina > 0)
                 {
                     shotCounter = rateOfFire;
 
