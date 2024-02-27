@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     public GameObject healthPack;
     public Slider healthBar;
 
-    public int pickupPercentage;
+    public int pickupSpawnPercentage;
 
     ImmunityBar immunityBar;
    
@@ -77,7 +77,7 @@ public class Enemy : MonoBehaviour
             Debug.Log("random number: " + randomNumber);
 
             //if the random number is equal to 1 (10% chance)
-            if(randomNumber <= pickupPercentage)
+            if(randomNumber <= pickupSpawnPercentage)
             {
                 // here would generate a health pack
                 Instantiate(healthPack, transform.position, Quaternion.identity);
