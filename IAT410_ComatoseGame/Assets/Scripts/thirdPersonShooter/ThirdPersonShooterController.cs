@@ -158,7 +158,7 @@ public class ThirdPersonShooterController : MonoBehaviour
             {
                 shotCounter -= Time.deltaTime;
 
-                //check if rate of fire timer is below 0 and current stamina is above 0
+                //check if rate of fire timer is below 0 and current stamina is above 0 AND if the immunity bar is active
                 if(shotCounter <= 0 && staminaBar.curStamina > 0 && immunityBar.powerUp == true)
                 {
                     shotCounter = rateOfFire;
@@ -189,6 +189,7 @@ public class ThirdPersonShooterController : MonoBehaviour
                     // //otherwise call recharge coroutine
                     // staminaBar.recharge = staminaBar.StartCoroutine(staminaBar.RechargeStamina());
                 }
+                //check if rate of fire timer is below 0 and current stamina is above 0
                 else if(shotCounter <= 0 && staminaBar.curStamina > 0)
                 {
                     shotCounter = rateOfFire;

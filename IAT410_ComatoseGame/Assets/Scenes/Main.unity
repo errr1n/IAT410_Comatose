@@ -18210,7 +18210,7 @@ MonoBehaviour:
   maxStamina: 500
   Staminabar: {fileID: 284375195}
   attackCost: 25
-  chargeRate: 66
+  chargeRate: 150
 --- !u!1 &1784748855 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5052f3e19152cba45a45f528cd0a9120,

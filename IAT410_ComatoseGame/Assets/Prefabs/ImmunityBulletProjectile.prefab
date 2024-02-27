@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 2049643038548663053}
   - component: {fileID: 5694137362978227883}
   m_Layer: 9
-  m_Name: ImmunityBulletProjectile
+  m_Name: immunityBulletProjectile
   m_TagString: PlayerAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
