@@ -19,7 +19,7 @@ public class ImmunityBar : MonoBehaviour
     //boolean for whether power up is active
     public bool powerUp;
 
-    [SerializeField] private Volume volume;
+    // [SerializeField] private Volume volume;
 
 
     void Awake()

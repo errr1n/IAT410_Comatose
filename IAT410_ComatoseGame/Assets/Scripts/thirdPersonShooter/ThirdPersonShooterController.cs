@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 // bring in cinemachine
 using Cinemachine;
 using StarterAssets;
+using UnityEngine.UI;
 
 public class ThirdPersonShooterController : MonoBehaviour
 {
@@ -41,6 +42,8 @@ public class ThirdPersonShooterController : MonoBehaviour
     float shotCounter;
     public float rateOfFire = 0.1f;
 
+    private StaminaBar staminaBar;
+
     private void Awake()
     {
         thirdPersonController = GetComponent<ThirdPersonController>();
@@ -49,6 +52,8 @@ public class ThirdPersonShooterController : MonoBehaviour
         // poisonParticles.SetActive(false);
 
         bulletProjectile = GetComponent<BulletProjectile>();
+
+        staminaBar = GetComponent<StaminaBar>();
     }
 
     private void Update()
@@ -146,7 +151,7 @@ public class ThirdPersonShooterController : MonoBehaviour
             {
                 shotCounter -= Time.deltaTime;
 
-                if(shotCounter <= 0)
+                if(shotCounter <= 0 && staminaBar.curStamina > 0)
                 {
                     shotCounter = rateOfFire;
 
@@ -154,6 +159,22 @@ public class ThirdPersonShooterController : MonoBehaviour
                     // to calculate aim direction, grab mouse position, calculate direction using spawn bullet position
                     Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
                     Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+
+                    //reduce stamina
+                    staminaBar.curStamina -= staminaBar.attackCost;
+                    if(staminaBar.curStamina < 0)
+                    {
+                        staminaBar.curStamina = 0;
+                    }
+                    staminaBar.Staminabar.fillAmount = staminaBar.curStamina / staminaBar.maxStamina;
+                    Debug.Log(staminaBar.curStamina);
+
+                    //recharge coroutine
+                    if(staminaBar.recharge != null)
+                    {
+                        staminaBar.StopCoroutine(staminaBar.recharge);
+                    }
+                    staminaBar.recharge = staminaBar.StartCoroutine(staminaBar.RechargeStamina());
                 }
             }
             else
