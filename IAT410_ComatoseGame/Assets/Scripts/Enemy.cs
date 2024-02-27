@@ -9,6 +9,8 @@ public class Enemy : MonoBehaviour
     public GameObject healthPack;
     public Slider healthBar;
 
+    public int pickupPercentage;
+
     ImmunityBar immunityBar;
    
     // Start is called before the first frame update
@@ -71,11 +73,11 @@ public class Enemy : MonoBehaviour
             Debug.Log("kills " + immunityBar.curImmunity);
 
             //random number between 1-10
-            float randomNumber = Random.Range(1, 10);
+            float randomNumber = Random.Range(0, 100);
             Debug.Log("random number: " + randomNumber);
 
             //if the random number is equal to 1 (10% chance)
-            if(randomNumber == 1)
+            if(randomNumber <= pickupPercentage)
             {
                 // here would generate a health pack
                 Instantiate(healthPack, transform.position, Quaternion.identity);
