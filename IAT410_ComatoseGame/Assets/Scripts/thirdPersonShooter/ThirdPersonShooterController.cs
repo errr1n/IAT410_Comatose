@@ -42,6 +42,7 @@ public class ThirdPersonShooterController : MonoBehaviour
     float shotCounter;
     public float rateOfFire = 0.1f;
 
+    //variable to hold stamina bar
     private StaminaBar staminaBar;
 
     private void Awake()
@@ -53,6 +54,7 @@ public class ThirdPersonShooterController : MonoBehaviour
 
         bulletProjectile = GetComponent<BulletProjectile>();
 
+        //access stamina bar
         staminaBar = GetComponent<StaminaBar>();
     }
 
@@ -151,6 +153,7 @@ public class ThirdPersonShooterController : MonoBehaviour
             {
                 shotCounter -= Time.deltaTime;
 
+                //check if rate of fire timer is below 0 and current stamina is above 0
                 if(shotCounter <= 0 && staminaBar.curStamina > 0)
                 {
                     shotCounter = rateOfFire;
@@ -162,18 +165,22 @@ public class ThirdPersonShooterController : MonoBehaviour
 
                     //reduce stamina
                     staminaBar.curStamina -= staminaBar.attackCost;
+                    //ensure stamina never goes below 0
                     if(staminaBar.curStamina < 0)
                     {
                         staminaBar.curStamina = 0;
                     }
+                    //drain stamina bar UI
                     staminaBar.Staminabar.fillAmount = staminaBar.curStamina / staminaBar.maxStamina;
-                    Debug.Log(staminaBar.curStamina);
+                    // Debug.Log(staminaBar.curStamina);
 
-                    //recharge coroutine
+                    //if coroutine is occuring (checks to make sure only one coroutine is running)
                     if(staminaBar.recharge != null)
                     {
+                        //stop coroutine 
                         staminaBar.StopCoroutine(staminaBar.recharge);
                     }
+                    //otherwise call recharge coroutine
                     staminaBar.recharge = staminaBar.StartCoroutine(staminaBar.RechargeStamina());
                 }
             }
