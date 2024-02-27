@@ -70,8 +70,16 @@ public class Enemy : MonoBehaviour
             //debug kill amount
             Debug.Log("kills " + immunityBar.curImmunity);
 
-            // here would generate a health pack
-            Instantiate(healthPack, transform.position, Quaternion.identity);
+            //random number between 1-10
+            float randomNumber = Random.Range(1, 10);
+            Debug.Log("random number: " + randomNumber);
+
+            //if the random number is equal to 1 (10% chance)
+            if(randomNumber == 1)
+            {
+                // here would generate a health pack
+                Instantiate(healthPack, transform.position, Quaternion.identity);
+            }
         }
         
     }
