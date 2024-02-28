@@ -70,7 +70,7 @@ public class AINavPath : MonoBehaviour
     private void AttackPlayer()
     {
         //stop enemy from moving 
-        agent.SetDestination(transform.position);
+        //agent.SetDestination(transform.position);
         transform.LookAt(player);
 
         if(!alreadyAttacked)

@@ -92,7 +92,7 @@ public class Enemy : MonoBehaviour
             //other.GetComponent<player>().Damage();
             // Debug.Log("hit enemy");
             health-=1;
-            sendDamage(10);
+            sendDamage(6);
            // Destroy(gameObject);
             //need to destroy player projectile too 
            // this.GetComponent<AINavPath>().TakeDamage(1);
