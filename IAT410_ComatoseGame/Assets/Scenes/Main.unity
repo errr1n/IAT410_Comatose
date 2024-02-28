@@ -1646,9 +1646,9 @@ RectTransform:
   - {fileID: 284375194}
   m_Father: {fileID: 68072008}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -854, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &183214540
@@ -3266,9 +3266,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 68072008}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 496.1, y: -361.3}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -247.9, y: -361.3}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &317227687
@@ -7357,10 +7357,10 @@ RectTransform:
   - {fileID: 607222400}
   m_Father: {fileID: 68072008}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -675, y: -274.5}
-  m_SizeDelta: {x: 112.3, y: 20}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 179, y: -274.5}
+  m_SizeDelta: {x: 112.29999, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &773785965
 GameObject:
@@ -16549,6 +16549,7 @@ MonoBehaviour:
   curHealth: 0
   healthPack: {fileID: 0}
   healthBar: {fileID: 0}
+  pickupSpawnPercentage: 0
 --- !u!1 &1617019063
 GameObject:
   m_ObjectHideFlags: 0
