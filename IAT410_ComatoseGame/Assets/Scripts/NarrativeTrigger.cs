@@ -8,11 +8,14 @@ public class NarrativeTrigger : MonoBehaviour
 
     public GameObject narrativeObj;
     private bool isInteracting;
+
+    [SerializeField] private TMP_Text dialogueText;
     // Start is called before the first frame update
-    // void Start()
-    // {
-        
-    // }
+    void Start()
+    {
+        //starts with no dialogue text (hidden)
+        dialogueText.enabled = false;
+    }
 
     // // Update is called once per frame
     void Update()
@@ -24,6 +27,11 @@ public class NarrativeTrigger : MonoBehaviour
         if( isInteracting && Input.GetKeyDown(KeyCode.I))
         {
             Debug.Log("discovered new narrative...");
+
+            //update the text field here 
+
+            //display the dialogue text
+            dialogueText.enabled = true;
         }
     }
 
@@ -49,6 +57,7 @@ public class NarrativeTrigger : MonoBehaviour
         if(other.CompareTag("NarrativeObj"))
         {
             isInteracting = false;
+            dialogueText.enabled = false;
         }
     }
   

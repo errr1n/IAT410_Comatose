@@ -12,6 +12,7 @@ TagManager:
   - Enemy
   - PlayerAttack
   - Checkpoint
+  - NarrativeObj
   layers:
   - Default
   - TransparentFX
