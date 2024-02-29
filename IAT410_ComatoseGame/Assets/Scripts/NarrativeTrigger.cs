@@ -31,7 +31,9 @@ public class NarrativeTrigger : MonoBehaviour
             //update the text field here 
 
             //display the dialogue text
+            dialogueText.text = "narrative 1";
             dialogueText.enabled = true;
+            
         }
     }
 
