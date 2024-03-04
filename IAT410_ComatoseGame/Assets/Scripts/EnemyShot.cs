@@ -27,6 +27,8 @@ public class EnemyShot : MonoBehaviour
             //collision.collider.GetComponent<PlayerHealth>().sendDamage(10);
             Destroy(this.gameObject);
         }
+
+        
     }
 
     public void DestroyShot(){

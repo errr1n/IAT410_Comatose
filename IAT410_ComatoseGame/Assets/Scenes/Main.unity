@@ -8633,6 +8633,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3205635482730415619, guid: 95607fca77f22fd42854347e085634a9,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1667654816}
     - target: {fileID: 3629105517698018535, guid: 95607fca77f22fd42854347e085634a9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8683,6 +8688,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4062387063179903594, guid: 95607fca77f22fd42854347e085634a9,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1667654816}
     - target: {fileID: 5030953485187836923, guid: 95607fca77f22fd42854347e085634a9,
         type: 3}
       propertyPath: m_Name
@@ -18818,7 +18828,6 @@ MonoBehaviour:
   immunityBulletProjectile: {fileID: 8396177813032939379, guid: 8abdc279743be174c94e29a907574dff,
     type: 3}
   spawnBulletPosition: {fileID: 845760976}
-  AOETargetPosition: {fileID: 0}
   crosshair: {fileID: 75434707}
   vfxHitGreen: {fileID: 0}
   vfxHitRed: {fileID: 0}

@@ -26,6 +26,8 @@ public class AOEAINavPath : MonoBehaviour
     public float sightRange, attackRange, health;
     public bool playerInSightRange,playerInAttackRange;
 
+    [SerializeField] public Transform AOETargetPosition;
+
 
 
     private void Awake()
@@ -75,10 +77,11 @@ public class AOEAINavPath : MonoBehaviour
 
         if(!alreadyAttacked)
         {
-            
+            // Vector3 aimDir = (mouseWorldPosition - AOETargetPosition.position).normalized;
+            //projectile prefab, position spawned, get bullet rigidbody
             Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
             rb.AddForce(transform.forward *32f, ForceMode.Impulse);
-            rb.AddForce(transform.up *5f, ForceMode.Impulse);
+            rb.AddForce(transform.up *3f, ForceMode.Impulse);
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         } 

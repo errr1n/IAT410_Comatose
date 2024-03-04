@@ -18,8 +18,8 @@ public class ThirdPersonShooterController : MonoBehaviour
     [SerializeField] private Transform pfBulletProjectile;
     [SerializeField] private Transform immunityBulletProjectile;
     [SerializeField] private Transform spawnBulletPosition;
-    
-    [SerializeField] public Transform AOETargetPosition;
+
+    // [SerializeField] public Transform AOETargetPosition;
 
     //crosshair
     [SerializeField] private GameObject crosshair; // makes a serialized field for the image of the crosshair to be assigned to.
