@@ -34,6 +34,7 @@ public class Enemy : MonoBehaviour
 
     }
 
+    //damage the enemy
     public void sendDamage (float damageValue){
         // Debug.Log("dmg : " + damageValue);
         // Debug.Log("powerUp : " + immunityBar.powerUp);
@@ -59,29 +60,12 @@ public class Enemy : MonoBehaviour
     }
 
 
-    // Update is called once per frame
+    //check if the enemy is dead
     void Update()
     {
         
         if(curHealth <=0){
-            //destroy enemy
-            Destroy(gameObject);
-
-            //call addkill from immunity bar script
-            immunityBar.AddKill();
-            //debug kill amount
-            Debug.Log("kills " + immunityBar.curImmunity);
-
-            //random number between 1-10
-            float randomNumber = Random.Range(0, 100);
-            Debug.Log("random number: " + randomNumber);
-
-            //if the random number is equal to 1 (10% chance)
-            if(randomNumber <= pickupSpawnPercentage)
-            {
-                // here would generate a health pack
-                Instantiate(healthPack, transform.position, Quaternion.identity);
-            }
+            EnemyDeath();
         }
         
     }
@@ -97,5 +81,32 @@ public class Enemy : MonoBehaviour
             //need to destroy player projectile too 
            // this.GetComponent<AINavPath>().TakeDamage(1);
         }
+    }
+
+    private void EnemyDeath()
+    {
+        //destroy enemy
+        Destroy(gameObject);
+
+        //call addkill from immunity bar script
+        immunityBar.AddKill();
+        //debug kill amount
+        Debug.Log("kills " + immunityBar.curImmunity);
+
+        //random number between 1-10
+        float randomNumber = Random.Range(0, 100);
+        Debug.Log("random number: " + randomNumber);
+
+        //if the random number is equal to 1 (10% chance)
+        if(randomNumber <= pickupSpawnPercentage)
+        {
+            SpawnPickup();
+        }
+    }
+
+    private void SpawnPickup()
+    {
+        // here would generate a health pack
+        Instantiate(healthPack, transform.position, Quaternion.identity);
     }
 }

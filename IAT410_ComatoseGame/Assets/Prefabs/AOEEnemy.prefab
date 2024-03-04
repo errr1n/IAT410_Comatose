@@ -15,8 +15,9 @@ GameObject:
   - component: {fileID: 4184486944764284661}
   - component: {fileID: 3205635482730415619}
   - component: {fileID: 7743764937236812371}
+  - component: {fileID: 4062387063179903594}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: AOEEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: ac86687c6cc57604fbb86e166b9462ad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -140,7 +141,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5030953485187836923}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d003820fecba1c54fb8d5565ae4856a0, type: 3}
   m_Name: 
@@ -183,6 +184,37 @@ MonoBehaviour:
     type: 3}
   healthBar: {fileID: 0}
   pickupSpawnPercentage: 25
+--- !u!114 &4062387063179903594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5030953485187836923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aba38e34be777fd4d9a4f1bd0ff4aff6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 4184486944764284661}
+  player: {fileID: 0}
+  spawnPoint: {fileID: 4045803367320238951}
+  isGround:
+    serializedVersion: 2
+    m_Bits: 64
+  isPlayer:
+    serializedVersion: 2
+    m_Bits: 128
+  projectile: {fileID: 7084973490443700893, guid: 7e5d9ea33dbeb754d9e0971f44ef0e2e,
+    type: 3}
+  walkPoint: {x: 0, y: 0, z: 0}
+  walkPointRange: 4
+  timeBetweenAttacks: 0.7
+  sightRange: 25
+  attackRange: 20
+  health: 3
+  playerInSightRange: 0
+  playerInAttackRange: 0
 --- !u!1 &7905662324005664404
 GameObject:
   m_ObjectHideFlags: 0

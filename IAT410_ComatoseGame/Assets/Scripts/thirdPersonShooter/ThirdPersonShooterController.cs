@@ -18,6 +18,8 @@ public class ThirdPersonShooterController : MonoBehaviour
     [SerializeField] private Transform pfBulletProjectile;
     [SerializeField] private Transform immunityBulletProjectile;
     [SerializeField] private Transform spawnBulletPosition;
+    
+    [SerializeField] public Transform AOETargetPosition;
 
     //crosshair
     [SerializeField] private GameObject crosshair; // makes a serialized field for the image of the crosshair to be assigned to.
@@ -146,12 +148,12 @@ public class ThirdPersonShooterController : MonoBehaviour
             if(starterAssetsInputs.shoot)
             {
                 isFiring = true;
-                Debug.Log("is firing: " + isFiring);
+                // Debug.Log("is firing: " + isFiring);
             }
             else if(starterAssetsInputs.shoot == false)
             {
                 isFiring = false;
-                Debug.Log("is firing: " + isFiring);
+                // Debug.Log("is firing: " + isFiring);
             }
 
             if(isFiring == true)
@@ -163,7 +165,7 @@ public class ThirdPersonShooterController : MonoBehaviour
                 {
                     shotCounter = rateOfFire;
 
-                    Debug.Log("shoot with immunity");
+                    // Debug.Log("shoot with immunity");
                     // to calculate aim direction, grab mouse position, calculate direction using spawn bullet position
                     Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
                     Instantiate(immunityBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
