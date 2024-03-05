@@ -19123,6 +19123,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: poisonParticle
       objectReference: {fileID: 0}
+    - target: {fileID: 4463510546404029593, guid: 79518669101f13e428182b91377a88c3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8205284912903300636, guid: 79518669101f13e428182b91377a88c3,
         type: 3}
       propertyPath: m_LocalPosition.x
