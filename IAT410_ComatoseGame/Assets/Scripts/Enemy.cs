@@ -34,6 +34,29 @@ public class Enemy : MonoBehaviour
 
     }
 
+    //check if the enemy is dead
+    void Update()
+    {
+        
+        if(curHealth <=0){
+            EnemyDeath();
+        }
+        
+    }
+
+    //OLD --- private void OnCollisionEnter(Collision collision){ (trigger in inspector was also not ticked on)
+     private void OnTriggerEnter(Collider collision){
+        if(collision.gameObject.tag == "PlayerAttack"){
+            //other.GetComponent<player>().Damage();
+            // Debug.Log("hit enemy");
+            health-=1;
+            sendDamage(6);
+           // Destroy(gameObject);
+            //need to destroy player projectile too 
+           // this.GetComponent<AINavPath>().TakeDamage(1);
+        }
+    }
+
     //damage the enemy
     public void sendDamage (float damageValue){
         // Debug.Log("dmg : " + damageValue);
@@ -59,30 +82,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-
-    //check if the enemy is dead
-    void Update()
-    {
-        
-        if(curHealth <=0){
-            EnemyDeath();
-        }
-        
-    }
-
-    //OLD --- private void OnCollisionEnter(Collision collision){ (trigger in inspector was also not ticked on)
-     private void OnTriggerEnter(Collider collision){
-        if(collision.gameObject.tag == "PlayerAttack"){
-            //other.GetComponent<player>().Damage();
-            // Debug.Log("hit enemy");
-            health-=1;
-            sendDamage(6);
-           // Destroy(gameObject);
-            //need to destroy player projectile too 
-           // this.GetComponent<AINavPath>().TakeDamage(1);
-        }
-    }
-
+    //on enemy death
     private void EnemyDeath()
     {
         //destroy enemy
@@ -104,6 +104,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    //spawn the health pickup
     private void SpawnPickup()
     {
         // here would generate a health pack

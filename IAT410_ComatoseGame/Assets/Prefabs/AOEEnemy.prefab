@@ -205,16 +205,17 @@ MonoBehaviour:
   isPlayer:
     serializedVersion: 2
     m_Bits: 128
-  projectile: {fileID: 7084973490443700893, guid: 7e5d9ea33dbeb754d9e0971f44ef0e2e,
+  projectile: {fileID: 7084973490443700893, guid: 8f12608fccc92354fa6fcc697102068a,
     type: 3}
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 4
-  timeBetweenAttacks: 0.7
+  timeBetweenAttacks: 4
   sightRange: 25
   attackRange: 20
   health: 3
   playerInSightRange: 0
   playerInAttackRange: 0
+  AOETargetPosition: {fileID: 0}
 --- !u!1 &7905662324005664404
 GameObject:
   m_ObjectHideFlags: 0
