@@ -13,6 +13,7 @@ TagManager:
   - PlayerAttack
   - Checkpoint
   - NarrativeObj
+  - isGround
   layers:
   - Default
   - TransparentFX

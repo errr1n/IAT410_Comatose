@@ -10,8 +10,8 @@ public class BulletProjectile : MonoBehaviour
    [SerializeField] private float bulletSpeed;
    private Rigidbody bulletRigidbody;
 
-   [SerializeField] GameObject poisonParticle;
-   GameObject pParticle;
+   // [SerializeField] GameObject poisonParticle;
+   // GameObject pParticle;
 
    // public ThirdPersonShooterController thirdPersonShooterController;
 
@@ -31,17 +31,17 @@ public class BulletProjectile : MonoBehaviour
    {
       
      // float timer;
-      if(other.GetComponent<BulletTarget>() != null)
-      {
-         //hit target (can play particles from here)
-         //play particle effect (effet rotated 90 degrees))
-         pParticle = Instantiate(poisonParticle, transform.position, Quaternion.Euler(90,0,0));
-         //destory particle after 3 seconds
-         Destroy(pParticle, 3);
+      // if(other.GetComponent<BulletTarget>() != null)
+      // {
+      //    //hit target (can play particles from here)
+      //    //play particle effect (effet rotated 90 degrees))
+      //    pParticle = Instantiate(poisonParticle, transform.position, Quaternion.Euler(90,0,0));
+      //    //destory particle after 3 seconds
+      //    Destroy(pParticle, 3);
    
-         // calls check if burnable method
-         CheckIfBurnable();
-      } 
+      //    // calls check if burnable method
+      //    CheckIfBurnable();
+      // } 
       //destroy bullet
       Destroy(gameObject);
       
@@ -49,24 +49,24 @@ public class BulletProjectile : MonoBehaviour
 
 
    //atm, this is only called once, it needs to be constantly called to check of an AOETarget is within the sphere
-   private void CheckIfBurnable()
-    {
-      //creates a list of colliders and creates a 4m overlap sphere (sphere collider)
-      Collider[] colliders = Physics.OverlapSphere(transform.position, 4f);
-      foreach(Collider c in colliders)
-      {
-         //if their is an AOETarget script attached to object
-         if(c.GetComponent<AOETarget>())
-         {
-            //apply the burn method to the object with the AOETarget script
-            c.GetComponent<AOETarget>().ApplyBurn(4);
+   // private void CheckIfBurnable()
+   //  {
+   //    //creates a list of colliders and creates a 4m overlap sphere (sphere collider)
+   //    Collider[] colliders = Physics.OverlapSphere(transform.position, 4f);
+   //    foreach(Collider c in colliders)
+   //    {
+   //       //if their is an AOETarget script attached to object
+   //       if(c.GetComponent<AOETarget>())
+   //       {
+   //          //apply the burn method to the object with the AOETarget script
+   //          c.GetComponent<AOETarget>().ApplyBurn(4);
 
-            // Debug.Log("Start Check");
-            // c.GetComponent<AOETarget>().StartCheck();
-            // c.GetComponent<AOETarget>().Test();
-         }
-      }
-    }
+   //          // Debug.Log("Start Check");
+   //          // c.GetComponent<AOETarget>().StartCheck();
+   //          // c.GetComponent<AOETarget>().Test();
+   //       }
+   //    }
+   //  }
 
    //if the bullet doesn't hit anything destroy it
    private void DelayDestroy()
@@ -74,6 +74,8 @@ public class BulletProjectile : MonoBehaviour
       Destroy(gameObject, 0.7f);
    }
 
+
+   //REALLY OLD ----------------------------------------------------
    // youtube comments to delete bullets after a while
    // private void Update()
    // {

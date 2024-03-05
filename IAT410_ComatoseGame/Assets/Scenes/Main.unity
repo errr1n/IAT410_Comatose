@@ -2044,7 +2044,7 @@ GameObject:
   - component: {fileID: 183214544}
   m_Layer: 6
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: isGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -8641,7 +8641,7 @@ PrefabInstance:
     - target: {fileID: 3629105517698018535, guid: 95607fca77f22fd42854347e085634a9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 129.09578
+      value: 138.68
       objectReference: {fileID: 0}
     - target: {fileID: 3629105517698018535, guid: 95607fca77f22fd42854347e085634a9,
         type: 3}
@@ -14628,6 +14628,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1780385085}
+    - targetCorrespondingSourceObject: {fileID: 974238578668270704, guid: c708a3b79cd542b42bbfedb17e213bc1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1780385092}
   m_SourcePrefab: {fileID: 100100000, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
 --- !u!1 &1327794856 stripped
 GameObject:
@@ -18906,6 +18910,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   narrativeObj: {fileID: 0}
   dialogueText: {fileID: 71587443}
+--- !u!114 &1780385092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780385027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b882f94aea06d8468047f183b64b680, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burnTickTimers: 
 --- !u!1 &1784748855 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5052f3e19152cba45a45f528cd0a9120,
