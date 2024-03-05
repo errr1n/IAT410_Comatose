@@ -32,7 +32,7 @@ public class PlayerHealth : MonoBehaviour
     }
 
     public void sendDamage (float damageValue){
-        Debug.Log("dmg : " + damageValue);
+        Debug.Log("p hit by e, dmg : " + damageValue);
         curHealth -= damageValue;
         healthBar.value = curHealth;
     }

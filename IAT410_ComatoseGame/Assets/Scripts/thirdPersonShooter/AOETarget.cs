@@ -6,6 +6,8 @@ public class AOETarget : MonoBehaviour
 {
     //access health script
     private Health healthScript;
+    //access player health script
+    private PlayerHealth playerhealth;
 
     //list to countdown # of ticks of damage
     public List<int> burnTickTimers = new List<int>();
@@ -14,6 +16,7 @@ public class AOETarget : MonoBehaviour
     {
         //get health component (so it get be lowered on tick)
         healthScript = GetComponent<Health>();
+        playerhealth = GetComponent<PlayerHealth>();
     }
 
     //apply burn for specified number of ticks
@@ -70,15 +73,17 @@ public class AOETarget : MonoBehaviour
                 //remove 1 from list
                 burnTickTimers[i]--;
             }
-            //subtract 5 health per tick
-            healthScript.health -= 5;
+            //subtract 5 health per tick (seperate health script)
+            // healthScript.health -= 5;
+            //player health
+            playerhealth.sendDamage(5);
             //delete the list when it gets down to 0
             burnTickTimers.RemoveAll(number => number == 0);
             //wait 0.75seconds (time between ticks)
             yield return new WaitForSeconds(0.75f);
         }
         //just for testing won't destroy only damage 
-        Destroy(gameObject);
+        // Destroy(gameObject);
     }
 
     // public void StartCheck()
