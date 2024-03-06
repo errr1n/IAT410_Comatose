@@ -8,6 +8,8 @@ public class AOEEnemyShot : MonoBehaviour
     [SerializeField] GameObject poisonParticle;
     GameObject pParticle;
 
+    Vector3 bulletPosition;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,6 +68,10 @@ public class AOEEnemyShot : MonoBehaviour
    
             // calls check if burnable method
             CheckIfBurnable();
+
+            bulletPosition = transform.position;
+            // Debug.Log(transform.position);
+            Debug.Log("bullet position " + bulletPosition);
         } 
         //destroy bullet
         Destroy(gameObject);
