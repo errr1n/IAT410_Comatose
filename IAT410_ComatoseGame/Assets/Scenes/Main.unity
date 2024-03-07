@@ -3959,6 +3959,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 349135421}
   m_CullTransparentMesh: 1
+--- !u!1 &351134442 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3417891276664287206, guid: 4c4c863e54743424895fc63221cbb74c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1709839862}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &360436622 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 291884733868725294, guid: 4c4c863e54743424895fc63221cbb74c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1709839862}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &364781189
 GameObject:
   m_ObjectHideFlags: 0
@@ -8611,7 +8623,7 @@ GameObject:
   - component: {fileID: 845760976}
   m_Layer: 7
   m_Name: spawnBulletPosition
-  m_TagString: Untagged
+  m_TagString: Test
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14950,6 +14962,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f06ec477e33b7f47a08034ae2163917, type: 3}
+--- !u!1 &1386474392 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5716955284277960409, guid: 4c4c863e54743424895fc63221cbb74c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1709839862}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1391737686
 GameObject:
   m_ObjectHideFlags: 0
@@ -18443,45 +18461,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 9000670302010141997, guid: 4c4c863e54743424895fc63221cbb74c,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1709839870}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c4c863e54743424895fc63221cbb74c, type: 3}
---- !u!1 &1709839863 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9000670302010141997, guid: 4c4c863e54743424895fc63221cbb74c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1709839862}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &1709839870
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1709839863}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1001 &1713020971
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19109,7 +19090,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7496a10bd7c360f4ab244aa51ee9bb45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleEffect: {fileID: 719140195}
+  p1: {fileID: 1386474392}
+  p2: {fileID: 719140195}
+  p3: {fileID: 351134442}
+  p4: {fileID: 360436622}
   speed: 2
 --- !u!1 &1784748855 stripped
 GameObject:
