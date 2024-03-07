@@ -20,9 +20,9 @@ public class particlesFollow : MonoBehaviour
     void Update()
     {
        // Instantiate(particleEffect, player.transform);
-      // particleEffect.transform.SetParent(target.transform);
-       //particleEffect.transform.localScale = new Vector3(0.09f,0.09f,0.09f);
-        //particleEffect.transform.localPosition = new Vector3(0f,0f,0f);
+        particleEffect.transform.SetParent(target.transform);
+       particleEffect.transform.localScale = new Vector3(0.09f,0.09f,0.09f);
+        particleEffect.transform.localPosition = new Vector3(0f,0f,0f);
        
         
        
