@@ -85,15 +85,15 @@ public class ImmunityBar : MonoBehaviour
         while(curImmunity > 0)
         {
             // powerUp = true;
-            curImmunity -= (1/decreaseRate) / 10f;
-            //if stamina is at full
+            curImmunity -= (maxImmunity*(1/decreaseRate)) / 10f;
+            //if current immunity is less then 0
             if(curImmunity < 0)
             {
-                //set to full
+                //set to 0
                 curImmunity = 0;
             }
-            //update stamina bar UI
-            immunityBar.value = curImmunity / maxImmunity;
+            //update immunity bar UI
+            immunityBar.value = curImmunity;
             yield return new WaitForSeconds(0.1f);
         }
 
