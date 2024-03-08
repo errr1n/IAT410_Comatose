@@ -8577,6 +8577,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 5030953485187836923, guid: fab2d1cc39c31094ea516296516d8c17,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7743764937236812371, guid: fab2d1cc39c31094ea516296516d8c17, type: 3}
     - {fileID: 3205635482730415619, guid: fab2d1cc39c31094ea516296516d8c17, type: 3}
@@ -13704,6 +13709,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 974238578668270715, guid: c708a3b79cd542b42bbfedb17e213bc1,
         type: 3}
+      propertyPath: MoveSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 974238578668270715, guid: c708a3b79cd542b42bbfedb17e213bc1,
+        type: 3}
       propertyPath: JumpHeight
       value: 1
       objectReference: {fileID: 0}
@@ -13711,6 +13721,11 @@ PrefabInstance:
         type: 3}
       propertyPath: JumpTimeout
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 974238578668270715, guid: c708a3b79cd542b42bbfedb17e213bc1,
+        type: 3}
+      propertyPath: SprintSpeed
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 974238578668270715, guid: c708a3b79cd542b42bbfedb17e213bc1,
         type: 3}
