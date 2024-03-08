@@ -19959,7 +19959,7 @@ MonoBehaviour:
   immunityBar: {fileID: 766350376}
   powerUp: 0
   qPrompt: {fileID: 897659647}
-  decreaseRate: 2
+  decreaseRate: 5
 --- !u!4 &1763842985
 Transform:
   m_ObjectHideFlags: 0

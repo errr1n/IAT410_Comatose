@@ -61,7 +61,7 @@ public class ImmunityBar : MonoBehaviour
     public void AddKill()
     {
         //if immunity bar is not full
-        if(curImmunity != maxImmunity)
+        if(curImmunity != maxImmunity && powerUp != true)
         {
             //add to immunity bar
             curImmunity++;
@@ -80,10 +80,11 @@ public class ImmunityBar : MonoBehaviour
 
         //update the value of the slider
         // immunityBar.value = curImmunity;
+        powerUp = true;
 
         while(curImmunity > 0)
         {
-            powerUp = true;
+            // powerUp = true;
             curImmunity -= (1/decreaseRate) / 10f;
             //if stamina is at full
             if(curImmunity < 0)
