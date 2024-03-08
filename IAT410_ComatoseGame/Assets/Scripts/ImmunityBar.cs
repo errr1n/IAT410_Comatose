@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; 
+using TMPro;
 
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
@@ -21,6 +22,8 @@ public class ImmunityBar : MonoBehaviour
 
     // [SerializeField] private Volume volume;
 
+    [SerializeField] private TMP_Text qPrompt;
+
 
     void Awake()
     {
@@ -31,18 +34,23 @@ public class ImmunityBar : MonoBehaviour
         //sets powerup to false on awake
         powerUp = false;
 
+        qPrompt.enabled = false;
+
     }
 
     void Update()
     {
-        //if immunity key pressed
-        if (Input.GetKeyDown(KeyCode.Q))
+        //if the current immunity is equal to maximum immunity
+        if(curImmunity == maxImmunity)
         {
-            //if the current immunity is equal to maximum immunity
-            if(curImmunity == maxImmunity)
+            qPrompt.enabled = true;
+            //if immunity key pressed
+            if (Input.GetKeyDown(KeyCode.Q))
             {
                 //call the power up coroutine
                 StartCoroutine(PowerUp());
+
+                qPrompt.enabled = false;
             } 
         }
     }
