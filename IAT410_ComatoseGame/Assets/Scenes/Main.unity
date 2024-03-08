@@ -19746,6 +19746,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ElectricOrb
       objectReference: {fileID: 0}
+    - target: {fileID: 9000670302010141997, guid: 4c4c863e54743424895fc63221cbb74c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
