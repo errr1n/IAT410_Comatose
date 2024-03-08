@@ -90,9 +90,11 @@ public class BossAINavPath : MonoBehaviour
             
 
             //creating second bullet at different rotation 
-            GameObject bullet2 = Instantiate(projectile, transform.position, transform.rotation*Quaternion.Euler(0,30,0)) as GameObject;
+            GameObject bullet2 = Instantiate(projectile, transform.position, transform.rotation*Quaternion.Euler(0,10,0)) as GameObject;
             Rigidbody rb2 = bullet2.GetComponent<Rigidbody>();
-            rb2.AddForce(rb2.transform.forward * 1000f);
+            rb2.AddForce(transform.forward *32f, ForceMode.Impulse);
+            rb2.AddForce(transform.right *3f, ForceMode.Impulse);
+            rb2.AddForce(transform.up *5f, ForceMode.Impulse);
 
 
             //create third bullet at different rotation here
