@@ -16,13 +16,15 @@ public class ImmunityBar : MonoBehaviour
     //slider reference
     public Slider immunityBar;
     //public timer for length of power up
-    public float immunityTimer;
+    // public float immunityTimer;
     //boolean for whether power up is active
     public bool powerUp;
 
     // [SerializeField] private Volume volume;
 
     [SerializeField] private TMP_Text qPrompt;
+
+    public float decreaseRate;
 
 
     void Awake()
@@ -73,14 +75,29 @@ public class ImmunityBar : MonoBehaviour
         // Debug.Log("POWER UP");
 
         //sets immunity bar back to 0
-        curImmunity = 0;
+        // curImmunity = 0;
         // Debug.Log("Curr immunity = " + curImmunity);
 
         //update the value of the slider
-        immunityBar.value = curImmunity;
+        // immunityBar.value = curImmunity;
+
+        while(curImmunity > 0)
+        {
+            powerUp = true;
+            curImmunity -= (1/decreaseRate) / 10f;
+            //if stamina is at full
+            if(curImmunity < 0)
+            {
+                //set to full
+                curImmunity = 0;
+            }
+            //update stamina bar UI
+            immunityBar.value = curImmunity / maxImmunity;
+            yield return new WaitForSeconds(0.1f);
+        }
 
         //set power up to true
-        powerUp = true;
+        // powerUp = true;
         // Debug.Log(powerUp);
 
         // if(volume.profile.TryGet(out Bloom bloom))
@@ -89,7 +106,7 @@ public class ImmunityBar : MonoBehaviour
         // }
 
         //wait for specified time
-        yield return new WaitForSeconds(immunityTimer);
+        // yield return new WaitForSeconds(immunityTimer);
         // Debug.Log("POWER UP DONE");
 
         //set power up to false
@@ -101,4 +118,43 @@ public class ImmunityBar : MonoBehaviour
         //     bloomX.intensity.value = 1f;
         // }
     }
+
+
+
+
+
+    // //variable for current stamina
+    // public float curStamina;
+    // //variable for maximum stamina
+    // public float maxStamina;
+    // //access image for stamina bar
+    // public Image Staminabar;
+    // //how much stamina cost per attack
+    // public float attackCost;
+    // //rate at which stamina bar recharges
+    // public float chargeRate;
+    // //recharge coroutine variable
+    // public Coroutine recharge;
+
+
+    // //coroutine to recharge stamina bar
+    // public IEnumerator RechargeStamina()
+    // {
+    //     //wait 1 second
+    //     yield return new WaitForSeconds(1f);
+    //     //while stamina is not full
+    //     while(curStamina < maxStamina)
+    //     {
+    //         curStamina += chargeRate / 10f;
+    //         //if stamina is at full
+    //         if(curStamina > maxStamina)
+    //         {
+    //             //set to full
+    //             curStamina = maxStamina;
+    //         }
+    //         //update stamina bar UI
+    //         Staminabar.fillAmount = curStamina / maxStamina;
+    //         yield return new WaitForSeconds(0.1f);
+    //     }
+    // }
 }

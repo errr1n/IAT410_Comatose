@@ -19955,11 +19955,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curImmunity: 0
-  maxImmunity: 3
+  maxImmunity: 1
   immunityBar: {fileID: 766350376}
-  immunityTimer: 3
   powerUp: 0
   qPrompt: {fileID: 897659647}
+  decreaseRate: 2
 --- !u!4 &1763842985
 Transform:
   m_ObjectHideFlags: 0
