@@ -6,8 +6,6 @@ public class BossAINavPath : MonoBehaviour
 {
     
 
-    [SerializeField]  int numberOfProjectiles = 3;
-    [SerializeField]  float projectileSpread = 10;
     public UnityEngine.AI.NavMeshAgent agent;
     public Transform player, spawnPoint;
     public LayerMask isGround, isPlayer;
@@ -21,7 +19,7 @@ public class BossAINavPath : MonoBehaviour
     public float walkPointRange;
 
     //attacking
-    public float timeBetweenAttacks;
+    [SerializeField] float timeBetweenAttacks;
   
     bool alreadyAttacked;
 
@@ -35,6 +33,7 @@ public class BossAINavPath : MonoBehaviour
     {
         player = GameObject.Find("PlayerArmature").transform;
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        
     }
 
     private void Patrolling()
@@ -123,7 +122,15 @@ public class BossAINavPath : MonoBehaviour
    {
         health -= damage;
 
+        //if health reaches half - increase the boss attack speed
+        
+
         if(health<=0 ) Invoke(nameof(DestroyEnemy), 3f);
+   }
+
+   public void IncreaseFireSpeed()
+   {
+        timeBetweenAttacks = 1f;
    }
 
    public void DestroyEnemy(){

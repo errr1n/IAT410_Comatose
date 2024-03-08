@@ -41,6 +41,12 @@ public class Enemy : MonoBehaviour
         if(curHealth <=0){
             EnemyDeath();
         }
+
+        if(curHealth <= maxHealth/2)
+        {
+            this.GetComponent<BossAINavPath>().IncreaseFireSpeed();
+            Debug.Log("fire increased");
+        }
         
     }
 
