@@ -85,20 +85,28 @@ public class BossAINavPath : MonoBehaviour
              
             GameObject bullet = Instantiate(projectile, transform.position, transform.rotation) as GameObject;
             Rigidbody rb = bullet.GetComponent<Rigidbody>();
-              rb.AddForce(transform.forward *32f, ForceMode.Impulse);
+            rb.AddForce(transform.forward *32f, ForceMode.Impulse);
             rb.AddForce(transform.up *5f, ForceMode.Impulse);
             
 
+
             //creating second bullet at different rotation 
-            GameObject bullet2 = Instantiate(projectile, transform.position, transform.rotation*Quaternion.Euler(0,10,0)) as GameObject;
+            GameObject bullet2 = Instantiate(projectile, transform.position, transform.rotation) as GameObject;
             Rigidbody rb2 = bullet2.GetComponent<Rigidbody>();
             rb2.AddForce(transform.forward *32f, ForceMode.Impulse);
-            rb2.AddForce(transform.right *3f, ForceMode.Impulse);
+            rb2.AddForce(transform.right *3, ForceMode.Impulse);
             rb2.AddForce(transform.up *5f, ForceMode.Impulse);
 
+          
 
             //create third bullet at different rotation here
-            
+            GameObject bullet3 = Instantiate(projectile,transform.position, transform.rotation) as GameObject;
+            Rigidbody rb3 = bullet3.GetComponent<Rigidbody>();
+            rb3.AddForce(transform.forward *35f, ForceMode.Impulse);
+            rb3.AddForce(transform.up *5f, ForceMode.Impulse);
+            rb3.AddForce(-transform.right *3f, ForceMode.Impulse);
+
+
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         } 
