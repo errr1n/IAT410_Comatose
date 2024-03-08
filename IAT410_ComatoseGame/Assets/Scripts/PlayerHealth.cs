@@ -14,9 +14,19 @@ public class PlayerHealth : MonoBehaviour
     void Awake()
     {
         curHealth = maxHealth;
-        healthBar.value = curHealth;
+        // Debug.Log("HERE");
+        // healthBar.value = curHealth;
         healthBar.maxValue = maxHealth;
 
+        healthBar.value = curHealth;
+
+    }
+
+    void Start()
+    {
+        // curHealth = maxHealth;
+        // healthBar.value = curHealth;
+        // healthBar.maxValue = maxHealth;
     }
 
     // Update is called once per frame
