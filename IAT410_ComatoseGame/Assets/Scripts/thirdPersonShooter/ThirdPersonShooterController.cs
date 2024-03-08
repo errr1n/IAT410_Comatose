@@ -196,7 +196,7 @@ public class ThirdPersonShooterController : MonoBehaviour
                 {
                     shotCounter = rateOfFire;
 
-                    Debug.Log("shoot");
+                    // Debug.Log("shoot");
                     // to calculate aim direction, grab mouse position, calculate direction using spawn bullet position
                     Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
                     Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
