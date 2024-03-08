@@ -77,6 +77,7 @@ public class BossAINavPath : MonoBehaviour
         transform.LookAt(player);
 
 
+
         
 
         if(!alreadyAttacked)
@@ -84,7 +85,11 @@ public class BossAINavPath : MonoBehaviour
              
             GameObject bullet = Instantiate(projectile, transform.position, transform.rotation) as GameObject;
             Rigidbody rb = bullet.GetComponent<Rigidbody>();
-            rb.AddForce(rb.transform.forward * 32f);
+            rb.AddForce(rb.transform.forward * 1000f);
+
+            GameObject bullet2 = Instantiate(projectile, transform.position, transform.rotation*Quaternion.Euler(0,90,0)) as GameObject;
+            Rigidbody rb2 = bullet2.GetComponent<Rigidbody>();
+            rb2.AddForce(rb2.transform.forward * 1000f);
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         } 
