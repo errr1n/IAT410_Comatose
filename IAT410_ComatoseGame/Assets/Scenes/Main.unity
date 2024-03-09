@@ -5894,7 +5894,7 @@ PrefabInstance:
     - target: {fileID: 3629105517698018535, guid: 54e948472b7c99e489910a1ead3ab70c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -195.67963
+      value: -200.32
       objectReference: {fileID: 0}
     - target: {fileID: 3629105517698018535, guid: 54e948472b7c99e489910a1ead3ab70c,
         type: 3}
@@ -10857,6 +10857,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TEXT-Trigger
       objectReference: {fileID: 0}
+    - target: {fileID: 1398963840845856661, guid: 531f0be70cadee640bacda11b6f95153,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12610,7 +12615,7 @@ PrefabInstance:
     - target: {fileID: 145400245388505921, guid: 531f0be70cadee640bacda11b6f95153,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -728.16003
+      value: -732
       objectReference: {fileID: 0}
     - target: {fileID: 145400245388505921, guid: 531f0be70cadee640bacda11b6f95153,
         type: 3}
@@ -12676,6 +12681,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: 'TEXT-Trigger '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1398963840845856661, guid: 531f0be70cadee640bacda11b6f95153,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
