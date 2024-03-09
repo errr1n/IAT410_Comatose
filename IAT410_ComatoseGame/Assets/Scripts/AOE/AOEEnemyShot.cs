@@ -89,12 +89,12 @@ public class AOEEnemyShot : MonoBehaviour
             //if their is an AOETarget script attached to object
             if(c.GetComponent<AOETarget>())
             {
-            //apply the burn method to the object with the AOETarget script
-            c.GetComponent<AOETarget>().ApplyBurn(4);
+                //apply the burn method to the object with the AOETarget script
+                c.GetComponent<AOETarget>().CanBurn();
 
-            // Debug.Log("Start Check");
-            // c.GetComponent<AOETarget>().StartCheck();
-            // c.GetComponent<AOETarget>().Test();
+                // Debug.Log("Start Check");
+                // c.GetComponent<AOETarget>().StartCheck();
+                // c.GetComponent<AOETarget>().Test();
             }
         }
     }

@@ -5,9 +5,11 @@ using UnityEngine;
 public class AOETarget : MonoBehaviour
 {
     //access health script
-    private Health healthScript;
+    // private Health healthScript;
     //access player health script
     private PlayerHealth playerhealth;
+
+    public bool canBurn;
 
     //list to countdown # of ticks of damage
     public List<int> burnTickTimers = new List<int>();
@@ -15,8 +17,19 @@ public class AOETarget : MonoBehaviour
     void Start()
     {
         //get health component (so it get be lowered on tick)
-        healthScript = GetComponent<Health>();
+        // healthScript = GetComponent<Health>();
         playerhealth = GetComponent<PlayerHealth>();
+
+        canBurn = false;
+    }
+
+    void Update()
+    {
+        // if(canBurn = true)
+        // {
+            // ApplyBurn(4);
+            CheckIfBurnable();
+        // }
     }
 
     //apply burn for specified number of ticks
@@ -42,6 +55,35 @@ public class AOETarget : MonoBehaviour
     //coroutine to wait a few seconds (optional, but good to give the player time to relax)
     //do sphere check (needs to be a constant check to make sure they're still within sphere range)
     //then apply damage (aka ApplyBurn;) (although looking at it now, may not need to be in a list with a countdown if it's constantly checking in within sphere, damage can just be done in the same code)
+
+    private void CheckIfBurnable()
+    {
+        if(canBurn = true)
+        {
+        //creates a list of colliders and creates a 4m overlap sphere (sphere collider)
+        Collider[] colliders = Physics.OverlapSphere(transform.position, 4f);
+        foreach(Collider c in colliders)
+        {
+            //if their is an AOETarget script attached to object
+            if(c.GetComponent<AOETarget>())
+            {
+            //apply the burn method to the object with the AOETarget script
+            c.GetComponent<AOETarget>().ApplyBurn(4);
+            // Debug.Log("apply burn 1");
+
+            // Debug.Log("Start Check");
+            // c.GetComponent<AOETarget>().StartCheck();
+            // c.GetComponent<AOETarget>().Test();
+            }
+        }
+        }
+        canBurn = false;
+    }
+
+    public void CanBurn()
+    {
+        canBurn = true;
+    }
 
     // burn coroutine (timer)
     private IEnumerator Burn()
