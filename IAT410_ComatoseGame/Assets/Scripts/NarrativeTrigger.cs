@@ -46,7 +46,7 @@ public class NarrativeTrigger : MonoBehaviour
 //checks if player entered the naarrative prompt thing - CHANGE TO ON COLLISION ENTER LATER ?
     private void OnTriggerEnter(Collider other){
         
-        if(other.CompareTag("NarrativeObj"))
+        if(other.CompareTag("Player"))
         {
             Debug.Log("narrative available");
             //narrativeObj = other.gameObject;
@@ -56,12 +56,11 @@ public class NarrativeTrigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.CompareTag("NarrativeObj"))
+        if(other.CompareTag("Player"))
         {
             isInteracting = false;
             dialogueText.enabled = false;
         }
     }
-  
- 
+    
 }
