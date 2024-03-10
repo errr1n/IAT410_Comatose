@@ -42,10 +42,13 @@ public class Enemy : MonoBehaviour
             EnemyDeath();
         }
 
-        if(curHealth <= maxHealth/2)
+        if(this.gameObject.name == "Boss")
         {
-            this.GetComponent<BossAINavPath>().IncreaseFireSpeed();
-            Debug.Log("fire increased");
+            if(curHealth <= maxHealth/2)
+            {
+                this.GetComponent<BossAINavPath>().IncreaseFireSpeed();
+                Debug.Log("fire increased");
+            }
         }
         
     }
