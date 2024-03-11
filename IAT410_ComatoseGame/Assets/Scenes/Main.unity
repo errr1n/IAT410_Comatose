@@ -14476,6 +14476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   narrativeObj: {fileID: 0}
+  hasInteracted: 0
   dialogueText: {fileID: 469982420}
   interactText: {fileID: 1616309619}
 --- !u!1 &1130299693
@@ -15820,6 +15821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   narrativeObj: {fileID: 0}
+  hasInteracted: 0
   dialogueText: {fileID: 1581862965}
   interactText: {fileID: 94423191}
 --- !u!65 &1242580218
@@ -17101,7 +17103,7 @@ PrefabInstance:
     - target: {fileID: 974238578668270715, guid: c708a3b79cd542b42bbfedb17e213bc1,
         type: 3}
       propertyPath: SprintSpeed
-      value: 13
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 974238578668270715, guid: c708a3b79cd542b42bbfedb17e213bc1,
         type: 3}
@@ -19140,6 +19142,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1780385099}
+    - targetCorrespondingSourceObject: {fileID: 974238578668270704, guid: c708a3b79cd542b42bbfedb17e213bc1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1780385106}
   m_SourcePrefab: {fileID: 100100000, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
 --- !u!4 &1327794860 stripped
 Transform:
@@ -25825,6 +25831,22 @@ MonoBehaviour:
   p3: {fileID: 703373048}
   p4: {fileID: 618175172}
   speed: 2
+--- !u!114 &1780385106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780385027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33dcf8315d50f1946b4e658bbef26475, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxProgress: 100
+  curProgress: 0
+  progressSlider: {fileID: 183659772}
+  bear: {fileID: 2048505657}
 --- !u!1 &1784748855 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5052f3e19152cba45a45f528cd0a9120,
@@ -28209,6 +28231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   narrativeObj: {fileID: 0}
+  hasInteracted: 0
   dialogueText: {fileID: 2128888694}
   interactText: {fileID: 1473911317}
 --- !u!135 &2048505662
@@ -30033,6 +30056,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   narrativeObj: {fileID: 0}
+  hasInteracted: 0
   dialogueText: {fileID: 71587443}
   interactText: {fileID: 0}
 --- !u!1001 &3544450332212523479

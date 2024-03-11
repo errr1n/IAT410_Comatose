@@ -8,6 +8,9 @@ public class NarrativeTrigger : MonoBehaviour
 
     public GameObject narrativeObj;
     private bool isInteracting;
+    public bool hasInteracted;
+
+    private int counter;
 
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private TMP_Text interactText;
@@ -17,15 +20,13 @@ public class NarrativeTrigger : MonoBehaviour
         //starts with no dialogue text (hidden)
         dialogueText.enabled = false;
         interactText.enabled = false;
+        counter =0; //resetting counter
     }
 
     // // Update is called once per frame
     void Update()
     {
-        // if(Input.GetKeyUp(KeyCode.I)) 
-        // {
-        //     deliverNarrative();
-        // }
+       
         if( isInteracting && Input.GetKeyDown(KeyCode.I))
         {
             Debug.Log("discovered new narrative...");
@@ -35,8 +36,10 @@ public class NarrativeTrigger : MonoBehaviour
             //display the dialogue text
             interactText.enabled =false;
             dialogueText.enabled = true;
-            
-            
+            counter +=1;
+            if(counter <=1){
+                hasInteracted = true;
+            }
         }
     }
 
@@ -50,11 +53,15 @@ public class NarrativeTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other){
         
         if(other.CompareTag("Player"))
-        {
+        {   
+            //has interacted once so add 1 to counter 
+            
             interactText.enabled = true;
             Debug.Log("narrative available");
             //narrativeObj = other.gameObject;
             isInteracting = true;
+
+            
         }
     }
 
@@ -65,6 +72,7 @@ public class NarrativeTrigger : MonoBehaviour
             isInteracting = false;
             interactText.enabled =false;
             dialogueText.enabled = false;
+            
         }
     }
     
