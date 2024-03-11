@@ -955,6 +955,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7743764937236812371, guid: 54e948472b7c99e489910a1ead3ab70c,
         type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1780385027}
+    - target: {fileID: 7743764937236812371, guid: 54e948472b7c99e489910a1ead3ab70c,
+        type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 272559673}
@@ -2637,6 +2642,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7743764937236812371, guid: 54e948472b7c99e489910a1ead3ab70c,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1780385027}
     - target: {fileID: 7743764937236812371, guid: 54e948472b7c99e489910a1ead3ab70c,
         type: 3}
       propertyPath: healthBar
@@ -4733,6 +4743,11 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7743764937236812371, guid: 54e948472b7c99e489910a1ead3ab70c,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1780385027}
     - target: {fileID: 7743764937236812371, guid: 54e948472b7c99e489910a1ead3ab70c,
         type: 3}
       propertyPath: healthBar
@@ -9745,6 +9760,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7743764937236812371, guid: 54e948472b7c99e489910a1ead3ab70c,
         type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1780385027}
+    - target: {fileID: 7743764937236812371, guid: 54e948472b7c99e489910a1ead3ab70c,
+        type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1776343484}
@@ -9861,6 +9881,11 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7743764937236812371, guid: 54e948472b7c99e489910a1ead3ab70c,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1780385027}
     - target: {fileID: 7743764937236812371, guid: 54e948472b7c99e489910a1ead3ab70c,
         type: 3}
       propertyPath: healthBar
@@ -11768,6 +11793,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7743764937236812371, guid: 54e948472b7c99e489910a1ead3ab70c,
         type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1780385027}
+    - target: {fileID: 7743764937236812371, guid: 54e948472b7c99e489910a1ead3ab70c,
+        type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1864379252}
@@ -12733,8 +12763,9 @@ MonoBehaviour:
   curHealth: 0
   healthPack: {fileID: 7619348863140790331, guid: d5fbd6ab3d22a5e48a974d770eb47176,
     type: 3}
+  player: {fileID: 1780385027}
   healthBar: {fileID: 788151883}
-  pickupSpawnPercentage: 25
+  pickupSpawnPercentage: 100
 --- !u!4 &1012308848 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3629105517698018535, guid: 54e948472b7c99e489910a1ead3ab70c,
@@ -15097,6 +15128,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7743764937236812371, guid: 54e948472b7c99e489910a1ead3ab70c,
         type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1780385027}
+    - target: {fileID: 7743764937236812371, guid: 54e948472b7c99e489910a1ead3ab70c,
+        type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1568612452}
@@ -15590,6 +15626,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7743764937236812371, guid: 54e948472b7c99e489910a1ead3ab70c,
         type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1780385027}
+    - target: {fileID: 7743764937236812371, guid: 54e948472b7c99e489910a1ead3ab70c,
+        type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1444156661}
@@ -15967,6 +16008,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7743764937236812371, guid: 54e948472b7c99e489910a1ead3ab70c,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1780385027}
     - target: {fileID: 7743764937236812371, guid: 54e948472b7c99e489910a1ead3ab70c,
         type: 3}
       propertyPath: healthBar
@@ -16507,7 +16553,7 @@ PrefabInstance:
     - target: {fileID: 974238578668270715, guid: c708a3b79cd542b42bbfedb17e213bc1,
         type: 3}
       propertyPath: SprintSpeed
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 974238578668270715, guid: c708a3b79cd542b42bbfedb17e213bc1,
         type: 3}
@@ -19669,6 +19715,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7743764937236812371, guid: 54e948472b7c99e489910a1ead3ab70c,
         type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1780385027}
+    - target: {fileID: 7743764937236812371, guid: 54e948472b7c99e489910a1ead3ab70c,
+        type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 2035591933}
@@ -20039,6 +20090,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7743764937236812371, guid: 54e948472b7c99e489910a1ead3ab70c,
         type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1780385027}
+    - target: {fileID: 7743764937236812371, guid: 54e948472b7c99e489910a1ead3ab70c,
+        type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 2022003811}
@@ -20326,6 +20382,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7743764937236812371, guid: 54e948472b7c99e489910a1ead3ab70c,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1780385027}
     - target: {fileID: 7743764937236812371, guid: 54e948472b7c99e489910a1ead3ab70c,
         type: 3}
       propertyPath: healthBar
@@ -20885,6 +20946,11 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7743764937236812371, guid: 54e948472b7c99e489910a1ead3ab70c,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1780385027}
     - target: {fileID: 7743764937236812371, guid: 54e948472b7c99e489910a1ead3ab70c,
         type: 3}
       propertyPath: healthBar
@@ -22406,6 +22472,7 @@ MonoBehaviour:
   maxHealth: 0
   curHealth: 0
   healthPack: {fileID: 0}
+  player: {fileID: 0}
   healthBar: {fileID: 0}
   pickupSpawnPercentage: 0
 --- !u!1001 &1611343440
@@ -22708,6 +22775,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7743764937236812371, guid: 54e948472b7c99e489910a1ead3ab70c,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1780385027}
     - target: {fileID: 7743764937236812371, guid: 54e948472b7c99e489910a1ead3ab70c,
         type: 3}
       propertyPath: healthBar
@@ -24391,6 +24463,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7743764937236812371, guid: 54e948472b7c99e489910a1ead3ab70c,
         type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1780385027}
+    - target: {fileID: 7743764937236812371, guid: 54e948472b7c99e489910a1ead3ab70c,
+        type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 2117571033}
@@ -25909,6 +25986,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7743764937236812371, guid: 54e948472b7c99e489910a1ead3ab70c,
         type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1780385027}
+    - target: {fileID: 7743764937236812371, guid: 54e948472b7c99e489910a1ead3ab70c,
+        type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 48628335}
@@ -26143,6 +26225,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7743764937236812371, guid: 54e948472b7c99e489910a1ead3ab70c,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1780385027}
     - target: {fileID: 7743764937236812371, guid: 54e948472b7c99e489910a1ead3ab70c,
         type: 3}
       propertyPath: healthBar
@@ -28297,6 +28384,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7743764937236812371, guid: 54e948472b7c99e489910a1ead3ab70c,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1780385027}
     - target: {fileID: 7743764937236812371, guid: 54e948472b7c99e489910a1ead3ab70c,
         type: 3}
       propertyPath: healthBar

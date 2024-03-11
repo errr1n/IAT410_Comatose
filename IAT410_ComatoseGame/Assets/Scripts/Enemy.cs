@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
     public float health, maxHealth, curHealth;
-    public GameObject healthPack;
+    public GameObject healthPack, player;
     public Slider healthBar;
 
     public int pickupSpawnPercentage;
@@ -25,6 +25,7 @@ public class Enemy : MonoBehaviour
 
         //access immunity bar script from gameobject KCO
         immunityBar = GameObject.Find("KCO").GetComponent<ImmunityBar>();
+        
     }
     void Awake()
     {
@@ -38,17 +39,26 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         
-        if(curHealth <=0){
-            EnemyDeath();
-        }
+       
 
         if(this.gameObject.name == "Boss")
         {
             if(curHealth <= maxHealth/2)
             {
+                
                 this.GetComponent<BossAINavPath>().IncreaseFireSpeed();
+                
                 Debug.Log("fire increased");
+            } 
+            if(curHealth <=0)
+            {
+                player.GetComponent<PlayerHealth>().upgradeHealth(10);
+                EnemyDeath();
             }
+        } else {
+            if(curHealth <=0){
+                EnemyDeath();
+                    }
         }
         
     }
@@ -94,8 +104,14 @@ public class Enemy : MonoBehaviour
     //on enemy death
     private void EnemyDeath()
     {
-        //destroy enemy
+        //if its boss defeated - add to player maxHealth
+       
+            //destroy enemy
         Destroy(gameObject);
+        
+        
+
+        
 
         //call addkill from immunity bar script
         immunityBar.AddKill();

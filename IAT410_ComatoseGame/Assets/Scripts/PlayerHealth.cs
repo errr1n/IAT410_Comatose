@@ -90,5 +90,11 @@ public class PlayerHealth : MonoBehaviour
     public float checkHealth(){
         return curHealth;
     }
+
+    public void upgradeHealth(float health)
+    {
+        maxHealth += health;
+        Debug.Log(maxHealth);
+    }
  
 }
