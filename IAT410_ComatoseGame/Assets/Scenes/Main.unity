@@ -2641,9 +2641,9 @@ RectTransform:
   - {fileID: 370631492}
   m_Father: {fileID: 68072008}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -369, y: 334}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 185, y: -36}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &183659772
@@ -3747,7 +3747,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4644b5b894cd77f4b96e731454ebfbe9,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 273718739}
+      addedObject: {fileID: 273718740}
   m_SourcePrefab: {fileID: 100100000, guid: 4644b5b894cd77f4b96e731454ebfbe9, type: 3}
 --- !u!1 &273718735 stripped
 GameObject:
@@ -3799,33 +3799,19 @@ CapsuleCollider:
   m_Height: 0.09564543
   m_Direction: 1
   m_Center: {x: 0.014560182, y: -0.00981554, z: -0.004156355}
---- !u!54 &273718739
-Rigidbody:
+--- !u!114 &273718740
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 273718735}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 701cc34ac6d9a4f45a7f24039b2d93ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
 --- !u!1 &283138798
 GameObject:
   m_ObjectHideFlags: 0
@@ -25910,6 +25896,7 @@ MonoBehaviour:
   shelf: {fileID: 1098519440}
   bed: {fileID: 1242580216}
   boss: {fileID: 1003673621}
+  infection: {fileID: 273718735}
   progressText: {fileID: 370631493}
 --- !u!1 &1784748855 stripped
 GameObject:
