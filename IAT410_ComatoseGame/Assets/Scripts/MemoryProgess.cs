@@ -12,7 +12,7 @@ public class MemoryProgess : MonoBehaviour
 
     public Slider progressSlider;
     
-    public GameObject bear, shelf, bed, boss;
+    public GameObject bear, shelf, bed, boss, infection;
     private bool test;
 
     private bool bearInteracted, shelfInteracted, bedInteracted, bossInteracted, infectionDead;
@@ -65,6 +65,11 @@ public class MemoryProgess : MonoBehaviour
        {
             addProgress();
             bossInteracted = true;
+       }
+       if(infection == null && infectionDead == false) 
+       {
+            addProgress();
+            infectionDead = true;
        }
 
     }
