@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
 
     public int pickupSpawnPercentage;
 
+    public bool bossDead;
     ImmunityBar immunityBar;
    
     // Start is called before the first frame update
@@ -53,6 +54,7 @@ public class Enemy : MonoBehaviour
             if(curHealth <=0)
             {
                 player.GetComponent<PlayerHealth>().upgradeHealth(10);
+                bossDead = true;
                 EnemyDeath();
             }
         } else {

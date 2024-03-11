@@ -13105,6 +13105,7 @@ MonoBehaviour:
   player: {fileID: 1780385027}
   healthBar: {fileID: 788151883}
   pickupSpawnPercentage: 100
+  bossDead: 0
 --- !u!4 &1012308848 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3629105517698018535, guid: 54e948472b7c99e489910a1ead3ab70c,
@@ -23029,6 +23030,7 @@ MonoBehaviour:
   player: {fileID: 0}
   healthBar: {fileID: 0}
   pickupSpawnPercentage: 0
+  bossDead: 0
 --- !u!1001 &1611343440
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25847,6 +25849,10 @@ MonoBehaviour:
   curProgress: 0
   progressSlider: {fileID: 183659772}
   bear: {fileID: 2048505657}
+  shelf: {fileID: 1098519440}
+  bed: {fileID: 1242580216}
+  boss: {fileID: 1003673621}
+  progressText: {fileID: 370631493}
 --- !u!1 &1784748855 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5052f3e19152cba45a45f528cd0a9120,

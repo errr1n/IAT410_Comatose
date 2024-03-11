@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class MemoryProgess : MonoBehaviour
 {
@@ -11,10 +12,13 @@ public class MemoryProgess : MonoBehaviour
 
     public Slider progressSlider;
     
-    public GameObject bear, shelf, bed;
+    public GameObject bear, shelf, bed, boss;
     private bool test;
 
-    private bool bearInteracted, shelfInteracted, bedInteracted;
+    private bool bearInteracted, shelfInteracted, bedInteracted, bossInteracted, infectionDead;
+
+    
+    [SerializeField] private TMP_Text progressText;
     void Awake()
     {
         //counter =0;
@@ -25,6 +29,10 @@ public class MemoryProgess : MonoBehaviour
         bearInteracted = false;
         shelfInteracted = false;
         bedInteracted = false;
+        bossInteracted = false;
+        infectionDead = false;
+
+        progressText.text = "0%";
     }
    
     
@@ -33,9 +41,7 @@ public class MemoryProgess : MonoBehaviour
     void Update()
     {
         //need to check for each item
-        
-        //check if bear interacted with 
-        //test =bear.GetComponent<NarrativeTrigger>().hasInteracted;
+    
         if(bear.GetComponent<NarrativeTrigger>().hasInteracted && bearInteracted == false) {
             
             addProgress();
@@ -55,7 +61,11 @@ public class MemoryProgess : MonoBehaviour
 
         } 
         
-       
+       if(boss == null && bossInteracted == false)  
+       {
+            addProgress();
+            bossInteracted = true;
+       }
 
     }
 
@@ -66,5 +76,8 @@ public class MemoryProgess : MonoBehaviour
         curProgress += 20;
         progressSlider.value = curProgress;
         Debug.Log(curProgress);
+
+        //update text at some point to reflect percent
+        progressText.text = curProgress + "%";
     }
 }
