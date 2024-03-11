@@ -10,11 +10,13 @@ public class NarrativeTrigger : MonoBehaviour
     private bool isInteracting;
 
     [SerializeField] private TMP_Text dialogueText;
+    [SerializeField] private TMP_Text interactText;
     // Start is called before the first frame update
     void Start()
     {
         //starts with no dialogue text (hidden)
         dialogueText.enabled = false;
+        interactText.enabled = false;
     }
 
     // // Update is called once per frame
@@ -31,8 +33,9 @@ public class NarrativeTrigger : MonoBehaviour
             //update the text field here 
 
             //display the dialogue text
-            dialogueText.text = "narrative 1";
+            interactText.enabled =false;
             dialogueText.enabled = true;
+            
             
         }
     }
@@ -48,6 +51,7 @@ public class NarrativeTrigger : MonoBehaviour
         
         if(other.CompareTag("Player"))
         {
+            interactText.enabled = true;
             Debug.Log("narrative available");
             //narrativeObj = other.gameObject;
             isInteracting = true;
@@ -59,6 +63,7 @@ public class NarrativeTrigger : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             isInteracting = false;
+            interactText.enabled =false;
             dialogueText.enabled = false;
         }
     }
