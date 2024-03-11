@@ -224,9 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b7f64cb288bdc4698558e70ae01afa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 80
-  poisonParticle: {fileID: 4463510546404029593, guid: 79518669101f13e428182b91377a88c3,
-    type: 3}
+  bulletSpeed: 90
 --- !u!96 &5694137362978227883
 TrailRenderer:
   serializedVersion: 3
