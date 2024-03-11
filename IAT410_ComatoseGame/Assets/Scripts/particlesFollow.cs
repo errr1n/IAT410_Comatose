@@ -26,10 +26,10 @@ public class particlesFollow : MonoBehaviour
     {
        // Instantiate(particleEffect, player.transform);
         //particleEffect.transform.SetParent(target.transform);
-        p1.transform.parent = target.transform;
-        p2.transform.parent = target.transform;
-        p3.transform.parent = target.transform;
-        p4.transform.parent = target.transform;
+        // p1.transform.parent = target.transform;
+        // p2.transform.parent = target.transform;
+        // p3.transform.parent = target.transform;
+        // p4.transform.parent = target.transform;
         // particleEffect.transform.localScale = new Vector3(0.09f,0.09f,0.09f);
         // particleEffect.transform.localPosition = new Vector3(0f,0f,0f);
         
