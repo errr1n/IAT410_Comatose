@@ -120,3 +120,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIObject: {fileID: 0}
   trigger: {fileID: 1398963840845856661}
+  delay: 10
