@@ -35,8 +35,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4045803367320238951}
   - {fileID: 3956288075481489676}
+  - {fileID: 4045803367320238951}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6564201987960762310
@@ -182,8 +182,10 @@ MonoBehaviour:
   curHealth: 0
   healthPack: {fileID: 7619348863140790331, guid: d5fbd6ab3d22a5e48a974d770eb47176,
     type: 3}
+  player: {fileID: 0}
   healthBar: {fileID: 0}
   pickupSpawnPercentage: 25
+  bossDead: 0
 --- !u!1 &7905662324005664404
 GameObject:
   m_ObjectHideFlags: 0
