@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour
 
     public bool bossDead;
     ImmunityBar immunityBar;
+
+  
    
     // Start is called before the first frame update
     // void Start()
@@ -41,7 +43,7 @@ public class Enemy : MonoBehaviour
     {
         
        
-
+        //checks if the enmy is of type boss
         if(this.gameObject.name == "Boss")
         {
             if(curHealth <= maxHealth/2)
@@ -56,6 +58,8 @@ public class Enemy : MonoBehaviour
                 player.GetComponent<PlayerHealth>().upgradeHealth(10);
                 bossDead = true;
                 EnemyDeath();
+
+               
             }
         } else {
             if(curHealth <=0){
