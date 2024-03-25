@@ -1,19 +1,9 @@
 fileFormatVersion: 2
-guid: 1682e996b1788844bbe20494a629e6e8
+guid: 33dd3f0cb0ba0c048916d7b037779dea
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Ferris_Cart
-    second: {fileID: 2100000, guid: 00f9cb4b3562a0547993ab9cef822746, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: aiStandardSurface4
-    second: {fileID: 2100000, guid: 920a77aa386bf9f449e0d3fc6a784698, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
