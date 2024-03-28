@@ -120,8 +120,10 @@ public class BossAINavPath : MonoBehaviour
    
    public void TakeDamage(int damage)
    {
-        health -= damage;
 
+        health -= damage;
+        
+        
         //if health reaches half - increase the boss attack speed
         
 
