@@ -7,6 +7,7 @@ public class InfectionBlob : MonoBehaviour
     // Start is called before the first frame update
     
     [SerializeField] private int health;
+    
 
     void Awake()
     {
@@ -25,6 +26,10 @@ public class InfectionBlob : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision){
         if(collision.gameObject.tag == "PlayerAttack"){
+
+            //check if boss is dead 
+
+            //if boss is dead - player able to destroy the infection 
            
             health-=1;
             Debug.Log("hit infection");

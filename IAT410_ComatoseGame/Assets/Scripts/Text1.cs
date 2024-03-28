@@ -45,6 +45,8 @@ public class Text1 : MonoBehaviour
         }
     }
 
+  
+
     // // coroutine (timer) funtion which takes in temporary variable
     // IEnumerator Delay(float _delay)
     // {
