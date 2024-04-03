@@ -22,11 +22,14 @@ public class Text1 : MonoBehaviour
      [SerializeField] float timeBtwWords;
     public string[] stringArray;
     int i =0;
+    private bool beginPlay;
+
     // by default, the text is not visible
     void Start()
     {
         // sets visibilty of UI text object to false
         UIObject.SetActive(false);
+        beginPlay = false;
       
     }
 
@@ -36,12 +39,17 @@ public class Text1 : MonoBehaviour
         // searches for player tag
         if(other.tag == "Player")
         {
-            // sets visibilty of UI text object to true
-            UIObject.SetActive(true);
+            //checks if player has already activated trigger (will only play animation once)
+            if(beginPlay == false)
+            {
+                beginPlay = true;
+                // sets visibilty of UI text object to true
+                UIObject.SetActive(true);
 
-            // starts coroutine (timer)
-           // StartCoroutine(Delay(delay));
-            EndCheck();
+                // starts coroutine (timer)
+                // StartCoroutine(Delay(delay));
+                EndCheck();
+            }
         }
     }
 
@@ -88,6 +96,7 @@ public class Text1 : MonoBehaviour
             counter += 1;
             yield return new WaitForSeconds(timeBtwChars);
         }
+        // Destroy(trigger);
 
     }
 }
