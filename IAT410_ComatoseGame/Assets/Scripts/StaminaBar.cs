@@ -24,7 +24,7 @@ public class StaminaBar : MonoBehaviour
     public IEnumerator RechargeStamina()
     {
         //wait 1 second
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         //while stamina is not full
         while(curStamina < maxStamina)
         {

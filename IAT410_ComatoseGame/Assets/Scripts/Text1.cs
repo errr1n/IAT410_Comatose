@@ -15,18 +15,21 @@ public class Text1 : MonoBehaviour
     public GameObject trigger;
 
     // adjustable float to change delay of disapearance
-    [SerializeField] float delay = 1f;
+    [SerializeField] float delay = 0f;
 
     [SerializeField] TextMeshProUGUI textMeshPro;
     [SerializeField] float timeBtwChars;
      [SerializeField] float timeBtwWords;
     public string[] stringArray;
     int i =0;
+    private bool beginPlay;
+
     // by default, the text is not visible
     void Start()
     {
         // sets visibilty of UI text object to false
         UIObject.SetActive(false);
+        beginPlay = false;
       
     }
 
@@ -36,27 +39,42 @@ public class Text1 : MonoBehaviour
         // searches for player tag
         if(other.tag == "Player")
         {
-            // sets visibilty of UI text object to true
-            UIObject.SetActive(true);
+            //checks if player has already activated trigger (will only play animation once)
+            if(beginPlay == false)
+            {
+                beginPlay = true;
+                StartCoroutine(Delay(delay));
+                // // sets visibilty of UI text object to true
+                // UIObject.SetActive(true);
 
-            // starts coroutine (timer)
-           // StartCoroutine(Delay(delay));
-            EndCheck();
+                // // starts coroutine (timer)
+                // // StartCoroutine(Delay(delay));
+                // EndCheck();
+            }
         }
     }
 
   
 
-    // // coroutine (timer) funtion which takes in temporary variable
-    // IEnumerator Delay(float _delay)
-    // {
-    //     // coroutine yield and waits for specified number of seconds
-    //     yield return new WaitForSecondsRealtime(_delay);
-    //     // sets visibilty of UI text object to false
-    //     UIObject.SetActive(false);
-    //     // destroys trigger (can only play once)
-    //     Destroy(trigger);
-    // }
+    // coroutine (timer) funtion which takes in temporary variable
+    IEnumerator Delay(float _delay)
+    {
+        // coroutine yield and waits for specified number of seconds
+        yield return new WaitForSecondsRealtime(_delay);
+
+        // sets visibilty of UI text object to true
+        UIObject.SetActive(true);
+
+        // starts coroutine (timer)
+        // StartCoroutine(Delay(delay));
+        EndCheck();
+
+
+        // // sets visibilty of UI text object to false
+        // UIObject.SetActive(false);
+        // // destroys trigger (can only play once)
+        // Destroy(trigger);
+    }
 
     void EndCheck()
     {
@@ -88,6 +106,7 @@ public class Text1 : MonoBehaviour
             counter += 1;
             yield return new WaitForSeconds(timeBtwChars);
         }
+        // Destroy(trigger);
 
     }
 }

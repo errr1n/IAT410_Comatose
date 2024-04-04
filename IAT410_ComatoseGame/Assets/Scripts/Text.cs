@@ -43,7 +43,7 @@ public class Text : MonoBehaviour
         // coroutine yield and waits for specified number of seconds
         yield return new WaitForSecondsRealtime(_delay);
         // sets visibilty of UI text object to false
-        UIObject.SetActive(false);
+        // UIObject.SetActive(false);
         // destroys trigger (can only play once)
         Destroy(trigger);
     }
