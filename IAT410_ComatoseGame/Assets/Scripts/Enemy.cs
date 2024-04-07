@@ -138,7 +138,14 @@ public class Enemy : MonoBehaviour
     //spawn the health pickup
     private void SpawnPickup()
     {
+        // transform.position = new Vector3(0, 0, 0);
+        // print(transform.position.x);
         // here would generate a health pack
+
+        Vector3 temp = transform.position;
+        temp.y = 1;
+        transform.position = temp;
         Instantiate(healthPack, transform.position, Quaternion.identity);
+        // print(transform.position);
     }
 }
