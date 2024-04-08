@@ -12,10 +12,10 @@ public class MemoryProgess : MonoBehaviour
 
     public Slider progressSlider;
     
-    public GameObject bear, shelf, bed, boss, infection;
+    public GameObject bear, shelf, bed, boss, infection, carousel, ferris, carnivalBoss, infection2;
     private bool test;
 
-    private bool bearInteracted, shelfInteracted, bedInteracted, bossInteracted, infectionDead;
+    private bool bearInteracted, shelfInteracted, bedInteracted, bossInteracted, infectionDead, carouselInteracted, ferrisInteracted, carnivalBossInteracted, infection2Dead;
 
     
     [SerializeField] private TMP_Text progressText;
@@ -70,6 +70,30 @@ public class MemoryProgess : MonoBehaviour
        {
             addProgress();
             infectionDead = true;
+       }
+
+       if(carousel.GetComponent<NarrativeTrigger>().hasInteracted && carouselInteracted == false) 
+       {
+            addProgress();
+            carouselInteracted = true;
+       }
+
+       if(ferris.GetComponent<NarrativeTrigger>().hasInteracted && ferrisInteracted == false) {
+            
+            addProgress();
+            ferrisInteracted = true;
+
+        } 
+
+        if(carnivalBoss == null && carnivalBossInteracted == false)  
+       {
+            addProgress();
+            carnivalBossInteracted = true;
+       }
+       if(infection2 == null && infection2Dead == false) 
+       {
+            addProgress();
+            infection2Dead = true;
        }
 
     }
