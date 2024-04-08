@@ -806,9 +806,9 @@ PrefabInstance:
     - target: {fileID: 3376194376173419109, guid: 62fd27073a48a5e4196019a82322c8bb,
         type: 3}
       propertyPath: m_text
-      value: I was always afraid of the dark... my sister understood... she snuck
-        in books and read to me at night. hours spent under the covers dreaming up
-        worlds..
+      value: But reading was the only thing that helped. I was always afraid of the
+        dark.. my sister understood and used to sneak in books to read to me at night.
+        We spent hours under the covers dreaming up worlds..
       objectReference: {fileID: 0}
     - target: {fileID: 3376194376173419109, guid: 62fd27073a48a5e4196019a82322c8bb,
         type: 3}
@@ -933,7 +933,7 @@ PrefabInstance:
     - target: {fileID: 7866319333008194202, guid: 62fd27073a48a5e4196019a82322c8bb,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -24.71
+      value: -22.97
       objectReference: {fileID: 0}
     - target: {fileID: 7866319333008194202, guid: 62fd27073a48a5e4196019a82322c8bb,
         type: 3}
@@ -3264,7 +3264,7 @@ PrefabInstance:
     - target: {fileID: 1507636620937791777, guid: 7097ba7ba649e1f41bba232312bdcbd8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.241789
+      value: 19.5
       objectReference: {fileID: 0}
     - target: {fileID: 1507636620937791777, guid: 7097ba7ba649e1f41bba232312bdcbd8,
         type: 3}
@@ -11152,12 +11152,12 @@ PrefabInstance:
     - target: {fileID: 145400245388505921, guid: 531f0be70cadee640bacda11b6f95153,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.76
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 145400245388505921, guid: 531f0be70cadee640bacda11b6f95153,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 49.5
+      value: 47
       objectReference: {fileID: 0}
     - target: {fileID: 145400245388505921, guid: 531f0be70cadee640bacda11b6f95153,
         type: 3}
@@ -11254,7 +11254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIObject: {fileID: 1302894089}
   trigger: {fileID: 394694545}
-  delay: 7
+  delay: 0
   textMeshPro: {fileID: 1302894088}
   timeBtwChars: 0.025
   timeBtwWords: 1
@@ -11914,7 +11914,7 @@ PrefabInstance:
       propertyPath: m_text
       value: "When I started getting nightmares, my parents blamed it on the books
         I was reading.  I had too much of an imagination and it wasn\u2019t right
-        for a sick child... something about too much exertion."
+        for a sick child..."
       objectReference: {fileID: 0}
     - target: {fileID: 3376194376173419109, guid: 62fd27073a48a5e4196019a82322c8bb,
         type: 3}
@@ -18857,8 +18857,9 @@ MonoBehaviour:
   timeBtwChars: 0.025
   timeBtwWords: 1
   stringArray:
-  - I was always afraid of the dark... my sister understood... she snuck in books
-    and read to me at night. hours spent under the covers dreaming up worlds..
+  - But reading was the only thing that helped. I was always afraid of the dark..
+    my sister understood and used to sneak in books to read to me at night. We spent
+    hours under the covers dreaming up worlds..
 --- !u!1 &703373048 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3417891276664287206, guid: 4c4c863e54743424895fc63221cbb74c,
@@ -33611,7 +33612,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIObject: {fileID: 40991961}
   trigger: {fileID: 1181799681}
-  delay: 7
+  delay: 0
   textMeshPro: {fileID: 1968335921}
   timeBtwChars: 0.025
   timeBtwWords: 1
@@ -41531,12 +41532,12 @@ PrefabInstance:
     - target: {fileID: 145400245388505921, guid: 531f0be70cadee640bacda11b6f95153,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 59.12
+      value: 56.15
       objectReference: {fileID: 0}
     - target: {fileID: 145400245388505921, guid: 531f0be70cadee640bacda11b6f95153,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.76
+      value: 19.53
       objectReference: {fileID: 0}
     - target: {fileID: 145400245388505921, guid: 531f0be70cadee640bacda11b6f95153,
         type: 3}
@@ -41638,7 +41639,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIObject: {fileID: 901126068}
   trigger: {fileID: 1388771879}
-  delay: 2
+  delay: 0
   textMeshPro: {fileID: 901126067}
   timeBtwChars: 0.025
   timeBtwWords: 1
@@ -42446,9 +42447,8 @@ MonoBehaviour:
   timeBtwChars: 0.025
   timeBtwWords: 1
   stringArray:
-  - "when i started getting nightmares, my parents blamed it on the books I was reading. 
-    I had too much of an imagination and it wasn\u2019t right for a sick child...something
-    about too much exertion."
+  - "When I started getting nightmares, my parents blamed it on the books I was reading. 
+    I had too much of an imagination and it wasn\u2019t right for a sick child..."
 --- !u!1001 &1427315377
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43882,12 +43882,12 @@ PrefabInstance:
     - target: {fileID: 145400245388505921, guid: 531f0be70cadee640bacda11b6f95153,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.76
+      value: 19.6
       objectReference: {fileID: 0}
     - target: {fileID: 145400245388505921, guid: 531f0be70cadee640bacda11b6f95153,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 23.91
+      value: 21.4
       objectReference: {fileID: 0}
     - target: {fileID: 145400245388505921, guid: 531f0be70cadee640bacda11b6f95153,
         type: 3}
@@ -43984,7 +43984,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIObject: {fileID: 766571742}
   trigger: {fileID: 1471500179}
-  delay: 7
+  delay: 0
   textMeshPro: {fileID: 1071957334}
   timeBtwChars: 0.025
   timeBtwWords: 1
@@ -46928,7 +46928,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIObject: {fileID: 426811023}
   trigger: {fileID: 1573861747}
-  delay: 2
+  delay: 0
   textMeshPro: {fileID: 275693553}
   timeBtwChars: 0.025
   timeBtwWords: 1
@@ -48369,7 +48369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIObject: {fileID: 1992001027}
   trigger: {fileID: 1647126557}
-  delay: 5
+  delay: 0
   textMeshPro: {fileID: 1058747938}
   timeBtwChars: 0.025
   timeBtwWords: 1
@@ -54284,12 +54284,12 @@ PrefabInstance:
     - target: {fileID: 145400245388505921, guid: 531f0be70cadee640bacda11b6f95153,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.76
+      value: 20.3
       objectReference: {fileID: 0}
     - target: {fileID: 145400245388505921, guid: 531f0be70cadee640bacda11b6f95153,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 35.03
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 145400245388505921, guid: 531f0be70cadee640bacda11b6f95153,
         type: 3}
@@ -54386,7 +54386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIObject: {fileID: 1671399849}
   trigger: {fileID: 1847740930}
-  delay: 7
+  delay: 0
   textMeshPro: {fileID: 1671399848}
   timeBtwChars: 0.025
   timeBtwWords: 1
@@ -54639,7 +54639,7 @@ PrefabInstance:
     - target: {fileID: 145400245388505921, guid: 531f0be70cadee640bacda11b6f95153,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.76
+      value: 20.46
       objectReference: {fileID: 0}
     - target: {fileID: 145400245388505921, guid: 531f0be70cadee640bacda11b6f95153,
         type: 3}
@@ -56432,7 +56432,7 @@ PrefabInstance:
     - target: {fileID: 145400245388505921, guid: 531f0be70cadee640bacda11b6f95153,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.76
+      value: 20.58
       objectReference: {fileID: 0}
     - target: {fileID: 145400245388505921, guid: 531f0be70cadee640bacda11b6f95153,
         type: 3}
@@ -56539,12 +56539,12 @@ PrefabInstance:
     - target: {fileID: 145400245388505921, guid: 531f0be70cadee640bacda11b6f95153,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.76
+      value: 20.8
       objectReference: {fileID: 0}
     - target: {fileID: 145400245388505921, guid: 531f0be70cadee640bacda11b6f95153,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12.53
+      value: 7.18
       objectReference: {fileID: 0}
     - target: {fileID: 145400245388505921, guid: 531f0be70cadee640bacda11b6f95153,
         type: 3}
@@ -56641,7 +56641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIObject: {fileID: 1071957335}
   trigger: {fileID: 2066976214}
-  delay: 7
+  delay: 0
   textMeshPro: {fileID: 1071957334}
   timeBtwChars: 0.025
   timeBtwWords: 1
