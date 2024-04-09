@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 1d55440ba55d5dc48bab6261964af0f7,
+    type: 2}
   m_LightingSettings: {fileID: 1505454461}
 --- !u!196 &4
 NavMeshSettings:
@@ -8401,6 +8402,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  boss: {fileID: 0}
+  immuneText: {fileID: 0}
+  sfx: {fileID: 0}
 --- !u!4 &273718741 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4644b5b894cd77f4b96e731454ebfbe9,
@@ -30134,6 +30138,7 @@ MonoBehaviour:
   door1: {fileID: 966956822}
   door2: {fileID: 873313049}
   boss: {fileID: 1003673621}
+  infection: {fileID: 0}
 --- !u!1001 &971073100
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30856,6 +30861,7 @@ MonoBehaviour:
   healthBar: {fileID: 788151883}
   pickupSpawnPercentage: 100
   bossDead: 0
+  enemyHitSFX: {fileID: 0}
 --- !u!1 &1003805718
 GameObject:
   m_ObjectHideFlags: 0
@@ -49103,6 +49109,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  boss: {fileID: 0}
+  immuneText: {fileID: 0}
+  sfx: {fileID: 0}
 --- !u!136 &1557215407
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -51245,6 +51254,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   pickupSpawnPercentage: 0
   bossDead: 0
+  enemyHitSFX: {fileID: 0}
 --- !u!1 &1614607072 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 205ef406482eda143b0fbd1958939522,
@@ -56237,6 +56247,8 @@ MonoBehaviour:
   immunityBulletProjectile: {fileID: 8396177813032939379, guid: 8abdc279743be174c94e29a907574dff,
     type: 3}
   spawnBulletPosition: {fileID: 845760976}
+  audioSource: {fileID: 0}
+  teleportSFX: {fileID: 0}
   crosshair: {fileID: 75434707}
   vfxHitGreen: {fileID: 0}
   vfxHitRed: {fileID: 0}
@@ -56265,6 +56277,8 @@ MonoBehaviour:
   curHealth: 0
   maxHealth: 120
   healthBar: {fileID: 1184707257}
+  player: {fileID: 0}
+  playerHit: {fileID: 0}
 --- !u!114 &1780385071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56355,6 +56369,7 @@ MonoBehaviour:
   ferris: {fileID: 181450093}
   carnivalBoss: {fileID: 90374876}
   infection2: {fileID: 1557215404}
+  IVdrip: {fileID: 0}
   progressText: {fileID: 370631493}
 --- !u!1 &1784748855 stripped
 GameObject:
