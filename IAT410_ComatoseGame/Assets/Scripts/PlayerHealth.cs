@@ -54,6 +54,7 @@ public class PlayerHealth : MonoBehaviour
                 player.GetComponent<StarterAssets.ThirdPersonController>().setMoveSpeed(10);
                 Debug.Log("speed returned");
                 startTime = false;
+                timeLeft = 3.0f;
             }
         }
     }
