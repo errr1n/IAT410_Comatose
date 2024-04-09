@@ -10,16 +10,20 @@ public class AOEEnemyShot : MonoBehaviour
 
     Vector3 bulletPosition;
 
+  
+    
     // Start is called before the first frame update
     void Start()
     {
         DelayDestroy();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         // Invoke(nameof(DestroyShot), 2f);
+        
     }
 
     // private void OnTriggerEnter(Collider other)
@@ -68,7 +72,7 @@ public class AOEEnemyShot : MonoBehaviour
    
             // calls check if burnable method
             CheckIfBurnable();
-
+           
             bulletPosition = transform.position;
             // Debug.Log(transform.position);
             Debug.Log("bullet position " + bulletPosition);

@@ -9,6 +9,7 @@ public class AOETarget : MonoBehaviour
     //access player health script
     private PlayerHealth playerhealth;
 
+    
     //list to countdown # of ticks of damage
     public List<int> burnTickTimers = new List<int>();
 
@@ -18,6 +19,8 @@ public class AOETarget : MonoBehaviour
         healthScript = GetComponent<Health>();
         playerhealth = GetComponent<PlayerHealth>();
     }
+
+    
 
     //apply burn for specified number of ticks
     public void ApplyBurn(int ticks)
