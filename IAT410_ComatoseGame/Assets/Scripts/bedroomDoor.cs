@@ -5,7 +5,7 @@ using UnityEngine;
 public class bedroomDoor : MonoBehaviour
 {
       public Transform door1, door2;
-      public GameObject boss;
+      public GameObject boss, infection;
     // Start is called before the first frame update
     private int count;
     void Start()
@@ -17,7 +17,7 @@ public class bedroomDoor : MonoBehaviour
     void Update()
     {
          //open doors to next area here
-         if(boss == null && count ==0)
+         if(boss == null && count ==0 && infection == null)
          {
             //boss dead
            // door1.position = new Vector3(-33, 250, -61);

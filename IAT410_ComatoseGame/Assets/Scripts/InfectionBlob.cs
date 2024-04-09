@@ -7,7 +7,7 @@ public class InfectionBlob : MonoBehaviour
     // Start is called before the first frame update
     
     [SerializeField] private int health;
-    
+    public GameObject boss;
 
     void Awake()
     {
@@ -30,9 +30,15 @@ public class InfectionBlob : MonoBehaviour
             //check if boss is dead 
 
             //if boss is dead - player able to destroy the infection 
-           
-            health-=1;
-            Debug.Log("hit infection");
+            if(boss == null) 
+            {
+                health-=1;
+                Debug.Log("hit infection");
+            }
+            else {
+                Debug.Log("did not kill boss yet");
+            }
+            
             
         }
     }
