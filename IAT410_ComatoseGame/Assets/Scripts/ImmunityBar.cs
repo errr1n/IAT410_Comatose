@@ -26,7 +26,7 @@ public class ImmunityBar : MonoBehaviour
 
     public float decreaseRate;
 
-
+    public AudioSource powerUpSFX;
     void Awake()
     {
         // sets initial value to current kill count (0)
@@ -37,7 +37,7 @@ public class ImmunityBar : MonoBehaviour
         powerUp = false;
 
         qPrompt.enabled = false;
-
+        powerUpSFX = GetComponents<AudioSource>()[4];
     }
 
     void Update()
@@ -49,6 +49,7 @@ public class ImmunityBar : MonoBehaviour
             //if immunity key pressed
             if (Input.GetKeyDown(KeyCode.Q))
             {
+                powerUpSFX.Play();
                 //call the power up coroutine
                 StartCoroutine(PowerUp());
 
