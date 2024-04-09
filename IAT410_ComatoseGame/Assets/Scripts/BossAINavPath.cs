@@ -132,7 +132,7 @@ public class BossAINavPath : MonoBehaviour
 
    public void IncreaseFireSpeed()
    {
-        timeBetweenAttacks = 1f;
+        timeBetweenAttacks = 0.5f;
    }
 
    public void DestroyEnemy(){
