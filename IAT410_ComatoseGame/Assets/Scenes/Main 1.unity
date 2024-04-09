@@ -23874,7 +23874,7 @@ PrefabInstance:
     - target: {fileID: -4949550457888128124, guid: fab2d1cc39c31094ea516296516d8c17,
         type: 3}
       propertyPath: attackRange
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -4949550457888128124, guid: fab2d1cc39c31094ea516296516d8c17,
         type: 3}
@@ -29348,7 +29348,7 @@ PrefabInstance:
     - target: {fileID: -4949550457888128124, guid: 0ee716f7c3badb341a39ce4185b28d26,
         type: 3}
       propertyPath: sightRange
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -4949550457888128124, guid: 0ee716f7c3badb341a39ce4185b28d26,
         type: 3}
@@ -29358,7 +29358,7 @@ PrefabInstance:
     - target: {fileID: -4949550457888128124, guid: 0ee716f7c3badb341a39ce4185b28d26,
         type: 3}
       propertyPath: attackRange
-      value: 22
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -4949550457888128124, guid: 0ee716f7c3badb341a39ce4185b28d26,
         type: 3}
@@ -29390,7 +29390,7 @@ PrefabInstance:
     - target: {fileID: -4949550457888128124, guid: 0ee716f7c3badb341a39ce4185b28d26,
         type: 3}
       propertyPath: timeBetweenAttacks
-      value: 1
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 3629105517698018535, guid: 0ee716f7c3badb341a39ce4185b28d26,
         type: 3}
@@ -29471,6 +29471,11 @@ PrefabInstance:
         type: 3}
       propertyPath: maxHealth
       value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 7743764937236812371, guid: 0ee716f7c3badb341a39ce4185b28d26,
+        type: 3}
+      propertyPath: pickupSpawnPercentage
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3205635482730415619, guid: 0ee716f7c3badb341a39ce4185b28d26, type: 3}
