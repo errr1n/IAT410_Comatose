@@ -15,6 +15,7 @@ TagManager:
   - NarrativeObj
   - isGround
   - Test
+  - carnivalAttack
   layers:
   - Default
   - TransparentFX

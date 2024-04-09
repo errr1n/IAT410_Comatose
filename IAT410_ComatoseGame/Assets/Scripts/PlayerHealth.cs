@@ -10,6 +10,10 @@ public class PlayerHealth : MonoBehaviour
     public Slider healthBar;
 
 
+    private bool startTime;
+    public GameObject player;
+    private float timeLeft = 3.0f;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -27,6 +31,9 @@ public class PlayerHealth : MonoBehaviour
         // curHealth = maxHealth;
         // healthBar.value = curHealth;
         // healthBar.maxValue = maxHealth;
+
+        startTime = false;
+        player = GameObject.Find("PlayerArmature");
     }
 
     // Update is called once per frame
@@ -38,7 +45,17 @@ public class PlayerHealth : MonoBehaviour
         //     sendDamage(Random.Range(10,20));
         // }
     
-        
+        if(startTime)
+        {
+            timeLeft -= Time.deltaTime;
+            Debug.Log(timeLeft);
+            if(timeLeft <= 0 )
+            {
+                player.GetComponent<StarterAssets.ThirdPersonController>().setMoveSpeed(10);
+                Debug.Log("speed returned");
+                startTime = false;
+            }
+        }
     }
 
     public void sendDamage (float damageValue){
@@ -51,11 +68,20 @@ public class PlayerHealth : MonoBehaviour
     {
         if(other.collider.tag == "enemyAttack"){
             sendDamage(10);
-            Debug.Log("collided with player");
+            Debug.Log("test");
            // Destroy(other.collider.gameObject); // not working
-            
+           
+            //try slow attack here 
             
         }
+        if(other.collider.tag == "carnivalAttack")
+        {
+            sendDamage(10);
+            Debug.Log("speed decreased");
+            this.GetComponent<StarterAssets.ThirdPersonController>().setMoveSpeed(5);
+            startTime = true;
+        }
+                
     }
 
     public void addHealth(float healthValue){

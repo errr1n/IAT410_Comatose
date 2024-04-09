@@ -411,5 +411,11 @@ namespace StarterAssets
         {
             _rotateOnMove = newRotateOnMove;
         }
+
+       
+        public void setMoveSpeed(float speed)
+        {
+            MoveSpeed =  speed;
+        }
     }
 }

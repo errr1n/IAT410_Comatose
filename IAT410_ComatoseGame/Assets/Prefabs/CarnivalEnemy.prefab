@@ -157,7 +157,7 @@ MonoBehaviour:
   isPlayer:
     serializedVersion: 2
     m_Bits: 128
-  projectile: {fileID: 7084973490443700893, guid: 7e5d9ea33dbeb754d9e0971f44ef0e2e,
+  projectile: {fileID: 7084973490443700893, guid: a34202d4817e1494493325484921df13,
     type: 3}
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 4
