@@ -5,15 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class sceneChange : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    void OnTriggerEnter(Collider other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        SceneManager.LoadScene(2);
     }
 }
