@@ -37,7 +37,7 @@ public class ImmunityBar : MonoBehaviour
         powerUp = false;
 
         qPrompt.enabled = false;
-        powerUpSFX = GetComponents<AudioSource>()[4];
+        powerUpSFX = GetComponent<AudioSource>();
     }
 
     void Update()
