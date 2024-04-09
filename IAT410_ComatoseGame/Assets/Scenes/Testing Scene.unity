@@ -10887,6 +10887,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  boss: {fileID: 0}
+  immuneText: {fileID: 0}
 --- !u!4 &273718741 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4644b5b894cd77f4b96e731454ebfbe9,
@@ -34463,6 +34465,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  boss: {fileID: 0}
+  immuneText: {fileID: 0}
 --- !u!136 &905805732
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -38821,6 +38825,7 @@ MonoBehaviour:
   door1: {fileID: 966956822}
   door2: {fileID: 873313049}
   boss: {fileID: 1003673621}
+  infection: {fileID: 0}
 --- !u!43 &969948349
 Mesh:
   m_ObjectHideFlags: 0
@@ -62511,6 +62516,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  boss: {fileID: 0}
+  immuneText: {fileID: 0}
 --- !u!136 &1557215407
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -72842,6 +72849,7 @@ MonoBehaviour:
   curHealth: 0
   maxHealth: 120
   healthBar: {fileID: 1184707257}
+  player: {fileID: 0}
 --- !u!114 &1780385071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72928,6 +72936,11 @@ MonoBehaviour:
   bed: {fileID: 1242580216}
   boss: {fileID: 1003673621}
   infection: {fileID: 273718735}
+  carousel: {fileID: 0}
+  ferris: {fileID: 0}
+  carnivalBoss: {fileID: 0}
+  infection2: {fileID: 0}
+  IVdrip: {fileID: 0}
   progressText: {fileID: 370631493}
 --- !u!1 &1784748855 stripped
 GameObject:
