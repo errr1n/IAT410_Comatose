@@ -33,7 +33,7 @@ public class BossAINavPath : MonoBehaviour
     {
         player = GameObject.Find("PlayerArmature").transform;
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        shootSFX = GetComponent<AudioSource>();
+        shootSFX = GetComponents<AudioSource>()[1];
         
     }
 

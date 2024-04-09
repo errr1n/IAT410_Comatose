@@ -169,6 +169,7 @@ MonoBehaviour:
   health: 3
   playerInSightRange: 0
   playerInAttackRange: 0
+  shootSFX: {fileID: 0}
 --- !u!114 &7743764937236812371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,7 +204,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: bbdef99f6e02d7c4dbea1a8792e42ab2, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.149
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -297,7 +298,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 991c97fba361c6d40b3d98dae0dfea7e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5e8a5fa0b961f9a4ebd0c180bec15f45, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

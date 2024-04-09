@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour
         curHealth = maxHealth;
         healthBar.value = curHealth;
         healthBar.maxValue = maxHealth;
-        enemyHitSFX = GetComponent<AudioSource>();
+        enemyHitSFX = GetComponents<AudioSource>()[0];
         
     }
 

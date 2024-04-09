@@ -33,7 +33,7 @@ public class AINavPath : MonoBehaviour
     {
         player = GameObject.Find("PlayerArmature").transform;
         agent = GetComponent<NavMeshAgent>();
-        shootSFX = GetComponent<AudioSource>();
+        shootSFX = GetComponents<AudioSource>()[1];
     }
 
     private void Patrolling()
