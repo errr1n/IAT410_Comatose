@@ -14,6 +14,8 @@ public class PlayerHealth : MonoBehaviour
     public GameObject player;
     private float timeLeft = 3.0f;
 
+    public AudioSource playerHit;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -23,7 +25,7 @@ public class PlayerHealth : MonoBehaviour
         healthBar.maxValue = maxHealth;
 
         healthBar.value = curHealth;
-
+        playerHit = GetComponent<AudioSource>();
     }
 
     void Start()
@@ -60,6 +62,7 @@ public class PlayerHealth : MonoBehaviour
     }
 
     public void sendDamage (float damageValue){
+        playerHit.Play();
         Debug.Log("p hit by e, dmg : " + damageValue);
         curHealth -= damageValue;
         healthBar.value = curHealth;
@@ -70,6 +73,7 @@ public class PlayerHealth : MonoBehaviour
         if(other.collider.tag == "enemyAttack"){
             sendDamage(10);
             Debug.Log("test");
+
            // Destroy(other.collider.gameObject); // not working
            
             //try slow attack here 

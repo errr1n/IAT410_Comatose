@@ -19,6 +19,8 @@ public class ThirdPersonShooterController : MonoBehaviour
     [SerializeField] private Transform immunityBulletProjectile;
     [SerializeField] private Transform spawnBulletPosition;
 
+    public AudioSource audioSource, teleportSFX;
+
     // [SerializeField] public Transform AOETargetPosition;
 
     //crosshair
@@ -63,6 +65,10 @@ public class ThirdPersonShooterController : MonoBehaviour
         staminaBar = GetComponent<StaminaBar>();
 
         immunityBar = GameObject.Find("KCO").GetComponent<ImmunityBar>();
+
+        audioSource = GetComponent<AudioSource>();
+        teleportSFX = GetComponent<AudioSource>();
+        
     }
 
     private void Update()
@@ -114,6 +120,7 @@ public class ThirdPersonShooterController : MonoBehaviour
                     //teleporting
                     // gameObject.transform.position = teleportLocation.transform.position;
                     gameObject.transform.position = mouseWorldPosition;
+                    teleportSFX.Play();
                     // thirdPersonController.transform.position = teleportLocation.transform.position;
                     // Debug.Log("complete");
                     // StartCoroutine(Delay());
@@ -148,6 +155,7 @@ public class ThirdPersonShooterController : MonoBehaviour
             if(starterAssetsInputs.shoot)
             {
                 isFiring = true;
+                
                 // Debug.Log("is firing: " + isFiring);
             }
             else if(starterAssetsInputs.shoot == false)
@@ -169,6 +177,7 @@ public class ThirdPersonShooterController : MonoBehaviour
                     // to calculate aim direction, grab mouse position, calculate direction using spawn bullet position
                     Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
                     Instantiate(immunityBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+                    audioSource.Play();
 
                     //DISSABLED STAMINA IN IMMUNITY MODE ----------
                     // //reduce stamina
@@ -200,6 +209,7 @@ public class ThirdPersonShooterController : MonoBehaviour
                     // to calculate aim direction, grab mouse position, calculate direction using spawn bullet position
                     Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
                     Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+                    audioSource.Play();
 
                     //reduce stamina
                     staminaBar.curStamina -= staminaBar.attackCost;

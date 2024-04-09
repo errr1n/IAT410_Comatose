@@ -27,12 +27,13 @@ public class BossAINavPath : MonoBehaviour
     public float sightRange, attackRange, health;
     public bool playerInSightRange,playerInAttackRange;
 
-
+    public AudioSource shootSFX;
 
     private void Awake()
     {
         player = GameObject.Find("PlayerArmature").transform;
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        shootSFX = GetComponent<AudioSource>();
         
     }
 
@@ -105,7 +106,7 @@ public class BossAINavPath : MonoBehaviour
             rb3.AddForce(transform.up *5f, ForceMode.Impulse);
             rb3.AddForce(-transform.right *3f, ForceMode.Impulse);
 
-
+            shootSFX.Play();
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         } 

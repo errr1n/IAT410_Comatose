@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     public bool bossDead;
     ImmunityBar immunityBar;
 
+    public AudioSource enemyHitSFX;
   
    
     // Start is called before the first frame update
@@ -35,7 +36,8 @@ public class Enemy : MonoBehaviour
         curHealth = maxHealth;
         healthBar.value = curHealth;
         healthBar.maxValue = maxHealth;
-
+        enemyHitSFX = GetComponent<AudioSource>();
+        
     }
 
     //check if the enemy is dead
@@ -75,6 +77,7 @@ public class Enemy : MonoBehaviour
             //other.GetComponent<player>().Damage();
             // Debug.Log("hit enemy");
             health-=1;
+            enemyHitSFX.Play();
             sendDamage(6);
            // Destroy(gameObject);
             //need to destroy player projectile too 

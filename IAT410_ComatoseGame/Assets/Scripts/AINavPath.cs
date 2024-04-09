@@ -26,12 +26,14 @@ public class AINavPath : MonoBehaviour
     public float sightRange, attackRange, health;
     public bool playerInSightRange,playerInAttackRange;
 
+    public AudioSource shootSFX;
 
 
     private void Awake()
     {
         player = GameObject.Find("PlayerArmature").transform;
         agent = GetComponent<NavMeshAgent>();
+        shootSFX = GetComponent<AudioSource>();
     }
 
     private void Patrolling()
@@ -77,6 +79,7 @@ public class AINavPath : MonoBehaviour
         {
             
             Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+            shootSFX.Play();
             rb.AddForce(transform.forward *32f, ForceMode.Impulse);
             rb.AddForce(transform.up *5f, ForceMode.Impulse);
             alreadyAttacked = true;

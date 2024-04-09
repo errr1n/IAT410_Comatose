@@ -13,12 +13,14 @@ public class InfectionBlob : MonoBehaviour
 
     private float timeLeft = 3.0f;
     private bool startTime;
+
+    public AudioSource sfx;
     void Awake()
     {
         health =3;
         immuneText.enabled = false;
         startTime = false;
-       
+       sfx = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -52,6 +54,7 @@ public class InfectionBlob : MonoBehaviour
             {
                 health-=1;
                 Debug.Log("hit infection");
+                sfx.Play();
             }
             else {
                 Debug.Log("did not kill boss yet");
