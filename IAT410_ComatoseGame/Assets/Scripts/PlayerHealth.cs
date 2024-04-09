@@ -14,7 +14,7 @@ public class PlayerHealth : MonoBehaviour
     public GameObject player;
     private float timeLeft = 3.0f;
 
-    public AudioSource playerHit;
+    public AudioSource playerHitSFX;
 
     // Start is called before the first frame update
     void Awake()
@@ -25,7 +25,7 @@ public class PlayerHealth : MonoBehaviour
         healthBar.maxValue = maxHealth;
 
         healthBar.value = curHealth;
-        playerHit = GetComponent<AudioSource>();
+        playerHitSFX = GetComponents<AudioSource>()[2];
     }
 
     void Start()
@@ -62,7 +62,7 @@ public class PlayerHealth : MonoBehaviour
     }
 
     public void sendDamage (float damageValue){
-        playerHit.Play();
+        
         Debug.Log("p hit by e, dmg : " + damageValue);
         curHealth -= damageValue;
         healthBar.value = curHealth;
@@ -71,7 +71,9 @@ public class PlayerHealth : MonoBehaviour
     public void OnCollisionEnter(Collision other)
     {
         if(other.collider.tag == "enemyAttack"){
+            playerHitSFX.Play();
             sendDamage(10);
+            
             Debug.Log("test");
 
            // Destroy(other.collider.gameObject); // not working
@@ -81,6 +83,7 @@ public class PlayerHealth : MonoBehaviour
         }
         if(other.collider.tag == "carnivalAttack")
         {
+            playerHitSFX.Play();
             sendDamage(10);
             Debug.Log("speed decreased");
             this.GetComponent<StarterAssets.ThirdPersonController>().setMoveSpeed(5);

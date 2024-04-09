@@ -66,8 +66,8 @@ public class ThirdPersonShooterController : MonoBehaviour
 
         immunityBar = GameObject.Find("KCO").GetComponent<ImmunityBar>();
 
-        audioSource = GetComponent<AudioSource>();
-        teleportSFX = GetComponent<AudioSource>();
+        audioSource = GetComponents<AudioSource>()[0];
+        teleportSFX = GetComponents<AudioSource>()[1];
         
     }
 
@@ -119,8 +119,9 @@ public class ThirdPersonShooterController : MonoBehaviour
                     Debug.Log("teleport");
                     //teleporting
                     // gameObject.transform.position = teleportLocation.transform.position;
-                    gameObject.transform.position = mouseWorldPosition;
                     teleportSFX.Play();
+                    gameObject.transform.position = mouseWorldPosition;
+                    
                     // thirdPersonController.transform.position = teleportLocation.transform.position;
                     // Debug.Log("complete");
                     // StartCoroutine(Delay());
