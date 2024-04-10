@@ -26,6 +26,7 @@ public class PlayerHealth : MonoBehaviour
 
         healthBar.value = curHealth;
         playerHitSFX = GetComponents<AudioSource>()[2];
+        
     }
 
     void Start()
@@ -96,7 +97,7 @@ public class PlayerHealth : MonoBehaviour
         if(curHealth != maxHealth)
         {
             // Debug.Log("one" + healthValue);
-
+            
             if((curHealth + healthValue) > maxHealth)
             {
                 healthValue = (maxHealth - curHealth);

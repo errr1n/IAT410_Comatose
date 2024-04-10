@@ -6,9 +6,9 @@ public class HealthPickUp : MonoBehaviour
 {
     public AudioSource healthSFX;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        healthSFX = GetComponent<AudioSource>();
+        healthSFX = GetComponents<AudioSource>()[0];
     }
 
     // Update is called once per frame
@@ -24,8 +24,9 @@ public class HealthPickUp : MonoBehaviour
             Debug.Log("player hit health");
 
             //call player health script 
-            healthSFX.Play();
+            
             collision.GetComponent<PlayerHealth>().addHealth(Random.Range(10,30));
+            healthSFX.Play();
             Destroy(gameObject);
 
         }
